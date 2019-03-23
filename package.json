@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/simon300000/bili-api/issues"
   },
-  "homepage": "https://github.com/simon300000/bili-api#readme"
+  "homepage": "https://github.com/simon300000/bili-api#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
 }

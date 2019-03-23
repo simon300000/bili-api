@@ -1,0 +1,23 @@
+{
+  "name": "bili-api",
+  "version": "0.0.0",
+  "description": "Bilibili API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simon300000/bili-api.git"
+  },
+  "keywords": [
+    "bilibili",
+    "api"
+  ],
+  "author": "simon3000 <simon3000@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simon300000/bili-api/issues"
+  },
+  "homepage": "https://github.com/simon300000/bili-api#readme"
+}

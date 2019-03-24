@@ -14,10 +14,8 @@ let get = (object, target) => {
 let route = (object, target, map) => {
   for (let i = 0; i < target.length; i++) {
     if (object[target[i]]) continue
-    if (!apis[target[i]]) {
-      throw new Error(`Unknow target: ${[...map, target[i]].join(' -> ')} -> ?`)
-    } else if (map.includes(target[i])) {
-      throw new Error(`Loop target: ${[...map, target[i]].join(' -> ')}`)
+    if (!apis[target[i]] || map.includes(target[i])) {
+      throw new Error(`Error target route: ${[...map, target[i]].join(' -> ')} -> ?`)
     } else {
       route(object, apis[target[i]].require, [...map, target[i]])
     }

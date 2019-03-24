@@ -12,7 +12,7 @@
 
 ##### API地址
 
-https://api.bilibili.com/x/relation/stat?vmid=<mid>
+https://api.bilibili.com/x/relation/stat?vmid=<mid\>
 
 ##### 实例:
 
@@ -30,7 +30,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 271163
+    "follower": 271179
   }
 }
 ```
@@ -39,7 +39,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
 
 ##### API地址
 
-https://api.bilibili.com/x/space/acc/info?mid=<mid>
+https://api.bilibili.com/x/space/acc/info?mid=<mid\>
 
 ##### 实例:
 
@@ -64,7 +64,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 60673.9,
+    "coins": 60674,
     "fans_badge": true,
     "official": {
       "role": 1,

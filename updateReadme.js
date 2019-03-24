@@ -11,7 +11,7 @@ const doc = ['stat', 'info']
 const syntax = name => {
   let object = { parse: e => e }
   for (let i = 0; i < api[name].require.length; i++) {
-    object[api[name].require[i]] = `<${api[name].require[i]}>`
+    object[api[name].require[i]] = `<${api[name].require[i]}\\>`
   }
   return object
 }

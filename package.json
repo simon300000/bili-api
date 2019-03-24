@@ -1,7 +1,7 @@
 {
   "name": "bili-api",
   "version": "0.0.0",
-  "description": "Bilibili API",
+  "description": "Bilibili API 接口",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && npm run unit",
@@ -10,10 +10,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "readme": "node updateReadme"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/simon300000/bili-api.git"
-  },
+  "repository": "github:simon300000/bili-api",
   "keywords": [
     "bilibili",
     "api"

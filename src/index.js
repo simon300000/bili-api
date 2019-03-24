@@ -1,6 +1,8 @@
-const api = require('./api')
+const api = require('./api.bilibili.com')
 const data = require('./data')
 const apis = { ...api, ...data }
+
+const parse = require('./parse')
 
 let get = (object, target) => {
   for (let i = 0; i < target.length; i++) {
@@ -23,6 +25,7 @@ let route = (object, target, map) => {
 }
 
 module.exports = async (object, target) => {
+  object.parse = parse
   route(object, target, [])
   get(object, target)
   for (let variable in object) {

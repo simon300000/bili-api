@@ -7,7 +7,8 @@
     "test": "npm run lint && npm run unit",
     "unit": "nyc mocha --reporter=landing",
     "lint": "eslint .",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "readme": "node updateReadme"
   },
   "repository": {
     "type": "git",

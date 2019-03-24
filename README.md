@@ -10,15 +10,15 @@
 
 #### stat
 
-#####API地址
+##### API地址
 
 https://api.bilibili.com/x/relation/stat?vmid=<mid>
 
-#####实例：
+##### 实例:
 
 https://api.bilibili.com/x/relation/stat?vmid=349991143
 
-##### 返回：
+##### 返回:
 
 ```json
 {
@@ -30,22 +30,22 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 271156
+    "follower": 271163
   }
 }
 ```
 
 #### info
 
-#####API地址
+##### API地址
 
 https://api.bilibili.com/x/space/acc/info?mid=<mid>
 
-#####实例：
+##### 实例:
 
 https://api.bilibili.com/x/space/acc/info?mid=349991143
 
-##### 返回：
+##### 返回:
 
 ```json
 {
@@ -64,7 +64,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 60673.3,
+    "coins": 60673.9,
     "fans_badge": true,
     "official": {
       "role": 1,

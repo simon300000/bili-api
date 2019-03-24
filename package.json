@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run lint && npm run unit",
     "unit": "nyc mocha --reporter=landing",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.0.3",
     "eslint": "^5.15.3",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",

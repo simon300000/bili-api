@@ -1,0 +1,8 @@
+sudo: enabled
+language: node_js
+matrix:
+  include:
+  - os: osx
+    after_success: npm run coverage
+node_js:
+- '10'

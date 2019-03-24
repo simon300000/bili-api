@@ -1,5 +1,7 @@
 # Bili-api
 
+[![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api)
+[![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api)
 [![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
 
 ## 插件文档
@@ -30,7 +32,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 271179
+    "follower": 271195
   }
 }
 ```
@@ -64,7 +66,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 60674,
+    "coins": 60704.3,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -77,10 +79,24 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
 ```
 
 
+
+## Contribution
+
+欢迎各种Issue和Pull Request
+
+开Issue聊天也行→\_→！！！
+
+### README.md
+
+请不要直接修改 README.md 文件，README.md 文件是由指令 `npm run readme`, `src/api.bilibili.com.js` 生成的，模版是 README.template.md
+
+#### API Document
+
+也是自动生成的，主要通过 `src/api.bilibili.com.js` 和 `updateReadme.js` 中的配置生成

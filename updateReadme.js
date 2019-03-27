@@ -27,6 +27,16 @@ const testData = {
   p: 0
 }
 
+const exampleData = async name => {
+  let object = {}
+  let requires = apis[name].require
+  let datas = await biliAPI({ ...testData }, [requires])
+  for (let i = 0; i < requires.length; i++) {
+    object[requires[i]] = datas[requires[i]]
+  }
+  return object
+}
+
 const section = ({ name, syntax, example, data, type = 'json', description = '' }) => {
   if (data.length > 1000) {
     data = data.slice(0, 1000)
@@ -50,7 +60,7 @@ const section = ({ name, syntax, example, data, type = 'json', description = '' 
       name,
       description: apis[name].description,
       syntax: await apis[name].get(syntax(name)),
-      example: await apis[name].get({ parse: e => e, ...testData }),
+      example: await apis[name].get({ parse: e => e, ...testData, ...await exampleData(name) }),
       type: apis[name].type,
       data: JSON.stringify((await biliAPI({ ...testData }, [name]))[name], 0, 2)
     })

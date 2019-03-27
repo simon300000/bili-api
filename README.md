@@ -53,7 +53,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276311
+    "follower": 276318
   }
 }
 ```
@@ -89,7 +89,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 62754.9,
+    "coins": 62755.3,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -102,7 +102,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -165,7 +165,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
       "danmaku": 32,
       "reply": 26,
       "favorite":
-...
+......
 ```
 
 ### list
@@ -178,7 +178,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>
 
 #### 实例:
 
-https://api.bilibili.com/x/v1/dm/list.so?oid=undefined
+https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
 
 #### 返回 (xml->json):
 
@@ -236,7 +236,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=undefined
         "$": {
           "p": "116.61600,1,25,16777215,1545803269,0,8b709dfe,9783787808882688"
      
-...
+......
 ```
 
 

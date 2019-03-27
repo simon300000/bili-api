@@ -1,10 +1,14 @@
 const fs = require('fs')
 const got = require('got')
 
+const toc = require('markdown-toc')
+
 const api = require('./src/api.bilibili.com')
 
 const README = String(fs.readFileSync('README.template.md'))
 const DOC = String(fs.readFileSync('DOC.template.md'))
+
+const maxdepth = 4
 
 const doc = ['stat', 'info']
 
@@ -55,5 +59,7 @@ const section = ({ name, syntax, example, data }) => {
       data: await api[name].get(test(name))
     })
   }
-  fs.writeFileSync('README.md', README.replace('<!-- [[apiDocument]] -->', doc.join('')))
+  let readMea = README.replace('<!-- [[apiDocument]] -->', doc.join(''))
+  readMea = readMea.replace('<!--toc-->', toc(readMea, { maxdepth }).content)
+  fs.writeFileSync('README.md', readMea)
 })()

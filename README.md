@@ -4,11 +4,29 @@
 [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api)
 [![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
 
+- [插件文档](#%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3)
+- [Bilibili API Document](#bilibili-api-document)
+    + [stat](#stat)
+    + [info](#info)
+- [Contribution](#contribution)
+  * [README.md](#readmemd)
+    + [API Document](#api-document)
+
 ## 插件文档
 
 没写完→\_→, 可以看看 test/test.js
 
 ## Bilibili API Document
+
+这里收集的API应该属于"匿名API(自造词)"，即不需要 登陆/appkey 的API。
+
+用处大概是公开信息获取，暂时没有涉及类似"发弹幕/评论"相关API的打算。
+
+以下是两个可能满足类似需求的资料：
+
+[fython/BilibiliAPIDocs: Bilibili API (For thrid-party) Documents 哔哩哔哩开放接口第三方文档](https://github.com/fython/BilibiliAPIDocs)
+
+[Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 
 #### stat
 
@@ -32,7 +50,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 271195
+    "follower": 276171
   }
 }
 ```
@@ -66,7 +84,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 60704.3,
+    "coins": 62686.2,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -79,7 +97,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }

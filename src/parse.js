@@ -1,3 +1,5 @@
 const got = require('got')
 
-module.exports = async url => JSON.parse((await got(url)).body).data
+const parsers = {}
+parsers.json = async url => JSON.parse((await got(url)).body)
+module.exports = (url, type = 'json') => parsers[type](url)

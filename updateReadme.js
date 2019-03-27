@@ -30,7 +30,7 @@ const testData = {
 const section = ({ name, syntax, example, data, type = 'json', description = '' }) => {
   if (data.length > 1000) {
     data = data.slice(0, 1000)
-    data += '\n...'
+    data += '\n......'
   }
   return DOC
     .replace('NAME', name)

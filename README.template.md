@@ -22,6 +22,12 @@
 
 [Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 
+### IDs
+
+<!-- [[idDocument]] -->
+
+### APIs
+
 <!-- [[apiDocument]] -->
 
 ## Contribution

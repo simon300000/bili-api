@@ -1,4 +1,10 @@
 module.exports = {
   mid: {},
-  aid: {}
+  aid: {},
+  cid: {
+    require: ['view'],
+    optional: ['p'],
+    get: async ({ view, p }) => (await view).data.pages[p || 0].cid
+  },
+  p: {}
 }

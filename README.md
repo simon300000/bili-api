@@ -8,6 +8,8 @@
 - [Bilibili API Document](#bilibili-api-document)
   * [stat](#stat)
   * [info](#info)
+  * [view](#view)
+  * [list](#list)
 - [Contribution](#contribution)
   * [README.md](#readmemd)
 
@@ -49,7 +51,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276176
+    "follower": 276307
   }
 }
 ```
@@ -83,7 +85,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 62688.7,
+    "coins": 62753.5,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -100,6 +102,133 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "theme": {}
   }
 }
+```
+
+### view
+
+#### API地址
+
+https://api.bilibili.com/x/web-interface/view?aid=<aid\>
+
+#### 实例:
+
+https://api.bilibili.com/x/web-interface/view?aid=30669363
+
+#### 返回:
+
+```json
+{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "aid": 30669363,
+    "videos": 1,
+    "tid": 138,
+    "tname": "搞笑",
+    "copyright": 2,
+    "pic": "http://i2.hdslb.com/bfs/archive/beb7c2ea63a31929b2aac187fee6f7da97058fa6.jpg",
+    "title": "ELECTRICAL COMMUNICATION",
+    "pubdate": 1535573687,
+    "ctime": 1535573684,
+    "desc": "N站http://www.nicovideo.jp/watch/sm31209485?ref=thumb_nicopedia\n真夏の夜の淫夢",
+    "state": 0,
+    "attribute": 16640,
+    "duration": 148,
+    "rights": {
+      "bp": 0,
+      "elec": 0,
+      "download": 1,
+      "movie": 0,
+      "pay": 0,
+      "hd5": 1,
+      "no_reprint": 0,
+      "autoplay": 1,
+      "ugc_pay": 0,
+      "is_cooperation": 0,
+      "ugc_pay_preview": 0
+    },
+    "owner": {
+      "mid": 37736515,
+      "name": "精鋭の見張り員",
+      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+    },
+    "stat": {
+      "aid": 30669363,
+      "view": 5500,
+      "danmaku": 32,
+      "reply": 26,
+      "favorite":
+...
+```
+
+### list
+
+#### API地址
+
+https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>
+
+#### 实例:
+
+https://api.bilibili.com/x/v1/dm/list.so?oid=undefined
+
+#### 返回:
+
+```json
+{
+  "i": {
+    "chatserver": [
+      "chat.bilibili.com"
+    ],
+    "chatid": [
+      "53534698"
+    ],
+    "mission": [
+      "0"
+    ],
+    "maxlimit": [
+      "500"
+    ],
+    "state": [
+      "0"
+    ],
+    "real_name": [
+      "0"
+    ],
+    "source": [
+      "k-v"
+    ],
+    "d": [
+      {
+        "_": "(눈_눈)",
+        "$": {
+          "p": "53.32200,1,25,16777215,1535805851,0,f028907,4542261363212288"
+        }
+      },
+      {
+        "_": "大哥大嫂过年好",
+        "$": {
+          "p": "118.40600,5,25,15138834,1541414098,0,892760a2,7482598462849024"
+        }
+      },
+      {
+        "_": "刷CPU的几个意思……",
+        "$": {
+          "p": "45.28400,1,25,16777215,1545353769,0,7907fd34,9548120285773826"
+        }
+      },
+      {
+        "_": "刷绘里的几个意思……",
+        "$": {
+          "p": "12.85700,1,25,16777215,1545353720,0,7907fd34,9548094612439040"
+        }
+      },
+      {
+        "_": "草",
+        "$": {
+          "p": "116.61600,1,25,16777215,1545803269,0,8b709dfe,9783787808882688"
+     
+...
 ```
 
 

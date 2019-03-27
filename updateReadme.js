@@ -11,7 +11,7 @@ const DOC = String(fs.readFileSync('DOC.template.md'))
 
 const maxdepth = 3
 
-const doc = ['stat', 'info']
+const doc = ['stat', 'info', 'view', 'list']
 
 const syntax = name => {
   let object = { parse: e => e }

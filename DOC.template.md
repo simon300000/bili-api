@@ -1,5 +1,7 @@
 ### NAME
 
+DESCRIPTION
+
 #### API地址
 
 SYNTAX
@@ -8,7 +10,7 @@ SYNTAX
 
 EXAMPLE
 
-#### 返回:
+#### 返回 (TYPE->json):
 
 ```json
 DATA

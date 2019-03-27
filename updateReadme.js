@@ -27,15 +27,17 @@ const testData = {
   p: 0
 }
 
-const section = ({ name, syntax, example, data }) => {
+const section = ({ name, syntax, example, data, type = 'json', description = '' }) => {
   if (data.length > 1000) {
     data = data.slice(0, 1000)
     data += '\n...'
   }
   return DOC
     .replace('NAME', name)
+    .replace('DESCRIPTION', description)
     .replace('SYNTAX', syntax)
     .replace('EXAMPLE', example)
+    .replace('TYPE', type)
     .replace('DATA', data)
 }
 
@@ -46,8 +48,10 @@ const section = ({ name, syntax, example, data }) => {
     let name = doc[i]
     sections[i] = section({
       name,
+      description: apis[name].description,
       syntax: await apis[name].get(syntax(name)),
       example: await apis[name].get({ parse: e => e, ...testData }),
+      type: apis[name].type,
       data: JSON.stringify((await biliAPI({ ...testData }, [name]))[name], 0, 2)
     })
   }

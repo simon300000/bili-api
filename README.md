@@ -31,6 +31,8 @@
 
 ### stat
 
+UP主统计数据
+
 #### API地址
 
 https://api.bilibili.com/x/relation/stat?vmid=<mid\>
@@ -39,7 +41,7 @@ https://api.bilibili.com/x/relation/stat?vmid=<mid\>
 
 https://api.bilibili.com/x/relation/stat?vmid=349991143
 
-#### 返回:
+#### 返回 (json->json):
 
 ```json
 {
@@ -51,12 +53,14 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276307
+    "follower": 276311
   }
 }
 ```
 
 ### info
+
+UP主信息
 
 #### API地址
 
@@ -66,7 +70,7 @@ https://api.bilibili.com/x/space/acc/info?mid=<mid\>
 
 https://api.bilibili.com/x/space/acc/info?mid=349991143
 
-#### 返回:
+#### 返回 (json->json):
 
 ```json
 {
@@ -85,7 +89,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 62753.5,
+    "coins": 62754.9,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -98,13 +102,15 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
 ```
 
 ### view
+
+视频信息
 
 #### API地址
 
@@ -114,7 +120,7 @@ https://api.bilibili.com/x/web-interface/view?aid=<aid\>
 
 https://api.bilibili.com/x/web-interface/view?aid=30669363
 
-#### 返回:
+#### 返回 (json->json):
 
 ```json
 {
@@ -164,6 +170,8 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
 
 ### list
 
+弹幕
+
 #### API地址
 
 https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>
@@ -172,7 +180,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>
 
 https://api.bilibili.com/x/v1/dm/list.so?oid=undefined
 
-#### 返回:
+#### 返回 (xml->json):
 
 ```json
 {

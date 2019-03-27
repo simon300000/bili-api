@@ -14,7 +14,7 @@ const maxdepth = 3
 const doc = ['stat', 'info', 'view', 'list']
 
 const syntax = name => {
-  let object = { parse: e => e }
+  let object = {}
   for (let i = 0; i < apis[name].require.length; i++) {
     object[apis[name].require[i]] = `<${apis[name].require[i]}\\>`
   }
@@ -60,7 +60,7 @@ const section = ({ name, syntax, example, data, type = 'json', description = '' 
       name,
       description: apis[name].description,
       syntax: await apis[name].get(syntax(name)),
-      example: await apis[name].get({ parse: e => e, ...testData, ...await exampleData(name) }),
+      example: await apis[name].get({ ...testData, ...await exampleData(name) }),
       type: apis[name].type,
       data: JSON.stringify((await biliAPI({ ...testData }, [name]))[name], 0, 2)
     })

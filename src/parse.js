@@ -6,7 +6,8 @@ const parseStringAsync = promisify(parseString)
 const inflateRawAsync = promisify(inflateRaw)
 
 const parsers = {}
-parsers.json = async url => JSON.parse((await got(url)).body)
-parsers.xml = async url => parseStringAsync(String(await inflateRawAsync((await got(url, { decompress: false })).body)))
+parsers.json = async url => JSON.parse((await got(await url)).body)
+parsers.xml = async url => parseStringAsync(String(await inflateRawAsync((await got(await url, { decompress: false })).body)))
+parsers.none = e => e
 
-module.exports = (url, type = 'json') => parsers[type](url)
+module.exports = (url, type = 'none') => parsers[type](url)

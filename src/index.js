@@ -8,8 +8,9 @@ const parse = require('./parse')
 let get = (object, target) => {
   for (let i = 0; i < target.length; i++) {
     if (!object[target[i]]) {
-      get(object, apis[target[i]].require)
-      object[target[i]] = apis[target[i]].get(object)
+      let targetAPI = apis[target[i]]
+      get(object, targetAPI.require)
+      object[target[i]] = parse(targetAPI.get(object), targetAPI.type)
     }
   }
 }
@@ -30,7 +31,6 @@ let route = (object, target, map) => {
 }
 
 module.exports = async (object, target) => {
-  object.parse = parse
   route(object, target, [])
   get(object, target)
   for (let variable in object) {

@@ -1,6 +1,7 @@
 const api = require('./api.bilibili.com')
 const data = require('./data')
-const apis = { ...api, ...data }
+const input = require('./input')
+const apis = { ...api, ...data, ...input }
 
 const parse = require('./parse')
 
@@ -14,12 +15,16 @@ let get = (object, target) => {
 }
 
 let route = (object, target, map) => {
-  for (let i = 0; i < target.length; i++) {
-    if (object[target[i]]) continue
-    if (!apis[target[i]] || map.includes(target[i])) {
-      throw new Error(`Error target route: ${[...map, target[i]].join(' -> ')} -> ?`)
-    } else {
-      route(object, apis[target[i]].require, [...map, target[i]])
+  if (!target) {
+    throw new Error(`Error target route: ${map.join(' -> ')} -> ?`)
+  } else {
+    for (let i = 0; i < target.length; i++) {
+      if (object[target[i]]) continue
+      if (!apis[target[i]] || map.includes(target[i])) {
+        throw new Error(`Error target route: ${[...map, target[i]].join(' -> ')} -> ?`)
+      } else {
+        route(object, apis[target[i]].require, [...map, target[i]])
+      }
     }
   }
 }

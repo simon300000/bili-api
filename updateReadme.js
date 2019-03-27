@@ -8,7 +8,7 @@ const api = require('./src/api.bilibili.com')
 const README = String(fs.readFileSync('README.template.md'))
 const DOC = String(fs.readFileSync('DOC.template.md'))
 
-const maxdepth = 4
+const maxdepth = 3
 
 const doc = ['stat', 'info']
 

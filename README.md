@@ -6,11 +6,10 @@
 
 - [插件文档](#%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3)
 - [Bilibili API Document](#bilibili-api-document)
-    + [stat](#stat)
-    + [info](#info)
+  * [stat](#stat)
+  * [info](#info)
 - [Contribution](#contribution)
   * [README.md](#readmemd)
-    + [API Document](#api-document)
 
 ## 插件文档
 
@@ -28,17 +27,17 @@
 
 [Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 
-#### stat
+### stat
 
-##### API地址
+#### API地址
 
 https://api.bilibili.com/x/relation/stat?vmid=<mid\>
 
-##### 实例:
+#### 实例:
 
 https://api.bilibili.com/x/relation/stat?vmid=349991143
 
-##### 返回:
+#### 返回:
 
 ```json
 {
@@ -50,22 +49,22 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276171
+    "follower": 276176
   }
 }
 ```
 
-#### info
+### info
 
-##### API地址
+#### API地址
 
 https://api.bilibili.com/x/space/acc/info?mid=<mid\>
 
-##### 实例:
+#### 实例:
 
 https://api.bilibili.com/x/space/acc/info?mid=349991143
 
-##### 返回:
+#### 返回:
 
 ```json
 {
@@ -84,7 +83,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 62686.2,
+    "coins": 62688.7,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -113,8 +112,4 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
 
 ### README.md
 
-请不要直接修改 README.md 文件，README.md 文件是由指令 `npm run readme`, `src/api.bilibili.com.js` 生成的，模版是 README.template.md
-
-#### API Document
-
-也是自动生成的，主要通过 `src/api.bilibili.com.js` 和 `updateReadme.js` 中的配置生成
+请不要直接修改 README.md 文件，README.md 文件是由 `updateReadme.js` 生成的，模版是 README.template.md 和 DOC.template.md

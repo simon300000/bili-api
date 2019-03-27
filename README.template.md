@@ -32,8 +32,4 @@
 
 ### README.md
 
-请不要直接修改 README.md 文件，README.md 文件是由指令 `npm run readme`, `src/api.bilibili.com.js` 生成的，模版是 README.template.md
-
-#### API Document
-
-也是自动生成的，主要通过 `src/api.bilibili.com.js` 和 `updateReadme.js` 中的配置生成
+请不要直接修改 README.md 文件，README.md 文件是由 `updateReadme.js` 生成的，模版是 README.template.md 和 DOC.template.md

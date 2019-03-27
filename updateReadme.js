@@ -52,7 +52,7 @@ const apiSection = ({ name, syntax, example, data, type = 'json', description = 
     optional[i] = `\[[${optional[i]}](#api_${optional[i]})\]`
   }
   return API
-    .replace('NAME', `${name}<a name="api_${name}"></a>`)
+    .replace('NAME', `<a name="api_${name}"></a>${name}`)
     .replace('DESCRIPTION', description)
     .replace('SYNTAX', syntax)
     .replace('REQUIRES', [...requires, ...optional].join(', ') || '无')
@@ -69,7 +69,7 @@ const idSection = ({ name, description = '', requires = [], optional = [] }) => 
     optional[i] = `\[[${optional[i]}](#api_${optional[i]})\]`
   }
   return ID
-    .replace('NAME', `${name}<a name="api_${name}"></a>`)
+    .replace('NAME', `<a name="api_${name}"></a>${name}`)
     .replace('DESCRIPTION', description)
     .replace('REQUIRES', [...requires, ...optional].join(', ') || '无')
 }

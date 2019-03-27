@@ -37,7 +37,7 @@
 
 ### IDs
 
-#### mid<a name="api_mid"></a>
+#### <u><a name="api_mid"></a>mid</u>
 
 
 
@@ -45,7 +45,7 @@
 
 无
 
-#### aid<a name="api_aid"></a>
+#### <u><a name="api_aid"></a>aid</u>
 
 
 
@@ -53,7 +53,7 @@
 
 无
 
-#### cid<a name="api_cid"></a>
+#### <u><a name="api_cid"></a>cid</u>
 
 
 
@@ -61,7 +61,7 @@
 
 <[view](#api_view)>, [[p](#api_p)]
 
-#### p<a name="api_p"></a>
+#### <u><a name="api_p"></a>p</u>
 
 
 
@@ -73,7 +73,7 @@
 
 ### APIs
 
-#### stat<a name="api_stat"></a>
+#### <u><a name="api_stat"></a>stat</u>
 
 UP主统计数据
 
@@ -101,12 +101,12 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276325
+    "follower": 276326
   }
 }
 ```
 
-#### info<a name="api_info"></a>
+#### <u><a name="api_info"></a>info</u>
 
 UP主信息
 
@@ -141,7 +141,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 62759.3,
+    "coins": 62759.5,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -154,13 +154,13 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
 ```
 
-#### view<a name="api_view"></a>
+#### <u><a name="api_view"></a>view</u>
 
 视频信息
 
@@ -224,7 +224,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
 ......
 ```
 
-#### list<a name="api_list"></a>
+#### <u><a name="api_list"></a>list</u>
 
 弹幕
 

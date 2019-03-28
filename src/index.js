@@ -3,14 +3,14 @@ const data = require('./data')
 const input = require('./input')
 const apis = { ...api, ...data, ...input }
 
-const parse = require('./parse')
+const defaultParser = require('./parser')
 
-let get = (object, target) => {
+let get = (object, target, { parser }) => {
   for (let i = 0; i < target.length; i++) {
     if (!object[target[i]]) {
       let targetAPI = apis[target[i]]
-      get(object, targetAPI.require)
-      object[target[i]] = parse(targetAPI.get(object), targetAPI.type)
+      get(object, targetAPI.require, { parser })
+      object[target[i]] = parser(targetAPI.get(object), targetAPI.type)
     }
   }
 }
@@ -30,9 +30,21 @@ let route = (object, target, map) => {
   }
 }
 
-module.exports = async (object, target) => {
+/**
+ * 程序主入口
+ * @method exports
+ * @param  {Object}    object                  输入的信息
+ * @param  {Array}     target                  需要的目标信息
+ * @param  {Function}  [parser=defaultParser]  设置: 自定义url下载/分析器
+ * @param  {Function}  [logger=e=>{}]          调试用信息输出
+ * @return {Promise}                           Resolve一个带有所需target的Object
+ */
+module.exports = async (object, target, {// 这里以下属于Options
+  parser = defaultParser,
+  logger = e => {}
+} = {}) => {
   route(object, target, [])
-  get(object, target)
+  get(object, target, { parser })
   for (let variable in object) {
     if (object.hasOwnProperty(variable)) {
       object[variable] = await object[variable]
@@ -40,3 +52,5 @@ module.exports = async (object, target) => {
   }
   return object
 }
+
+module.exports.apis = { ...apis }

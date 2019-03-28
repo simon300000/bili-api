@@ -6,10 +6,13 @@ object.uname // 神楽めあOfficial
 object.guardNum // 634
 ```
 
-![Graph of apis](md/api.svg)
-
 # 目录
 
+- [biliAPI](#biliapi)
+  * [安装](#%E5%AE%89%E8%A3%85)
+  * [开始](#%E5%BC%80%E5%A7%8B)
+    + [biliAPI Document](#biliapi-document)
+    + [Route Graph](#route-graph)
 - [Bilibili API Document](#bilibili-api-document)
   * [IDs](#ids)
     + [mid](#mid)
@@ -25,6 +28,47 @@ object.guardNum // 634
     + [getRoomInfoOld](#getroominfoold)
     + [topList](#toplist)
 - [Contribution](#contribution)
+
+# biliAPI
+
+## 安装
+
+npm: `npm install bili-api`
+
+## 开始
+
+```javascript
+const biliAPI = require('bili-api')
+;
+(async () => {
+  let up = await biliAPI({ mid: 349991143 }, ['follower'])
+  up.follower // 277042
+})()
+```
+
+以上便是根据<[mid](#api_mid)>查找粉丝数，很简单对不对→\_→
+
+### biliAPI Document
+
+```javascript
+/**
+ * @method exports
+ * @param  {Object}    object        输入的信息
+ * @param  {Array}     target        需要的目标信息
+ * @param  {Function}  [option]      设置
+ * @return {Promise}                 Resolve一个带有所需target的Object
+ */
+biliAPI(object, target, [option])
+```
+
+- `object`: 对象，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
+- `target`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+
+<!-- #### Option -->
+
+### Route Graph
+
+![Graph of apis](md/api.svg)
 
 # Bilibili API Document
 
@@ -116,7 +160,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 277039
+    "follower": 277042
   }
 }
 ```
@@ -156,7 +200,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63432.5,
+    "coins": 63434.4,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -169,7 +213,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -232,7 +276,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 5572,
+      "view": 5574,
       "danmaku": 32,
       "reply": 26,
       "favorite":

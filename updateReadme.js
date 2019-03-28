@@ -16,10 +16,8 @@ let DESCRIPTIONS = {}
 
 for (let i = 0; i < descriptionFile.length; i++) {
   if (descriptionFile[i][0] === '#') {
-    if (DESCRIPTIONS._current) {
-      DESCRIPTIONS[DESCRIPTIONS._current] = DESCRIPTIONS[DESCRIPTIONS._current].join('\n\n')
-    }
     DESCRIPTIONS._current = descriptionFile[i].replace(' ', '').replace('#', '')
+    console.log(`DESCRIPTIONS: ${descriptionFile[i]}`)
     DESCRIPTIONS[DESCRIPTIONS._current] = []
   } else if (descriptionFile[i]) {
     DESCRIPTIONS[DESCRIPTIONS._current].push(descriptionFile[i])
@@ -52,7 +50,8 @@ const exampleData = async name => {
   return object
 }
 
-const apiSection = ({ name, syntax, example, data, type = 'json', description = '', requires = [], optional = [] }) => {
+const apiSection = ({ name, syntax, example, data, type = 'json', description = [], requires = [], optional = [] }) => {
+  console.log(`apiSection: ${name}`)
   if (data.length > 1000) {
     data = data.slice(0, 1000)
     data += '\n......'
@@ -65,7 +64,7 @@ const apiSection = ({ name, syntax, example, data, type = 'json', description = 
   }
   return API
     .replace('NAME', `<a name="api_${name}"></a>${name}`)
-    .replace('DESCRIPTION', description)
+    .replace('DESCRIPTION', description.join('\n\n'))
     .replace('SYNTAX', syntax)
     .replace('REQUIRES', [...requires, ...optional].join(', ') || '无')
     .replace('EXAMPLE', example)
@@ -73,7 +72,8 @@ const apiSection = ({ name, syntax, example, data, type = 'json', description = 
     .replace('DATA', data)
 }
 
-const idSection = ({ name, description = '', requires = [], optional = [] }) => {
+const idSection = ({ name, description = [], requires = [], optional = [] }) => {
+  console.log(`idSection: ${name}`)
   for (let i = 0; i < requires.length; i++) {
     requires[i] = `\<[${requires[i]}](#api_${requires[i]})\>`
   }
@@ -82,7 +82,7 @@ const idSection = ({ name, description = '', requires = [], optional = [] }) => 
   }
   return ID
     .replace('NAME', `<a name="api_${name}"></a>${name}`)
-    .replace('DESCRIPTION', description)
+    .replace('DESCRIPTION', description.join('\n\n'))
     .replace('REQUIRES', [...requires, ...optional].join(', ') || '无')
 }
 
@@ -126,16 +126,16 @@ const idSection = ({ name, description = '', requires = [], optional = [] }) => 
     } else if (readMea[i] === '```') {
       js.current = false
       js.content = []
-    } else if (js.current) {
+    } else if (js.current && !readMea[i].includes('const biliAPI') && !readMea[i].includes('(async () => {')) {
       js.content.push(readMea[i])
       if (readMea[i].includes('// DATA')) {
         let data = await eval(`(async()=>{${js.content.join('\n')};\nreturn ${readMea[i]}\n})()`)
+        console.log(`EVAL: ${data}`)
         readMea[i] = readMea[i].replace('DATA', `${data}`)
       }
     }
   }
   readMea = readMea.join('\n')
-
   readMea = readMea.replace('<!-- [[apiDocument]] -->', apiSections.join(''))
   readMea = readMea.replace('<!-- [[idDocument]] -->', idSections.join(''))
   readMea = readMea.replace('<!--toc-->', toc(readMea, { maxdepth }).content)

@@ -6,11 +6,50 @@ object.uname // DATA
 object.guardNum // DATA
 ```
 
-![Graph of apis](md/api.svg)
-
 # 目录
 
 <!--toc-->
+
+# biliAPI
+
+## 安装
+
+npm: `npm install bili-api`
+
+## 开始
+
+```javascript
+const biliAPI = require('bili-api')
+;
+(async () => {
+  let up = await biliAPI({ mid: 349991143 }, ['follower'])
+  up.follower // DATA
+})()
+```
+
+以上便是根据<[mid](#api_mid)>查找粉丝数，很简单对不对→\_→
+
+### biliAPI Document
+
+```javascript
+/**
+ * @method exports
+ * @param  {Object}    object        输入的信息
+ * @param  {Array}     target        需要的目标信息
+ * @param  {Function}  [option]      设置
+ * @return {Promise}                 Resolve一个带有所需target的Object
+ */
+biliAPI(object, target, [option])
+```
+
+- `object`: 对象，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
+- `target`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+
+<!-- #### Option -->
+
+### Route Graph
+
+![Graph of apis](md/api.svg)
 
 # Bilibili API Document
 

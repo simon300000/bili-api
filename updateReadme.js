@@ -6,9 +6,9 @@ const { apis } = biliAPI
 
 const toc = require('markdown-toc')
 
-const README = String(fs.readFileSync('README.template.md'))
-const API = String(fs.readFileSync('API.template.md'))
-const ID = String(fs.readFileSync('ID.template.md'))
+const README = String(fs.readFileSync('md/README.template.md'))
+const API = String(fs.readFileSync('md/API.template.md'))
+const ID = String(fs.readFileSync('md/ID.template.md'))
 
 const maxdepth = 4
 

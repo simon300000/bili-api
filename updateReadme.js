@@ -2,10 +2,9 @@
 const fs = require('fs')
 
 const biliAPI = require('.')
+const { apis } = biliAPI
 
 const toc = require('markdown-toc')
-
-const apis = { ...require('./src/api.bilibili.com'), ...require('./src/data'), ...require('./src/input') }
 
 const README = String(fs.readFileSync('README.template.md'))
 const API = String(fs.readFileSync('API.template.md'))
@@ -16,8 +15,9 @@ const maxdepth = 4
 const doc = ['stat', 'info', 'view', 'list']
 const id = ['mid', 'aid', 'cid', 'p']
 
-const syntax = name => {
-  let object = {}
+const syntax = async name => {
+  let object = await biliAPI(testData, [name])
+  object[name] = undefined
   for (let i = 0; i < apis[name].require.length; i++) {
     object[apis[name].require[i]] = `<${apis[name].require[i]}\\>`
   }
@@ -31,12 +31,8 @@ const testData = {
 }
 
 const exampleData = async name => {
-  let object = {}
-  let requires = apis[name].require
-  let datas = await biliAPI({ ...testData }, [requires])
-  for (let i = 0; i < requires.length; i++) {
-    object[requires[i]] = datas[requires[i]]
-  }
+  let object = await biliAPI(testData, [name])
+  object[name] = undefined
   return object
 }
 
@@ -84,12 +80,12 @@ const idSection = ({ name, description = '', requires = [], optional = [] }) => 
     apiSections[i] = apiSection({
       name,
       description: apis[name].description,
-      syntax: await apis[name].get(syntax(name)),
-      example: await apis[name].get({ ...testData, ...await exampleData(name) }),
+      syntax: (await biliAPI(await syntax(name), [name], { parser: url => url }))[name],
+      example: (await biliAPI(await exampleData(name), [name], { parser: url => url }))[name],
       type: apis[name].type,
       requires: [...(apis[name].require || [])],
       optional: [...(apis[name].optional || [])],
-      data: JSON.stringify((await biliAPI({ ...testData }, [name]))[name], 0, 2)
+      data: JSON.stringify((await biliAPI(testData, [name]))[name], 0, 2)
     })
   }
 

@@ -42,7 +42,7 @@
 
 UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`就是这个`mid`了
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 无
 
@@ -52,7 +52,7 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 无
 
@@ -60,7 +60,7 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 <[view](#api_view)>, [[p](#api_p)]
 
@@ -68,7 +68,7 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 无
 
@@ -80,19 +80,19 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 UP主统计数据
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 <[mid](#api_mid)>
 
-#### API地址
+##### API地址
 
 https://api.bilibili.com/x/relation/stat?vmid=<mid\>
 
-#### 实例:
+##### 实例:
 
 https://api.bilibili.com/x/relation/stat?vmid=349991143
 
-#### 返回 (json->json):
+##### 返回 (json->json):
 
 ```json
 {
@@ -104,7 +104,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276878
+    "follower": 276884
   }
 }
 ```
@@ -113,19 +113,19 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
 
 UP主信息
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 <[mid](#api_mid)>
 
-#### API地址
+##### API地址
 
 https://api.bilibili.com/x/space/acc/info?mid=<mid\>
 
-#### 实例:
+##### 实例:
 
 https://api.bilibili.com/x/space/acc/info?mid=349991143
 
-#### 返回 (json->json):
+##### 返回 (json->json):
 
 ```json
 {
@@ -144,7 +144,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63358.2,
+    "coins": 63359.9,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -157,7 +157,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -167,19 +167,19 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
 
 视频信息
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 <[aid](#api_aid)>
 
-#### API地址
+##### API地址
 
 https://api.bilibili.com/x/web-interface/view?aid=<aid\>
 
-#### 实例:
+##### 实例:
 
 https://api.bilibili.com/x/web-interface/view?aid=30669363
 
-#### 返回 (json->json):
+##### 返回 (json->json):
 
 ```json
 {
@@ -231,19 +231,19 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
 
 弹幕
 
-#### 前置信息/参数
+##### 前置信息/参数
 
 <[cid](#api_cid)>
 
-#### API地址
+##### API地址
 
 https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>
 
-#### 实例:
+##### 实例:
 
 https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
 
-#### 返回 (xml->json):
+##### 返回 (xml->json):
 
 ```json
 {

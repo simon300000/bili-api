@@ -36,6 +36,4 @@
 
 开Issue聊天也行→\_→！！！
 
-### README.md
-
-请不要直接修改 README.md 文件，README.md 文件是由 `updateReadme.js` 生成的，模版是 README.template.md 和 DOC.template.md
+详细可以阅读 [CONTRIBUTING.md](CONTRIBUTING.md)

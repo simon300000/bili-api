@@ -17,7 +17,6 @@
     + [view](#view)
     + [list](#list)
 - [Contribution](#contribution)
-  * [README.md](#readmemd)
 
 ## 插件文档
 
@@ -37,7 +36,7 @@
 
 ### IDs
 
-#### <u><a name="api_mid"></a>mid</u>
+#### <a name="api_mid"></a>mid
 
 
 
@@ -45,7 +44,7 @@
 
 无
 
-#### <u><a name="api_aid"></a>aid</u>
+#### <a name="api_aid"></a>aid
 
 
 
@@ -53,7 +52,7 @@
 
 无
 
-#### <u><a name="api_cid"></a>cid</u>
+#### <a name="api_cid"></a>cid
 
 
 
@@ -61,7 +60,7 @@
 
 <[view](#api_view)>, [[p](#api_p)]
 
-#### <u><a name="api_p"></a>p</u>
+#### <a name="api_p"></a>p
 
 
 
@@ -73,7 +72,7 @@
 
 ### APIs
 
-#### <u><a name="api_stat"></a>stat</u>
+#### <a name="api_stat"></a>stat
 
 UP主统计数据
 
@@ -101,12 +100,12 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276326
+    "follower": 276717
   }
 }
 ```
 
-#### <u><a name="api_info"></a>info</u>
+#### <a name="api_info"></a>info
 
 UP主信息
 
@@ -141,7 +140,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 62759.5,
+    "coins": 63283.4,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -154,13 +153,13 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
 ```
 
-#### <u><a name="api_view"></a>view</u>
+#### <a name="api_view"></a>view
 
 视频信息
 
@@ -213,18 +212,18 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
-      "view": 5501,
+      "view": 5547,
       "danmaku": 32,
       "reply": 26,
       "favorite":
 ......
 ```
 
-#### <u><a name="api_list"></a>list</u>
+#### <a name="api_list"></a>list
 
 弹幕
 
@@ -307,6 +306,4 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
 
 开Issue聊天也行→\_→！！！
 
-### README.md
-
-请不要直接修改 README.md 文件，README.md 文件是由 `updateReadme.js` 生成的，模版是 README.template.md 和 DOC.template.md
+详细可以阅读 [CONTRIBUTING.md](CONTRIBUTING.md)

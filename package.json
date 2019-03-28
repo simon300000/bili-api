@@ -4,9 +4,9 @@
   "description": "Bilibili API 接口",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && npm run unit",
+    "test": "npm run unit",
     "unit": "nyc mocha --reporter=landing",
-    "lint": "eslint .",
+    "lint": "eslint --fix .",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "readme": "node updateReadme"
   },

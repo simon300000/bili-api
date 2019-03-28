@@ -39,7 +39,7 @@ let route = (object, target, map) => {
  * @param  {Function}  [logger=e=>{}]          调试用信息输出
  * @return {Promise}                           Resolve一个带有所需target的Object
  */
-module.exports = async (object, target, {// 这里以下属于Options
+module.exports = async ({ ...object }, [...target], { // 这里以下属于Options
   parser = defaultParser,
   logger = e => {}
 } = {}) => {

@@ -8,7 +8,7 @@ const apis = {
   input: require('../src/api/input')
 }
 
-let dot = 'digraph G{'
+let dot = 'digraph G{K=0.4;splines=spline;'
 
 for (let variable in apis) {
   if (apis.hasOwnProperty(variable)) {

@@ -25,7 +25,7 @@ for (let i = 0; i < descriptionFile.length; i++) {
   }
 }
 
-const maxdepth = 4
+const maxdepth = 3
 
 const doc = ['stat', 'info', 'view', 'list']
 const id = ['mid', 'aid', 'cid', 'p']

@@ -6,11 +6,11 @@
 
 <!--toc-->
 
-## 插件文档
+# 插件文档
 
 没写完→\_→, 可以看看 test/test.js
 
-## Bilibili API Document
+# Bilibili API Document
 
 这里收集的API应该属于"匿名API(自造词)"，即不需要 登陆/appkey 的API。
 
@@ -22,15 +22,15 @@
 
 [Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 
-### IDs
+## IDs
 
 <!-- [[idDocument]] -->
 
-### APIs
+## APIs
 
 <!-- [[apiDocument]] -->
 
-## Contribution
+# Contribution
 
 欢迎各种Issue和Pull Request
 

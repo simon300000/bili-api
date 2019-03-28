@@ -33,4 +33,14 @@ describe('Bilibili API', function() {
       return assert.isRejected(api({}, ['uname']))
     })
   })
+  context('Options', function() {
+    it('Default parser', async function() {
+      let object = await api({ mid }, ['stat'])
+      assert.isObject(object.stat)
+    })
+    it('Optinal parser', async function() {
+      let object = await api({ mid }, ['stat'], { parser: url => url })
+      assert.isString(object.stat)
+    })
+  })
 })

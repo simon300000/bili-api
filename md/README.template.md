@@ -33,7 +33,7 @@ const biliAPI = require('bili-api')
 
 ```javascript
 /**
- * @method exports
+ * @method biliAPI
  * @param  {Object}    object        输入的信息
  * @param  {Array}     target        需要的目标信息
  * @param  {Function}  [option]      设置

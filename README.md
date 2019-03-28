@@ -52,7 +52,7 @@ const biliAPI = require('bili-api')
 
 ```javascript
 /**
- * @method exports
+ * @method biliAPI
  * @param  {Object}    object        输入的信息
  * @param  {Array}     target        需要的目标信息
  * @param  {Function}  [option]      设置
@@ -213,7 +213,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -426,9 +426,18 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
     },
     "list": [
       {
-        "uid": 28221,
+        "uid": 38608128,
         "ruid": 349991143,
         "rank": 1,
+        "username": "神楽めあ一生推",
+        "face": "https://i1.hdslb.com/bfs/face/f2a9dff68740e34ceac5612358027e551a931823.jpg",
+        "is_alive": 1,
+        "guard_level": 2
+      },
+      {
+        "uid": 28221,
+        "ruid": 349991143,
+        "rank": 2,
         "username": "cjtk",
         "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
         "is_alive": 0,
@@ -437,7 +446,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 1336969,
         "ruid": 349991143,
-        "rank": 2,
+        "rank": 3,
         "username": "T-_3",
         "face": "https://i0.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg",
         "is_alive": 0,
@@ -445,15 +454,6 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       },
       {
         "uid": 1935136,
-        "ruid": 349991143,
-        "rank": 3,
-        "username": "Arccueid",
-        "face": "https://i1.hdslb.com/bfs/face/e0430ffce3918ff96ec5b30ede533ea58863858d.jpg",
-        "is_alive": 0,
-        "guard_level": 2
-      },
-      {
-        "uid": 2147984,
         "ruid": 349991143,
         "ra
 ......

@@ -1,6 +1,6 @@
-const api = require('./api.bilibili.com')
-const data = require('./data')
-const input = require('./input')
+const api = require('./api/api.bilibili.com')
+const data = require('./api/data')
+const input = require('./api/input')
 const apis = { ...api, ...data, ...input }
 
 const defaultParser = require('./parser')

@@ -38,7 +38,9 @@
 
 #### <a name="api_mid"></a>mid
 
+大概是 Member ID?
 
+UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`就是这个`mid`了
 
 ##### 前置信息/参数
 
@@ -100,7 +102,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276717
+    "follower": 276868
   }
 }
 ```
@@ -140,7 +142,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63283.4,
+    "coins": 63355.4,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -153,7 +155,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -216,7 +218,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 5547,
+      "view": 5554,
       "danmaku": 32,
       "reply": 26,
       "favorite":

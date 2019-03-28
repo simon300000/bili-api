@@ -10,6 +10,21 @@ const README = String(fs.readFileSync('md/README.template.md'))
 const API = String(fs.readFileSync('md/API.template.md'))
 const ID = String(fs.readFileSync('md/ID.template.md'))
 
+const descriptionFile = String(fs.readFileSync('md/DESCRIPTIONS.md')).split('\n')
+let DESCRIPTIONS = {}
+
+for (let i = 0; i < descriptionFile.length; i++) {
+  if (descriptionFile[i][0] === '#') {
+    if (DESCRIPTIONS._current) {
+      DESCRIPTIONS[DESCRIPTIONS._current] = DESCRIPTIONS[DESCRIPTIONS._current].join('\n\n')
+    }
+    DESCRIPTIONS._current = descriptionFile[i].replace(' ', '').replace('#', '')
+    DESCRIPTIONS[DESCRIPTIONS._current] = []
+  } else if (descriptionFile[i]) {
+    DESCRIPTIONS[DESCRIPTIONS._current].push(descriptionFile[i])
+  }
+}
+
 const maxdepth = 4
 
 const doc = ['stat', 'info', 'view', 'list']
@@ -79,7 +94,7 @@ const idSection = ({ name, description = '', requires = [], optional = [] }) => 
     let name = doc[i]
     apiSections[i] = apiSection({
       name,
-      description: apis[name].description,
+      description: DESCRIPTIONS[name],
       syntax: (await biliAPI(await syntax(name), [name], { parser: url => url }))[name],
       example: (await biliAPI(await exampleData(name), [name], { parser: url => url }))[name],
       type: apis[name].type,
@@ -93,7 +108,7 @@ const idSection = ({ name, description = '', requires = [], optional = [] }) => 
     let name = id[i]
     idSections[i] = idSection({
       name,
-      description: apis[name].description,
+      description: DESCRIPTIONS[name],
       requires: [...(apis[name].require || [])],
       optional: [...(apis[name].optional || [])]
     })

@@ -42,7 +42,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 277043
+  up.follower // → 277044
 })()
 ```
 
@@ -142,7 +142,7 @@ UP主统计数据
 
 ##### API地址
 
-https://api.bilibili.com/x/relation/stat?vmid=<mid\>
+`https://api.bilibili.com/x/relation/stat?vmid=<mid\>`
 
 ##### 实例:
 
@@ -160,7 +160,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 277043
+    "follower": 277044
   }
 }
 ```
@@ -175,7 +175,7 @@ UP主信息
 
 ##### API地址
 
-https://api.bilibili.com/x/space/acc/info?mid=<mid\>
+`https://api.bilibili.com/x/space/acc/info?mid=<mid\>`
 
 ##### 实例:
 
@@ -200,7 +200,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63434.6,
+    "coins": 63434.7,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -229,7 +229,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
 
 ##### API地址
 
-https://api.bilibili.com/x/web-interface/view?aid=<aid\>
+`https://api.bilibili.com/x/web-interface/view?aid=<aid\>`
 
 ##### 实例:
 
@@ -272,7 +272,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
@@ -293,7 +293,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
 
 ##### API地址
 
-https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>
+`https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>`
 
 ##### 实例:
 
@@ -368,7 +368,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
 
 ##### API地址
 
-https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=<mid\>
+`https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=<mid\>`
 
 ##### 实例:
 
@@ -405,7 +405,7 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
 
 ##### API地址
 
-https://api.live.bilibili.com/guard/topList?roomid=<roomid\>&page=1&ruid=<mid\>
+`https://api.live.bilibili.com/guard/topList?roomid=<roomid\>&page=<page\>&ruid=<mid\>`
 
 ##### 实例:
 
@@ -426,18 +426,9 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
     },
     "list": [
       {
-        "uid": 38608128,
-        "ruid": 349991143,
-        "rank": 1,
-        "username": "神楽めあ一生推",
-        "face": "https://i1.hdslb.com/bfs/face/f2a9dff68740e34ceac5612358027e551a931823.jpg",
-        "is_alive": 1,
-        "guard_level": 2
-      },
-      {
         "uid": 28221,
         "ruid": 349991143,
-        "rank": 2,
+        "rank": 1,
         "username": "cjtk",
         "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
         "is_alive": 0,
@@ -446,7 +437,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 1336969,
         "ruid": 349991143,
-        "rank": 3,
+        "rank": 2,
         "username": "T-_3",
         "face": "https://i0.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg",
         "is_alive": 0,
@@ -454,6 +445,15 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       },
       {
         "uid": 1935136,
+        "ruid": 349991143,
+        "rank": 3,
+        "username": "Arccueid",
+        "face": "https://i1.hdslb.com/bfs/face/e0430ffce3918ff96ec5b30ede533ea58863858d.jpg",
+        "is_alive": 0,
+        "guard_level": 2
+      },
+      {
+        "uid": 2147984,
         "ruid": 349991143,
         "ra
 ......

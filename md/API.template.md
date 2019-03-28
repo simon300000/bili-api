@@ -8,7 +8,7 @@ REQUIRES
 
 ##### API地址
 
-SYNTAX
+`SYNTAX`
 
 ##### 实例:
 

@@ -35,6 +35,11 @@ const syntax = async name => {
   for (let i = 0; i < apis[name].require.length; i++) {
     object[apis[name].require[i]] = `<${apis[name].require[i]}\\>`
   }
+  if (apis[name].optional) {
+    for (let i = 0; i < apis[name].optional.length; i++) {
+      object[apis[name].optional[i]] = `<${apis[name].optional[i]}\\>`
+    }
+  }
   return object
 }
 

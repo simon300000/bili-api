@@ -131,7 +131,7 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
       if (readMea[i].includes('// DATA')) {
         let data = await eval(`(async()=>{${js.content.join('\n')};\nreturn ${readMea[i]}\n})()`)
         console.log(`EVAL: ${data}`)
-        readMea[i] = readMea[i].replace('DATA', `${data}`)
+        readMea[i] = readMea[i].replace('DATA', `→ ${data}`)
       }
     }
   }

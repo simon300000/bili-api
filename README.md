@@ -2,8 +2,8 @@
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
-object.uname // 神楽めあOfficial
-object.guardNum // 634
+object.uname // → 神楽めあOfficial
+object.guardNum // → 634
 ```
 
 # 目录
@@ -42,7 +42,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // 277042
+  up.follower // → 277043
 })()
 ```
 
@@ -160,7 +160,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 277042
+    "follower": 277043
   }
 }
 ```
@@ -200,7 +200,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63434.4,
+    "coins": 63434.6,
     "fans_badge": true,
     "official": {
       "role": 1,

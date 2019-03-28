@@ -11,11 +11,14 @@
     + [aid](#aid)
     + [cid](#cid)
     + [p](#p)
+    + [roomid](#roomid)
   * [APIs](#apis)
     + [stat](#stat)
     + [info](#info)
     + [view](#view)
     + [list](#list)
+    + [getRoomInfoOld](#getroominfoold)
+    + [topList](#toplist)
 - [Contribution](#contribution)
 
 # 插件文档
@@ -76,6 +79,14 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 无
 
+### <a name="api_roomid"></a>roomid
+
+
+
+##### 前置信息/参数
+
+<[getRoomInfoOld](#api_getRoomInfoOld)>
+
 
 
 ## APIs
@@ -108,7 +119,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276955
+    "follower": 276966
   }
 }
 ```
@@ -148,7 +159,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63384.1,
+    "coins": 63389.3,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -161,7 +172,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -303,6 +314,108 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
         "$": {
           "p": "116.61600,1,25,16777215,1545803269,0,8b709dfe,9783787808882688"
      
+......
+```
+
+### <a name="api_getRoomInfoOld"></a>getRoomInfoOld
+
+
+
+##### 前置信息/参数
+
+<[mid](#api_mid)>
+
+##### API地址
+
+https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=<mid\>
+
+##### 实例:
+
+https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
+
+##### 返回 (json->json):
+
+```json
+{
+  "code": 0,
+  "msg": "ok",
+  "message": "ok",
+  "data": {
+    "roomStatus": 1,
+    "roundStatus": 0,
+    "liveStatus": 0,
+    "url": "https://live.bilibili.com/12235923",
+    "title": "嘘だよーーーーーーーーー",
+    "cover": "https://i0.hdslb.com/bfs/live/12235923.jpg?03260105",
+    "online": 357211,
+    "roomid": 12235923,
+    "broadcast_type": 0
+  }
+}
+```
+
+### <a name="api_topList"></a>topList
+
+
+
+##### 前置信息/参数
+
+<[roomid](#api_roomid)>, <[mid](#api_mid)>, [[page](#api_page)]
+
+##### API地址
+
+https://api.live.bilibili.com/guard/topList?roomid=<roomid\>&page=1&ruid=<mid\>
+
+##### 实例:
+
+https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=349991143
+
+##### 返回 (json->json):
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "message": "success",
+  "data": {
+    "info": {
+      "num": 634,
+      "page": 64,
+      "now": 1
+    },
+    "list": [
+      {
+        "uid": 3446994,
+        "ruid": 349991143,
+        "rank": 1,
+        "username": "G_弦上的咏叹调",
+        "is_alive": 1,
+        "guard_level": 2,
+        "face": "https://static.hdslb.com/images/member/noface.gif"
+      },
+      {
+        "uid": 28221,
+        "ruid": 349991143,
+        "rank": 2,
+        "username": "cjtk",
+        "is_alive": 0,
+        "guard_level": 2,
+        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg"
+      },
+      {
+        "uid": 1336969,
+        "ruid": 349991143,
+        "rank": 3,
+        "username": "T-_3",
+        "is_alive": 0,
+        "guard_level": 2,
+        "face": "https://i0.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg"
+      },
+      {
+        "uid": 1935136,
+        "ruid": 349991143,
+        "rank": 4,
+        "username
 ......
 ```
 

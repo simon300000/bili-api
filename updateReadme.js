@@ -27,8 +27,8 @@ for (let i = 0; i < descriptionFile.length; i++) {
 
 const maxdepth = 3
 
-const doc = ['stat', 'info', 'view', 'list']
-const id = ['mid', 'aid', 'cid', 'p']
+const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList']
+const id = ['mid', 'aid', 'cid', 'p', 'roomid']
 
 const syntax = async name => {
   let object = await biliAPI(testData, [name])

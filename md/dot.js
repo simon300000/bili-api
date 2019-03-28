@@ -4,6 +4,7 @@ const path = require('path')
 const BiliAPI = require('..')
 const apis = {
   'api.bilibili.com': require('../src/api/api.bilibili.com'),
+  'api.live.bilibili.com': require('../src/api/api.live.bilibili.com'),
   data: require('../src/api/data'),
   input: require('../src/api/input')
 }

@@ -10,17 +10,22 @@ const assert = chai.assert
 
 // test data
 const mid = 349991143
+const aid = 30669363
 
 describe('Bilibili API', function() {
   context('bilibili', function() {
     it('mid -> uname', async function() {
       let object = await api({ mid }, ['uname'])
-      assert.typeOf(object.uname, 'string')
+      assert.isString(object.uname)
     })
     it('mid -> follower', async function() {
       let object = await api({ mid }, ['follower'])
-      assert.typeOf(object.follower, 'number')
+      assert.isNumber(object.follower)
       assert.isNotNaN(object.follower)
+    })
+    it('aid -> list', async function() {
+      let object = await api({ aid }, ['list'])
+      assert.isArray(object.list.i.d)
     })
   })
   context('Route', function() {

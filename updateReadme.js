@@ -1,4 +1,5 @@
 /* eslint no-useless-escape: "off" */
+/* eslint no-eval: "off" */
 const fs = require('fs')
 
 const biliAPI = require('.')
@@ -114,7 +115,27 @@ const idSection = ({ name, description = '', requires = [], optional = [] }) => 
     })
   }
 
-  let readMea = README
+  let readMea = README.split('\n')
+  let js = {
+    current: false,
+    content: []
+  }
+  for (let i = 0; i < readMea.length; i++) {
+    if (readMea[i] === '```javascript') {
+      js.current = true
+    } else if (readMea[i] === '```') {
+      js.current = false
+      js.content = []
+    } else if (js.current) {
+      js.content.push(readMea[i])
+      if (readMea[i].includes('// DATA')) {
+        let data = await eval(`(async()=>{${js.content.join('\n')};\nreturn ${readMea[i]}\n})()`)
+        readMea[i] = readMea[i].replace('DATA', `${data}`)
+      }
+    }
+  }
+  readMea = readMea.join('\n')
+
   readMea = readMea.replace('<!-- [[apiDocument]] -->', apiSections.join(''))
   readMea = readMea.replace('<!-- [[idDocument]] -->', idSections.join(''))
   readMea = readMea.replace('<!--toc-->', toc(readMea, { maxdepth }).content)

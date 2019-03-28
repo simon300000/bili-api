@@ -1,10 +1,15 @@
-# Bili-api
+# Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api) [![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
 
-[![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api)
-[![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api)
-[![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
+```javascript
+let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
+object.uname // 神楽めあOfficial
+object.guardNum // 634
+```
 
-- [插件文档](#%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3)
+![Graph of apis](md/api.svg)
+
+# 目录
+
 - [Bilibili API Document](#bilibili-api-document)
   * [IDs](#ids)
     + [mid](#mid)
@@ -20,14 +25,6 @@
     + [getRoomInfoOld](#getroominfoold)
     + [topList](#toplist)
 - [Contribution](#contribution)
-
-# 插件文档
-
-没写完→\_→, 可以看看 test/test.js
-
-API信息路线图:
-
-![Graph of apis](md/api.svg)
 
 # Bilibili API Document
 
@@ -55,7 +52,7 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 ### <a name="api_aid"></a>aid
 
-就是av号啦→_→
+就是av号啦→\_→
 
 比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
 
@@ -119,7 +116,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276966
+    "follower": 277039
   }
 }
 ```
@@ -159,7 +156,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63389.3,
+    "coins": 63432.5,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -172,7 +169,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -235,7 +232,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 5561,
+      "view": 5572,
       "danmaku": 32,
       "reply": 26,
       "favorite":
@@ -385,37 +382,36 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
     },
     "list": [
       {
-        "uid": 3446994,
-        "ruid": 349991143,
-        "rank": 1,
-        "username": "G_弦上的咏叹调",
-        "is_alive": 1,
-        "guard_level": 2,
-        "face": "https://static.hdslb.com/images/member/noface.gif"
-      },
-      {
         "uid": 28221,
         "ruid": 349991143,
-        "rank": 2,
+        "rank": 1,
         "username": "cjtk",
+        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
         "is_alive": 0,
-        "guard_level": 2,
-        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg"
+        "guard_level": 2
       },
       {
         "uid": 1336969,
         "ruid": 349991143,
-        "rank": 3,
+        "rank": 2,
         "username": "T-_3",
+        "face": "https://i0.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg",
         "is_alive": 0,
-        "guard_level": 2,
-        "face": "https://i0.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg"
+        "guard_level": 2
       },
       {
         "uid": 1935136,
         "ruid": 349991143,
-        "rank": 4,
-        "username
+        "rank": 3,
+        "username": "Arccueid",
+        "face": "https://i1.hdslb.com/bfs/face/e0430ffce3918ff96ec5b30ede533ea58863858d.jpg",
+        "is_alive": 0,
+        "guard_level": 2
+      },
+      {
+        "uid": 2147984,
+        "ruid": 349991143,
+        "ra
 ......
 ```
 

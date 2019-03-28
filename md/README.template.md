@@ -1,18 +1,16 @@
-# Bili-api
+# Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api) [![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
 
-[![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api)
-[![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api)
-[![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
-
-<!--toc-->
-
-# 插件文档
-
-没写完→\_→, 可以看看 test/test.js
-
-API信息路线图:
+```javascript
+let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
+object.uname // DATA
+object.guardNum // DATA
+```
 
 ![Graph of apis](md/api.svg)
+
+# 目录
+
+<!--toc-->
 
 # Bilibili API Document
 

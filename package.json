@@ -8,7 +8,8 @@
     "unit": "nyc mocha --reporter=landing",
     "lint": "eslint --fix .",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "readme": "node updateReadme"
+    "readme": "node updateReadme",
+    "dot": "node md/dot; dot -Tsvg md/api.dot > md/api.svg"
   },
   "repository": "github:simon300000/bili-api",
   "keywords": [

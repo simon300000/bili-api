@@ -10,6 +10,10 @@
 
 没写完→\_→, 可以看看 test/test.js
 
+API信息路线图:
+
+[![Graph of apis](md/dot.svg)
+
 # Bilibili API Document
 
 这里收集的API应该属于"匿名API(自造词)"，即不需要 登陆/appkey 的API。

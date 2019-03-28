@@ -22,6 +22,10 @@
 
 没写完→\_→, 可以看看 test/test.js
 
+API信息路线图:
+
+[![Graph of apis](md/dot.svg)
+
 # Bilibili API Document
 
 这里收集的API应该属于"匿名API(自造词)"，即不需要 登陆/appkey 的API。
@@ -104,7 +108,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276884
+    "follower": 276944
   }
 }
 ```
@@ -144,7 +148,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63359.9,
+    "coins": 63374.6,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -157,7 +161,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -220,7 +224,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 5556,
+      "view": 5561,
       "danmaku": 32,
       "reply": 26,
       "favorite":

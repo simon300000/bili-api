@@ -5,4 +5,4 @@ matrix:
   - os: osx
     after_success: npm run coverage
 node_js:
-- '10'
+- '11'

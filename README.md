@@ -24,7 +24,7 @@
 
 API信息路线图:
 
-[![Graph of apis](md/api.svg)
+![Graph of apis](md/api.svg)
 
 # Bilibili API Document
 
@@ -108,7 +108,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276954
+    "follower": 276955
   }
 }
 ```
@@ -148,7 +148,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63381.8,
+    "coins": 63384.1,
     "fans_badge": true,
     "official": {
       "role": 1,

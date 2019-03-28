@@ -12,7 +12,7 @@
 
 API信息路线图:
 
-[![Graph of apis](md/api.svg)
+![Graph of apis](md/api.svg)
 
 # Bilibili API Document
 

@@ -42,7 +42,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 277044
+  up.follower // → 277045
 })()
 ```
 
@@ -142,7 +142,7 @@ UP主统计数据
 
 ##### API地址
 
-`https://api.bilibili.com/x/relation/stat?vmid=<mid\>`
+`https://api.bilibili.com/x/relation/stat?vmid=<mid>`
 
 ##### 实例:
 
@@ -160,7 +160,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 277044
+    "follower": 277045
   }
 }
 ```
@@ -175,7 +175,7 @@ UP主信息
 
 ##### API地址
 
-`https://api.bilibili.com/x/space/acc/info?mid=<mid\>`
+`https://api.bilibili.com/x/space/acc/info?mid=<mid>`
 
 ##### 实例:
 
@@ -200,7 +200,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63434.7,
+    "coins": 63434.9,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -213,7 +213,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -229,7 +229,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
 
 ##### API地址
 
-`https://api.bilibili.com/x/web-interface/view?aid=<aid\>`
+`https://api.bilibili.com/x/web-interface/view?aid=<aid>`
 
 ##### 实例:
 
@@ -272,7 +272,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
@@ -293,7 +293,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
 
 ##### API地址
 
-`https://api.bilibili.com/x/v1/dm/list.so?oid=<cid\>`
+`https://api.bilibili.com/x/v1/dm/list.so?oid=<cid>`
 
 ##### 实例:
 
@@ -368,7 +368,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
 
 ##### API地址
 
-`https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=<mid\>`
+`https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=<mid>`
 
 ##### 实例:
 
@@ -405,7 +405,7 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
 
 ##### API地址
 
-`https://api.live.bilibili.com/guard/topList?roomid=<roomid\>&page=<page\>&ruid=<mid\>`
+`https://api.live.bilibili.com/guard/topList?roomid=<roomid>&page=[page]&ruid=<mid>`
 
 ##### 实例:
 

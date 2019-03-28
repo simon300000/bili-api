@@ -48,7 +48,9 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 #### <a name="api_aid"></a>aid
 
+就是av号啦→_→
 
+比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
 
 ##### 前置信息/参数
 
@@ -102,7 +104,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 276868
+    "follower": 276871
   }
 }
 ```
@@ -142,7 +144,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63355.4,
+    "coins": 63355.6,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -218,7 +220,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 5554,
+      "view": 5556,
       "danmaku": 32,
       "reply": 26,
       "favorite":

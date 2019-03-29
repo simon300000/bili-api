@@ -16,17 +16,21 @@ let get = (object, target, { parser }) => {
   }
 }
 
-let route = (object, target, map) => {
-  if (!target) {
-    throw new Error(`Error target route: ${map.join(' -> ')} -> ?`)
-  } else {
-    for (let i = 0; i < target.length; i++) {
-      if (object[target[i]]) continue
-      if (!apis[target[i]] || map.includes(target[i])) {
-        throw new Error(`Error target route: ${[...map, target[i]].join(' -> ')} -> ?`)
-      } else {
-        route(object, apis[target[i]].require, [...map, target[i]])
-      }
+let router = (object, targets, map = []) => {
+  for (let i = 0; i < targets.length; i++) {
+    let target = targets[i]
+    if (object[target]) {
+      return
+    }
+    if (!apis[target]) {
+      return [target, '?']
+    }
+    if (map.includes(target)) {
+      return [target, 'LOOP']
+    }
+    if (apis[target].require) {
+      let route = router(object, apis[target].require, [...map, target])
+      return route && [target, ...route]
     }
   }
 }
@@ -44,7 +48,10 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
   parser = defaultParser,
   logger = e => {}
 } = {}) => {
-  route(object, targets, [])
+  let error = router(object, targets)
+  if (error) {
+    throw new Error(`Target route: ${error.join(' -> ')}`)
+  }
   get(object, targets, { parser })
   for (let variable in object) {
     if (object.hasOwnProperty(variable)) {

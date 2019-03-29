@@ -47,7 +47,7 @@ biliAPI(object, targets, [option])
 
 <!-- #### Option -->
 
-### Route Graph
+### Router Graph
 
 ![Graph of apis](md/api.svg)
 

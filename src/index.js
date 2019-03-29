@@ -35,17 +35,17 @@ let route = (object, target, map) => {
  * 程序主入口
  * @method exports
  * @param  {Object}    object                  输入的信息
- * @param  {Array}     target                  需要的目标信息
+ * @param  {Array}     targets                 需要的目标信息
  * @param  {Function}  [parser=defaultParser]  设置: 自定义url下载/分析器
  * @param  {Function}  [logger=e=>{}]          调试用信息输出
- * @return {Promise}                           Resolve一个带有所需target的Object
+ * @return {Promise}                           Resolve一个带有所需targets的Object
  */
-module.exports = async ({ ...object }, [...target], { // 这里以下属于Options
+module.exports = async ({ ...object }, [...targets], { // 这里以下属于Options
   parser = defaultParser,
   logger = e => {}
 } = {}) => {
-  route(object, target, [])
-  get(object, target, { parser })
+  route(object, targets, [])
+  get(object, targets, { parser })
   for (let variable in object) {
     if (object.hasOwnProperty(variable)) {
       object[variable] = await object[variable]

@@ -35,15 +35,15 @@ const biliAPI = require('bili-api')
 /**
  * @method biliAPI
  * @param  {Object}    object        输入的信息
- * @param  {Array}     target        需要的目标信息
+ * @param  {Array}     targets       需要的目标信息
  * @param  {Function}  [option]      设置
- * @return {Promise}                 Resolve一个带有所需target的Object
+ * @return {Promise}                 Resolve一个带有所需targets的Object
  */
-biliAPI(object, target, [option])
+biliAPI(object, targets, [option])
 ```
 
 - `object`: 对象，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
-- `target`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+- `targets`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
 
 <!-- #### Option -->
 

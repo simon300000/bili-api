@@ -115,8 +115,8 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
     idSections[i] = idSection({
       name,
       description: DESCRIPTIONS[name],
-      requires: [...(apis[name].require || [])],
-      optional: [...(apis[name].optional || [])]
+      requires: apis[name] && [...(apis[name].require || [])],
+      optional: apis[name] && [...(apis[name].optional || [])]
     })
   }
 

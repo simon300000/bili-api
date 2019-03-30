@@ -32,7 +32,15 @@ for (let variable in BiliAPI.apis) {
     }
     if (BiliAPI.apis[variable].optional) {
       for (let i = 0; i < BiliAPI.apis[variable].optional.length; i++) {
-        dot += `${BiliAPI.apis[variable].optional[i]}->${variable}[style=dashed];`
+        dot += `${BiliAPI.apis[variable].optional[i]}->${variable}[style=dotted];`
+      }
+    }
+    if (BiliAPI.apis[variable].oneOf) {
+      let { oneOf } = BiliAPI.apis[variable]
+      for (let i = 0; i < oneOf.length; i++) {
+        for (let j = 0; j < oneOf[i].length; j++) {
+          dot += `${oneOf[i][j]}->${variable}[style=dashed];`
+        }
       }
     }
   }

@@ -16,34 +16,34 @@ const uname = '神楽めあOfficial'
 describe('Bilibili biliAPI', function() {
   context('bilibili', function() {
     it('mid -> uname', async function() {
-      let object = await biliAPI({ mid }, ['uname'])
-      assert.isString(object.uname)
+      let { uname } = await biliAPI({ mid }, ['uname'])
+      assert.isString(uname)
     })
     it('mid -> follower', async function() {
-      let object = await biliAPI({ mid }, ['follower'])
-      assert.isNumber(object.follower)
-      assert.isNotNaN(object.follower)
+      let { follower } = await biliAPI({ mid }, ['follower'])
+      assert.isNumber(follower)
+      assert.isNotNaN(follower)
     })
     it('aid -> list', async function() {
       let object = await biliAPI({ aid }, ['list'])
       assert.isArray(object.list.i.d)
     })
     it('mid -> roomid', async function() {
-      let object = await biliAPI({ mid }, ['roomid'])
-      assert.strictEqual(object.roomid, 12235923)
+      let { roomid } = await biliAPI({ mid }, ['roomid'])
+      assert.strictEqual(roomid, 12235923)
     })
     it('mid -> guardNum', async function() {
-      let object = await biliAPI({ mid }, ['guardNum'])
-      assert.isNumber(object.guardNum)
-      assert.isNotNaN(object.guardNum)
+      let { guardNum } = await biliAPI({ mid }, ['guardNum'])
+      assert.isNumber(guardNum)
+      assert.isNotNaN(guardNum)
     })
     it('uname -> mid', async function() {
-      let object = await biliAPI({ uname }, ['mid'])
-      assert.strictEqual(object.mid, 349991143)
+      let { mid } = await biliAPI({ uname }, ['mid'])
+      assert.strictEqual(mid, 349991143)
     })
     it('aid -> mid', async function() {
-      let object = await biliAPI({ aid }, ['mid'])
-      assert.strictEqual(object.mid, 8829972)
+      let { mid } = await biliAPI({ aid }, ['mid'])
+      assert.strictEqual(mid, 8829972)
     })
   })
   context('Route', function() {
@@ -54,12 +54,12 @@ describe('Bilibili biliAPI', function() {
   })
   context('Options', function() {
     it('Default parser', async function() {
-      let object = await biliAPI({ mid }, ['stat'])
-      assert.isObject(object.stat)
+      let { stat } = await biliAPI({ mid }, ['stat'])
+      assert.isObject({ stat })
     })
     it('Optinal parser', async function() {
-      let object = await biliAPI({ mid }, ['stat'], { parser: url => url })
-      assert.isString(object.stat)
+      let { stat } = await biliAPI({ mid }, ['stat'], { parser: url => url })
+      assert.isString(stat)
     })
   })
 })

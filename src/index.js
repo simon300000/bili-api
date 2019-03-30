@@ -15,7 +15,7 @@ let get = (object, target, { parser }) => {
         get(object, targetAPI.require, { parser })
       }
       if (targetAPI.oneOf) {
-        let oneOf = targetAPI.oneOf
+        let { oneOf } = targetAPI
         for (let j = 0; j < oneOf.length; j++) {
           let error = router(object, oneOf[j])
           if (!error) {
@@ -48,7 +48,7 @@ let router = (object, targets, map = []) => {
       }
     }
 
-    let oneOf = apis[target].oneOf
+    let { oneOf } = apis[target]
     if (oneOf) {
       let error
       for (let j = 0; j < oneOf.length; j++) {

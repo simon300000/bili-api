@@ -1,5 +1,18 @@
 module.exports = {
-  // TODO: mid: {},
+  mid: {
+    oneOf: [
+      ['view'],
+      ['search']
+    ],
+    get: async ({ view, search }) => {
+      if (view) {
+        return (await view).data.owner.mid
+      }
+      if (search) {
+        return (await search).data.result[0].mid
+      }
+    }
+  },
   // TODO: aid: {},
   cid: {
     require: ['view'],

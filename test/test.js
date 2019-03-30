@@ -10,7 +10,8 @@ const assert = chai.assert
 
 // test data
 const mid = 349991143
-const aid = 30669363
+const aid = 31779330
+const uname = '神楽めあOfficial'
 
 describe('Bilibili API', function() {
   context('bilibili', function() {
@@ -27,11 +28,20 @@ describe('Bilibili API', function() {
       let object = await api({ aid }, ['list'])
       assert.isArray(object.list.i.d)
     })
+    it('uname -> mid', async function() {
+      let object = await api({ uname }, ['mid'])
+      assert.strictEqual(object.mid, 349991143)
+    })
+    it('aid -> mid', async function() {
+      let object = await api({ aid }, ['mid'])
+      assert.strictEqual(object.mid, 8829972)
+    })
   })
   context('Route', function() {
     it('Should reject', function() {
       return assert.isRejected(api({}, ['uname']))
     })
+    // TODO: Correct order of "oneOf" value
   })
   context('Options', function() {
     it('Default parser', async function() {

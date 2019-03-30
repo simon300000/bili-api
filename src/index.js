@@ -10,7 +10,20 @@ let get = (object, target, { parser }) => {
   for (let i = 0; i < target.length; i++) {
     if (!object[target[i]]) {
       let targetAPI = apis[target[i]]
-      get(object, targetAPI.require, { parser })
+      // TODO: Deep Optional Router
+      if (targetAPI.require) {
+        get(object, targetAPI.require, { parser })
+      }
+      if (targetAPI.oneOf) {
+        let oneOf = targetAPI.oneOf
+        for (let j = 0; j < oneOf.length; j++) {
+          let error = router(object, oneOf[j])
+          if (!error) {
+            get(object, oneOf[j], { parser })
+            break
+          }
+        }
+      }
       object[target[i]] = parser(targetAPI.get(object), targetAPI.type)
     }
   }
@@ -30,7 +43,22 @@ let router = (object, targets, map = []) => {
     }
     if (apis[target].require) {
       let route = router(object, apis[target].require, [...map, target])
-      return route && [target, ...route]
+      if (route) {
+        return [target, ...route]
+      }
+    }
+
+    let oneOf = apis[target].oneOf
+    if (oneOf) {
+      let error
+      for (let j = 0; j < oneOf.length; j++) {
+        let route = router(object, oneOf[j], [...map, target])
+        if (!route) {
+          return
+        }
+        error = route
+      }
+      return error
     }
   }
 }

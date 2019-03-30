@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 634
+object.guardNum // → 683
 ```
 
 # 目录
@@ -12,7 +12,7 @@ object.guardNum // → 634
   * [安装](#%E5%AE%89%E8%A3%85)
   * [开始](#%E5%BC%80%E5%A7%8B)
     + [biliAPI Document](#biliapi-document)
-    + [Route Graph](#route-graph)
+    + [Router Graph](#router-graph)
 - [Bilibili API Document](#bilibili-api-document)
   * [IDs](#ids)
     + [mid](#mid)
@@ -42,7 +42,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 277045
+  up.follower // → 279559
 })()
 ```
 
@@ -54,19 +54,19 @@ const biliAPI = require('bili-api')
 /**
  * @method biliAPI
  * @param  {Object}    object        输入的信息
- * @param  {Array}     target        需要的目标信息
+ * @param  {Array}     targets       需要的目标信息
  * @param  {Function}  [option]      设置
- * @return {Promise}                 Resolve一个带有所需target的Object
+ * @return {Promise}                 Resolve一个带有所需targets的Object
  */
-biliAPI(object, target, [option])
+biliAPI(object, targets, [option])
 ```
 
 - `object`: 对象，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
-- `target`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+- `targets`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
 
 <!-- #### Option -->
 
-### Route Graph
+### Router Graph
 
 ![Graph of apis](md/api.svg)
 
@@ -160,7 +160,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 277045
+    "follower": 279559
   }
 }
 ```
@@ -200,7 +200,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 63434.9,
+    "coins": 64602.4,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -276,7 +276,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 5574,
+      "view": 5738,
       "danmaku": 32,
       "reply": 26,
       "favorite":
@@ -386,9 +386,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "嘘だよーーーーーーーーー",
-    "cover": "https://i0.hdslb.com/bfs/live/12235923.jpg?03260105",
-    "online": 357211,
+    "title": "3月最後。10連勝するまで終わりません。",
+    "cover": "https://i0.hdslb.com/bfs/live/room_cover/73fae0647fe1750a7158bfeddf6e70526460c469.jpg",
+    "online": 85286,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -420,42 +420,42 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 634,
-      "page": 64,
+      "num": 683,
+      "page": 68,
       "now": 1
     },
     "list": [
       {
-        "uid": 28221,
+        "uid": 749030,
         "ruid": 349991143,
         "rank": 1,
+        "username": "HakureiMea",
+        "face": "https://i1.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
+        "is_alive": 1,
+        "guard_level": 2
+      },
+      {
+        "uid": 28221,
+        "ruid": 349991143,
+        "rank": 2,
         "username": "cjtk",
-        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
+        "face": "https://i0.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
+        "is_alive": 0,
+        "guard_level": 2
+      },
+      {
+        "uid": 730732,
+        "ruid": 349991143,
+        "rank": 3,
+        "username": "瓶子君152",
+        "face": "https://i2.hdslb.com/bfs/face/ef8070a00162afaf5205e75a481085b4b33f4cee.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
         "uid": 1336969,
         "ruid": 349991143,
-        "rank": 2,
-        "username": "T-_3",
-        "face": "https://i0.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg",
-        "is_alive": 0,
-        "guard_level": 2
-      },
-      {
-        "uid": 1935136,
-        "ruid": 349991143,
-        "rank": 3,
-        "username": "Arccueid",
-        "face": "https://i1.hdslb.com/bfs/face/e0430ffce3918ff96ec5b30ede533ea58863858d.jpg",
-        "is_alive": 0,
-        "guard_level": 2
-      },
-      {
-        "uid": 2147984,
-        "ruid": 349991143,
-        "ra
+        "
 ......
 ```
 

@@ -18,5 +18,10 @@ module.exports = {
     require: ['cid'],
     type: 'xml',
     get: async ({ cid }) => `https://api.bilibili.com/x/v1/dm/list.so?oid=${await cid}`
+  },
+  search: {
+    require: ['uname'],
+    type: 'json',
+    get: async ({ uname }) => `https://api.bilibili.com/x/web-interface/search/type?jsonp=jsonp&search_type=bili_user&keyword=${await uname}`
   }
 }

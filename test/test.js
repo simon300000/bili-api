@@ -28,6 +28,10 @@ describe('Bilibili biliAPI', function() {
       let object = await biliAPI({ aid }, ['list'])
       assert.isArray(object.list.i.d)
     })
+    it('mid -> roomid', async function() {
+      let object = await biliAPI({ mid }, ['roomid'])
+      assert.strictEqual(object.roomid, 12235923)
+    })
     it('uname -> mid', async function() {
       let object = await biliAPI({ uname }, ['mid'])
       assert.strictEqual(object.mid, 349991143)

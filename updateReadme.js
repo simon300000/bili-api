@@ -69,9 +69,9 @@ const apiSection = ({ name, syntax, example, data, type = 'json', description = 
   }
   return API
     .replace('NAME', `<a name="api_${name}"></a>${name}`)
-    .replace('DESCRIPTION', description.join('\n\n'))
+    .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
     .replace('SYNTAX', syntax)
-    .replace('REQUIRES', [...requires, ...optional].join(', ') || '无')
+    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置信息/参数', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
     .replace('EXAMPLE', example)
     .replace('TYPE', type)
     .replace('DATA', data)
@@ -87,8 +87,8 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
   }
   return ID
     .replace('NAME', `<a name="api_${name}"></a>${name}`)
-    .replace('DESCRIPTION', description.join('\n\n'))
-    .replace('REQUIRES', [...requires, ...optional].join(', ') || '无')
+    .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
+    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置信息/参数', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
 }
 
 ;

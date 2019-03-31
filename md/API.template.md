@@ -2,8 +2,6 @@
 
 DESCRIPTION
 
-##### 前置信息/参数
-
 REQUIRES
 
 ##### API地址

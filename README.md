@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 683
+object.guardNum // → 684
 ```
 
 # 目录
@@ -42,7 +42,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 279559
+  up.follower // → 279952
 })()
 ```
 
@@ -160,7 +160,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 279559
+    "follower": 279952
   }
 }
 ```
@@ -200,7 +200,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 64602.4,
+    "coins": 64710.9,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -213,7 +213,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -276,8 +276,8 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 5738,
-      "danmaku": 32,
+      "view": 5771,
+      "danmaku": 33,
       "reply": 26,
       "favorite":
 ......
@@ -420,27 +420,27 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 683,
-      "page": 68,
+      "num": 684,
+      "page": 69,
       "now": 1
     },
     "list": [
       {
-        "uid": 749030,
+        "uid": 70836,
         "ruid": 349991143,
         "rank": 1,
-        "username": "HakureiMea",
-        "face": "https://i1.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
+        "username": "我抱头蹲防啦",
+        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
         "is_alive": 1,
         "guard_level": 2
       },
       {
-        "uid": 28221,
+        "uid": 749030,
         "ruid": 349991143,
         "rank": 2,
-        "username": "cjtk",
-        "face": "https://i0.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
-        "is_alive": 0,
+        "username": "HakureiMea",
+        "face": "https://i1.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
+        "is_alive": 1,
         "guard_level": 2
       },
       {
@@ -455,7 +455,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 1336969,
         "ruid": 349991143,
-        "
+       
 ......
 ```
 

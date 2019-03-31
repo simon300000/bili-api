@@ -1,10 +1,6 @@
 # Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api) [![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
 
-```javascript
-let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
-object.uname // DATA
-object.guardNum // DATA
-```
+EXAMPLE:1
 
 # 目录
 
@@ -18,14 +14,7 @@ npm: `npm install bili-api`
 
 ## 开始
 
-```javascript
-const biliAPI = require('bili-api')
-;
-(async () => {
-  let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // DATA
-})()
-```
+EXAMPLE:2
 
 以上便是根据<[mid](#api_mid)>查找粉丝数，很简单对不对→\_→
 

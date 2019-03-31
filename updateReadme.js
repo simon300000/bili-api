@@ -121,23 +121,31 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
   }
 
   let readMea = README.split('\n')
-  let js = {
-    current: false,
-    content: []
-  }
   for (let i = 0; i < readMea.length; i++) {
-    if (readMea[i] === '```javascript') {
-      js.current = true
-    } else if (readMea[i] === '```') {
-      js.current = false
-      js.content = []
-    } else if (js.current && !readMea[i].includes('const biliAPI') && !readMea[i].includes('(async () => {')) {
-      js.content.push(readMea[i])
-      if (readMea[i].includes('// DATA')) {
-        let data = await eval(`(async()=>{${js.content.join('\n')};\nreturn ${readMea[i]}\n})()`)
-        console.log(`EVAL: ${data}`)
-        readMea[i] = readMea[i].replace('DATA', `→ ${data}`)
+    if (readMea[i].includes('EXAMPLE:')) {
+      let exampleName = readMea[i].replace('EXAMPLE:', '')
+      console.log(`EXAMPLE: ${exampleName}`)
+      let example = String(fs.readFileSync(`examples/${exampleName}.js`)).split('\n')
+      let text = ['```javascript', ...example, '```'].join('\n')
+      text = text.replace('\n\n```', '\n```')
+      let data = []
+      for (let j = 0; j < example.length; j++) {
+        if (example[j].includes(' // DATA')) {
+          example[j] = example[j].replace(' // DATA', '')
+          example[j] = ['data.push(', example[j], ')'].join('')
+        }
+        if (example[j].includes('(async')) {
+          example[j] = example[j].replace('(async', 'await (async')
+        }
+        if (example[j].includes('require(\'bili-api\')')) {
+          example[j] = ''
+        }
       }
+      await eval(['(async()=>{', ...example, '})()'].join('\n'))
+      for (let j = 0; j < data.length; j++) {
+        text = text.replace(' // DATA', ` // → ${data[j]}`)
+      }
+      readMea[i] = text
     }
   }
   readMea = readMea.join('\n')

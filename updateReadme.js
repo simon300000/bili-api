@@ -26,7 +26,7 @@ for (let i = 0; i < descriptionFile.length; i++) {
 
 const maxdepth = 3
 
-const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList']
+const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList', 'getAnchorInRoom']
 const id = ['mid', 'aid', 'cid', 'p', 'roomid']
 
 const syntax = async name => {
@@ -46,7 +46,8 @@ const syntax = async name => {
 const testData = {
   mid: 349991143,
   aid: 30669363,
-  p: 0
+  p: 0,
+  roomid: 12235923
 }
 
 const exampleData = async name => {

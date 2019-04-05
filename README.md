@@ -27,6 +27,7 @@ object.guardNum // → 758
     + [list](#list)
     + [getRoomInfoOld](#getroominfoold)
     + [topList](#toplist)
+    + [getAnchorInRoom](#getanchorinroom)
 - [Contribution](#contribution)
 
 # biliAPI
@@ -42,7 +43,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 288045
+  up.follower // → 288160
 })()
 ```
 
@@ -142,7 +143,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 288044
+    "follower": 288160
   }
 }
 ```
@@ -182,7 +183,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 67811.4,
+    "coins": 67832.8,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -195,7 +196,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -258,7 +259,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 6264,
+      "view": 6282,
       "danmaku": 41,
       "reply": 26,
       "favorite":
@@ -404,9 +405,18 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
     },
     "list": [
       {
-        "uid": 749030,
+        "uid": 70836,
         "ruid": 349991143,
         "rank": 1,
+        "username": "我抱头蹲防啦",
+        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
+        "is_alive": 1,
+        "guard_level": 2
+      },
+      {
+        "uid": 749030,
+        "ruid": 349991143,
+        "rank": 2,
         "username": "HakureiMea",
         "face": "https://i0.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
         "is_alive": 1,
@@ -415,25 +425,79 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 3501317,
         "ruid": 349991143,
-        "rank": 2,
+        "rank": 3,
         "username": "ジャンヌ-オルタ",
         "face": "https://i0.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
         "is_alive": 1,
         "guard_level": 2
       },
       {
-        "uid": 28221,
-        "ruid": 349991143,
-        "rank": 3,
-        "username": "cjtk",
-        "face": "https://i0.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
-        "is_alive": 0,
-        "guard_level": 2
-      },
-      {
         "uid": 730732,
         "ruid": 349991143,
-       
+     
+......
+```
+
+### <a name="api_getAnchorInRoom"></a>getAnchorInRoom
+
+##### 前置信息/参数
+
+<[roomid](#api_roomid)>
+
+##### API地址
+
+`https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=<roomid>`
+
+##### 实例:
+
+https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12235923
+
+##### 返回 (json->json):
+
+```json
+{
+  "code": 0,
+  "msg": "success",
+  "message": "success",
+  "data": {
+    "info": {
+      "uid": 349991143,
+      "uname": "神楽めあOfficial",
+      "face": "https://i1.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
+      "rank": "10000",
+      "identification": 1,
+      "mobile_verify": 1,
+      "platform_user_level": 6,
+      "vip_type": 2,
+      "gender": 2,
+      "official_verify": {
+        "type": 0,
+        "desc": "bilibili 知名UP主",
+        "role": 1
+      }
+    },
+    "level": {
+      "uid": 349991143,
+      "cost": 632900,
+      "rcost": 2893747217,
+      "user_score": "0",
+      "vip": 0,
+      "vip_time": "2018-08-03 13:56:27",
+      "svip": 0,
+      "svip_time": "0000-00-00 00:00:00",
+      "update_time": "2019-04-05 16:31:51",
+      "master_level": {
+        "level": 33,
+        "current": [
+          6700000,
+          27313810
+        ],
+        "next": [
+          9100000,
+          36413810
+        ],
+        "color": 16746162,
+        "anchor_score": 2
 ......
 ```
 

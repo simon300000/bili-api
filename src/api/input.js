@@ -1,10 +1,14 @@
 module.exports = {
   mid: {
     oneOf: [
+      ['getAnchorInRoom'],
       ['view'],
       ['search']
     ],
-    get: async ({ view, search }) => {
+    get: async ({ getAnchorInRoom, view, search }) => {
+      if (getAnchorInRoom) {
+        return (await getAnchorInRoom).data.info.uid
+      }
       if (view) {
         return (await view).data.owner.mid
       }

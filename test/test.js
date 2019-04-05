@@ -50,6 +50,10 @@ describe('Bilibili biliAPI', function() {
       let { sign } = await biliAPI({ mid: 349991143 }, ['sign'])
       assert.isString(sign)
     })
+    it('roomid -> mid', async function() {
+      let { mid } = await biliAPI({ roomid: 12235923 }, ['mid'])
+      assert.strictEqual(mid, 349991143)
+    })
   })
   context('Route', function() {
     it('Should reject', function() {

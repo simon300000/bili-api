@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 684
+object.guardNum // → 758
 ```
 
 # 目录
@@ -42,7 +42,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 279971
+  up.follower // → 288045
 })()
 ```
 
@@ -142,7 +142,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 279971
+    "follower": 288044
   }
 }
 ```
@@ -182,7 +182,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 64718.2,
+    "coins": 67811.4,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -254,12 +254,12 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
-      "view": 5772,
-      "danmaku": 33,
+      "view": 6264,
+      "danmaku": 41,
       "reply": 26,
       "favorite":
 ......
@@ -366,9 +366,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "3月最後。10連勝するまで終わりません。",
-    "cover": "https://i0.hdslb.com/bfs/live/room_cover/73fae0647fe1750a7158bfeddf6e70526460c469.jpg",
-    "online": 85286,
+    "title": "秘密基地ないしょだよっ　【アーカイブなし",
+    "cover": "https://i0.hdslb.com/bfs/live/room_cover/e839b30ef0cf399f30f80446401844d700a5325d.jpg",
+    "online": 88764,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -398,40 +398,40 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 684,
-      "page": 69,
+      "num": 758,
+      "page": 76,
       "now": 1
     },
     "list": [
       {
-        "uid": 70836,
-        "ruid": 349991143,
-        "rank": 1,
-        "username": "我抱头蹲防啦",
-        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
-        "is_alive": 1,
-        "guard_level": 2
-      },
-      {
         "uid": 749030,
         "ruid": 349991143,
-        "rank": 2,
+        "rank": 1,
         "username": "HakureiMea",
-        "face": "https://i1.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
+        "face": "https://i0.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
         "is_alive": 1,
         "guard_level": 2
       },
       {
-        "uid": 730732,
+        "uid": 3501317,
+        "ruid": 349991143,
+        "rank": 2,
+        "username": "ジャンヌ-オルタ",
+        "face": "https://i0.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
+        "is_alive": 1,
+        "guard_level": 2
+      },
+      {
+        "uid": 28221,
         "ruid": 349991143,
         "rank": 3,
-        "username": "瓶子君152",
-        "face": "https://i2.hdslb.com/bfs/face/ef8070a00162afaf5205e75a481085b4b33f4cee.jpg",
+        "username": "cjtk",
+        "face": "https://i0.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 1336969,
+        "uid": 730732,
         "ruid": 349991143,
        
 ......

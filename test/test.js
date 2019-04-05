@@ -45,6 +45,10 @@ describe('Bilibili biliAPI', function() {
       let { mid } = await biliAPI({ aid }, ['mid'])
       assert.strictEqual(mid, 8829972)
     })
+    it('mid -> sign', async function() {
+      let { sign } = await biliAPI({ mid }, ['sign'])
+      assert.isString(sign)
+    })
   })
   context('Route', function() {
     it('Should reject', function() {

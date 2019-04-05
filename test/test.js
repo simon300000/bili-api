@@ -9,44 +9,45 @@ chai.use(chaiAsPromised)
 const assert = chai.assert
 
 // test data
-const mid = 349991143
-const aid = 31779330
-const uname = '神楽めあOfficial'
+// mid: 349991143
+// aid: 31779330
+// uname: '神楽めあOfficial'
+// roomid: 12235923
 
 describe('Bilibili biliAPI', function() {
   context('bilibili', function() {
     it('mid -> uname', async function() {
-      let { uname } = await biliAPI({ mid }, ['uname'])
+      let { uname } = await biliAPI({ mid: 349991143 }, ['uname'])
       assert.isString(uname)
     })
     it('mid -> follower', async function() {
-      let { follower } = await biliAPI({ mid }, ['follower'])
+      let { follower } = await biliAPI({ mid: 349991143 }, ['follower'])
       assert.isNumber(follower)
       assert.isNotNaN(follower)
     })
     it('aid -> list', async function() {
-      let object = await biliAPI({ aid }, ['list'])
+      let object = await biliAPI({ aid: 31779330 }, ['list'])
       assert.isArray(object.list.i.d)
     })
     it('mid -> roomid', async function() {
-      let { roomid } = await biliAPI({ mid }, ['roomid'])
+      let { roomid } = await biliAPI({ mid: 349991143 }, ['roomid'])
       assert.strictEqual(roomid, 12235923)
     })
     it('mid -> guardNum', async function() {
-      let { guardNum } = await biliAPI({ mid }, ['guardNum'])
+      let { guardNum } = await biliAPI({ mid: 349991143 }, ['guardNum'])
       assert.isNumber(guardNum)
       assert.isNotNaN(guardNum)
     })
     it('uname -> mid', async function() {
-      let { mid } = await biliAPI({ uname }, ['mid'])
+      let { mid } = await biliAPI({ uname: '神楽めあOfficial' }, ['mid'])
       assert.strictEqual(mid, 349991143)
     })
     it('aid -> mid', async function() {
-      let { mid } = await biliAPI({ aid }, ['mid'])
+      let { mid } = await biliAPI({ aid: 31779330 }, ['mid'])
       assert.strictEqual(mid, 8829972)
     })
     it('mid -> sign', async function() {
-      let { sign } = await biliAPI({ mid }, ['sign'])
+      let { sign } = await biliAPI({ mid: 349991143 }, ['sign'])
       assert.isString(sign)
     })
   })
@@ -58,11 +59,11 @@ describe('Bilibili biliAPI', function() {
   })
   context('Options', function() {
     it('Default parser', async function() {
-      let { stat } = await biliAPI({ mid }, ['stat'])
+      let { stat } = await biliAPI({ mid: 349991143 }, ['stat'])
       assert.isObject({ stat })
     })
     it('Optinal parser', async function() {
-      let { stat } = await biliAPI({ mid }, ['stat'], { parser: url => url })
+      let { stat } = await biliAPI({ mid: 349991143 }, ['stat'], { parser: url => url })
       assert.isString(stat)
     })
   })

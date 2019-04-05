@@ -17,7 +17,7 @@ let get = (object, target, { parser }) => {
       if (targetAPI.oneOf) {
         let { oneOf } = targetAPI
         for (let j = 0; j < oneOf.length; j++) {
-          let error = router(object, oneOf[j])
+          let error = router(object, oneOf[j], [target[i]])
           if (!error) {
             get(object, oneOf[j], { parser })
             break

@@ -12,7 +12,7 @@ EXAMPLE:1
 
 npm: `npm install bili-api`
 
-## 开始
+## 用法
 
 EXAMPLE:2
 

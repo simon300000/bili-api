@@ -10,7 +10,7 @@ object.guardNum // → 758
 
 - [biliAPI](#biliapi)
   * [安装](#%E5%AE%89%E8%A3%85)
-  * [开始](#%E5%BC%80%E5%A7%8B)
+  * [用法](#%E7%94%A8%E6%B3%95)
     + [biliAPI Document](#biliapi-document)
     + [Router Graph](#router-graph)
 - [Bilibili API Document](#bilibili-api-document)
@@ -36,14 +36,14 @@ object.guardNum // → 758
 
 npm: `npm install bili-api`
 
-## 开始
+## 用法
 
 ```javascript
 const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 288160
+  up.follower // → 288188
 })()
 ```
 
@@ -143,7 +143,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 288160
+    "follower": 288188
   }
 }
 ```
@@ -183,7 +183,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 67832.8,
+    "coins": 67835,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -196,7 +196,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -259,7 +259,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 6282,
+      "view": 6286,
       "danmaku": 41,
       "reply": 26,
       "favorite":
@@ -479,13 +479,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 632900,
-      "rcost": 2893747217,
+      "rcost": 2893763517,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-05 16:31:51",
+      "update_time": "2019-04-05 16:45:40",
       "master_level": {
         "level": 33,
         "current": [

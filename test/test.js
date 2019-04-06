@@ -70,8 +70,20 @@ describe('Bilibili biliAPI', function() {
     })
   })
   context('Route', function() {
-    it('Should reject', function() {
+    it('Should reject when no require input', function() {
       return assert.isRejected(biliAPI({}, ['uname']))
+    })
+    it('API namespace', function() {
+      const input = Object.keys(require('../src/api/input'))
+      const data = Object.keys(require('../src/api/data'))
+      const api = Object.keys(require('../src/api/api.bilibili.com'))
+      const live = Object.keys(require('../src/api/api.live.bilibili.com'))
+      let array = [...input, ...data, ...api, ...live]
+      let check = {}
+      for (let i = 0; i < array.length; i++) {
+        if (check[array[i]]) throw new Error(`Repeat ${array[i]}`)
+        check[array[i]] = true
+      }
     })
     // TODO: Correct order of "oneOf" value
   })

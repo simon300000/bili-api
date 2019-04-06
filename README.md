@@ -1,9 +1,9 @@
-# Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api) [![Greenkeeper badge](https://badges.greenkeeper.io/simon300000/bili-api.svg)](https://greenkeeper.io/)
+# Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api)
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 758
+object.guardNum // → 763
 ```
 
 # 目录
@@ -43,7 +43,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 288188
+  up.follower // → 289715
 })()
 ```
 
@@ -143,7 +143,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 288188
+    "follower": 289715
   }
 }
 ```
@@ -183,7 +183,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 67835,
+    "coins": 68308.1,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -259,7 +259,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 6286,
+      "view": 6423,
       "danmaku": 41,
       "reply": 26,
       "favorite":
@@ -367,9 +367,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "秘密基地ないしょだよっ　【アーカイブなし",
-    "cover": "https://i0.hdslb.com/bfs/live/room_cover/e839b30ef0cf399f30f80446401844d700a5325d.jpg",
-    "online": 88764,
+    "title": "【突击歌回】リクエスト一応聞く",
+    "cover": "https://i0.hdslb.com/bfs/live/room_cover/b401f1166539dae805b9755624ce5b99a418d12c.jpg",
+    "online": 131792,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -399,7 +399,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 758,
+      "num": 763,
       "page": 76,
       "now": 1
     },
@@ -409,7 +409,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
         "ruid": 349991143,
         "rank": 1,
         "username": "我抱头蹲防啦",
-        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
+        "face": "https://i0.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
         "is_alive": 1,
         "guard_level": 2
       },
@@ -479,13 +479,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 632900,
-      "rcost": 2893763517,
+      "rcost": 2929775735,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-05 16:45:40",
+      "update_time": "2019-04-06 20:27:53",
       "master_level": {
         "level": 33,
         "current": [

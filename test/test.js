@@ -54,6 +54,20 @@ describe('Bilibili biliAPI', function() {
       let { mid } = await biliAPI({ roomid: 12235923 }, ['mid'])
       assert.strictEqual(mid, 349991143)
     })
+    it('roomid -> liveStatus', async function() {
+      let { liveStatus } = await biliAPI({ roomid: 12235923 }, ['liveStatus'])
+      assert.isNumber(liveStatus)
+      assert.isNotNaN(liveStatus)
+    })
+    it('roomid -> title', async function() {
+      let { title } = await biliAPI({ roomid: 12235923 }, ['title'])
+      assert.isString(title)
+    })
+    it('roomid -> online', async function() {
+      let { online } = await biliAPI({ roomid: 12235923 }, ['online'])
+      assert.isNumber(online)
+      assert.isNotNaN(online)
+    })
   })
   context('Route', function() {
     it('Should reject', function() {

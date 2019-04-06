@@ -14,5 +14,17 @@ module.exports = {
   guardNum: {
     require: ['topList'],
     get: async ({ topList }) => (await topList).data.info.num
+  },
+  liveStatus: {
+    require: ['getRoomInfoOld'],
+    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.liveStatus
+  },
+  title: {
+    require: ['getRoomInfoOld'],
+    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.title
+  },
+  online: {
+    require: ['getRoomInfoOld'],
+    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.online
   }
 }

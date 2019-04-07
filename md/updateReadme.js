@@ -2,7 +2,7 @@
 /* eslint no-eval: "off" */
 const fs = require('fs')
 
-const biliAPI = require('.')
+const biliAPI = require('..')
 const { apis } = biliAPI
 
 const toc = require('markdown-toc')

@@ -4,6 +4,11 @@ module.exports = {
     type: 'json',
     get: async ({ mid }) => `https://api.bilibili.com/x/relation/stat?vmid=${await mid}`
   },
+  upstat: {
+    require: ['mid'],
+    type: 'json',
+    get: async ({ mid }) => `https://api.bilibili.com/x/space/upstat?mid=${mid}`
+  },
   info: {
     require: ['mid'],
     type: 'json',

@@ -30,5 +30,13 @@ module.exports = {
   notice: {
     require: ['_notice'],
     get: async ({ _notice }) => (await _notice).data
+  },
+  archiveView: {
+    require: ['upstat'],
+    get: async ({ upstat }) => (await upstat).data.archive.view
+  },
+  articleView: {
+    require: ['upstat'],
+    get: async ({ upstat }) => (await upstat).data.article.view
   }
 }

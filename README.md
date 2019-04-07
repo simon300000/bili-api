@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 763
+object.guardNum // → 764
 ```
 
 # 目录
@@ -28,6 +28,7 @@ object.guardNum // → 763
     + [getRoomInfoOld](#getroominfoold)
     + [topList](#toplist)
     + [getAnchorInRoom](#getanchorinroom)
+    + [\_notice](#_notice)
 - [Contribution](#contribution)
 
 # biliAPI
@@ -43,7 +44,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 289715
+  up.follower // → 290936
 })()
 ```
 
@@ -143,7 +144,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 289715
+    "follower": 290936
   }
 }
 ```
@@ -183,7 +184,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 68308.1,
+    "coins": 68691.6,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -255,11 +256,11 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
-      "view": 6423,
+      "view": 6519,
       "danmaku": 41,
       "reply": 26,
       "favorite":
@@ -399,8 +400,8 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 763,
-      "page": 76,
+      "num": 764,
+      "page": 77,
       "now": 1
     },
     "list": [
@@ -409,7 +410,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
         "ruid": 349991143,
         "rank": 1,
         "username": "我抱头蹲防啦",
-        "face": "https://i0.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
+        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
         "is_alive": 1,
         "guard_level": 2
       },
@@ -479,13 +480,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 632900,
-      "rcost": 2929775735,
+      "rcost": 2946879268,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-06 20:27:53",
+      "update_time": "2019-04-07 22:14:05",
       "master_level": {
         "level": 33,
         "current": [
@@ -499,6 +500,33 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
         "color": 16746162,
         "anchor_score": 2
 ......
+```
+
+### <a name="api__notice"></a>\_notice
+
+UP主公告
+
+##### 前置信息/参数
+
+<[mid](#api_mid)>
+
+##### API地址
+
+`https://api.bilibili.com/x/space/notice?mid=<mid>`
+
+##### 实例:
+
+https://api.bilibili.com/x/space/notice?mid=349991143
+
+##### 返回 (json->json):
+
+```json
+{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": "【QQ群】\nMeaMea公国第一国度：431766969\nMeaMea公国第二国度：749547516"
+}
 ```
 
 

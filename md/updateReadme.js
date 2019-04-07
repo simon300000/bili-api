@@ -16,8 +16,8 @@ let DESCRIPTIONS = {}
 
 for (let i = 0; i < descriptionFile.length; i++) {
   if (descriptionFile[i][0] === '#') {
-    DESCRIPTIONS._current = descriptionFile[i].replace(' ', '').replace('#', '')
-    console.log(`DESCRIPTIONS: ${descriptionFile[i]}`)
+    DESCRIPTIONS._current = descriptionFile[i].replace(' ', '').replace('#', '').replace(/\\_/g, '_')
+    console.log(`load DESCRIPTIONS: ${descriptionFile[i]}`)
     DESCRIPTIONS[DESCRIPTIONS._current] = []
   } else if (descriptionFile[i]) {
     DESCRIPTIONS[DESCRIPTIONS._current].push(descriptionFile[i])
@@ -26,7 +26,7 @@ for (let i = 0; i < descriptionFile.length; i++) {
 
 const maxdepth = 3
 
-const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList', 'getAnchorInRoom']
+const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList', 'getAnchorInRoom', '_notice']
 const id = ['mid', 'aid', 'cid', 'p', 'roomid']
 
 const syntax = async name => {
@@ -69,7 +69,7 @@ const apiSection = ({ name, syntax, example, data, type = 'json', description = 
     optional[i] = `\[[${optional[i]}](#api_${optional[i]})\]`
   }
   return API
-    .replace('NAME', `<a name="api_${name}"></a>${name}`)
+    .replace('NAME', `<a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
     .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
     .replace('SYNTAX', syntax)
     .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置信息/参数', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
@@ -87,7 +87,7 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
     optional[i] = `\[[${optional[i]}](#api_${optional[i]})\]`
   }
   return ID
-    .replace('NAME', `<a name="api_${name}"></a>${name}`)
+    .replace('NAME', `<a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
     .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
     .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置信息/参数', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
 }

@@ -25,3 +25,7 @@ UP主信息
 # list
 
 弹幕
+
+# \_notice
+
+UP主公告

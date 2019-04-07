@@ -7,7 +7,7 @@ module.exports = {
   upstat: {
     require: ['mid'],
     type: 'json',
-    get: async ({ mid }) => `https://api.bilibili.com/x/space/upstat?mid=${mid}`
+    get: async ({ mid }) => `https://api.bilibili.com/x/space/upstat?mid=${await mid}`
   },
   info: {
     require: ['mid'],
@@ -32,6 +32,6 @@ module.exports = {
   _notice: {
     require: ['mid'],
     type: 'json',
-    get: async ({ mid }) => `https://api.bilibili.com/x/space/notice?mid=${mid}`
+    get: async ({ mid }) => `https://api.bilibili.com/x/space/notice?mid=${await mid}`
   }
 }

@@ -15,6 +15,8 @@ const assert = chai.assert
 // roomid: 12235923
 
 describe('Bilibili biliAPI', function() {
+  this.retries(2)
+  this.timeout(5000)
   context('bilibili', function() {
     it('mid -> uname', async function() {
       let { uname } = await biliAPI({ mid: 349991143 }, ['uname'])

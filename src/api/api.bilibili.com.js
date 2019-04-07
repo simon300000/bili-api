@@ -23,5 +23,10 @@ module.exports = {
     require: ['uname'],
     type: 'json',
     get: async ({ uname }) => `https://api.bilibili.com/x/web-interface/search/type?jsonp=jsonp&search_type=bili_user&keyword=${await uname}`
+  },
+  _notice: {
+    require: ['mid'],
+    type: 'json',
+    get: async ({ mid }) => `https://api.bilibili.com/x/space/notice?mid=${mid}`
   }
 }

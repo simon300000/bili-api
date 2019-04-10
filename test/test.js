@@ -84,6 +84,10 @@ describe('Bilibili biliAPI', function() {
       assert.isNumber(articleView)
       assert.isNotNaN(articleView)
     })
+    it('mid -> face', async function() {
+      let { face } = await biliAPI({ mid: 349991143 }, ['face'])
+      assert.isString(face)
+    })
   })
   context('Route', function() {
     it('Should reject when no require input', function() {

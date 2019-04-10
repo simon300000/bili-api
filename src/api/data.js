@@ -38,5 +38,9 @@ module.exports = {
   articleView: {
     require: ['upstat'],
     get: async ({ upstat }) => (await upstat).data.article.view
+  },
+  face: {
+    require: ['info'],
+    get: async ({ info }) => (await info).data.face
   }
 }

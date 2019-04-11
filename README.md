@@ -1,9 +1,9 @@
-# Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api)
+# Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api) [![npm](https://img.shields.io/npm/v/bili-api.svg)](https://www.npmjs.com/package/bili-api)
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 764
+object.guardNum // → 721
 ```
 
 # 目录
@@ -44,7 +44,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 290936
+  up.follower // → 295056
 })()
 ```
 
@@ -144,7 +144,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 290936
+    "follower": 295056
   }
 }
 ```
@@ -184,7 +184,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 68691.6,
+    "coins": 70573.9,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -197,7 +197,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -256,13 +256,13 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
-      "view": 6519,
+      "view": 6849,
       "danmaku": 41,
-      "reply": 26,
+      "reply": 27,
       "favorite":
 ......
 ```
@@ -368,9 +368,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "【突击歌回】リクエスト一応聞く",
-    "cover": "https://i0.hdslb.com/bfs/live/room_cover/b401f1166539dae805b9755624ce5b99a418d12c.jpg",
-    "online": 131792,
+    "title": "お昼の激戦区に立ち向かう。",
+    "cover": "https://i0.hdslb.com/bfs/live/user_cover/60bb80e6105cc88f62da2d83ffbfe896007a2e91.jpg",
+    "online": 215768,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -400,42 +400,42 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 764,
-      "page": 77,
+      "num": 721,
+      "page": 72,
       "now": 1
     },
     "list": [
       {
-        "uid": 70836,
-        "ruid": 349991143,
-        "rank": 1,
-        "username": "我抱头蹲防啦",
-        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
-        "is_alive": 1,
-        "guard_level": 2
-      },
-      {
-        "uid": 749030,
-        "ruid": 349991143,
-        "rank": 2,
-        "username": "HakureiMea",
-        "face": "https://i0.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
-        "is_alive": 1,
-        "guard_level": 2
-      },
-      {
         "uid": 3501317,
         "ruid": 349991143,
-        "rank": 3,
+        "rank": 1,
         "username": "ジャンヌ-オルタ",
         "face": "https://i0.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
         "is_alive": 1,
         "guard_level": 2
       },
       {
+        "uid": 38608128,
+        "ruid": 349991143,
+        "rank": 2,
+        "username": "神楽めあ一生推",
+        "face": "https://i0.hdslb.com/bfs/face/f2a9dff68740e34ceac5612358027e551a931823.jpg",
+        "is_alive": 1,
+        "guard_level": 2
+      },
+      {
+        "uid": 70836,
+        "ruid": 349991143,
+        "rank": 3,
+        "username": "我抱头蹲防啦",
+        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
+        "is_alive": 0,
+        "guard_level": 2
+      },
+      {
         "uid": 730732,
         "ruid": 349991143,
-     
+      
 ......
 ```
 
@@ -480,13 +480,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 632900,
-      "rcost": 2946879268,
+      "rcost": 3043843997,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-07 22:14:05",
+      "update_time": "2019-04-12 00:09:32",
       "master_level": {
         "level": 33,
         "current": [
@@ -498,7 +498,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           36413810
         ],
         "color": 16746162,
-        "anchor_score": 2
+        "anchor_score": 3
 ......
 ```
 

@@ -14,5 +14,10 @@ module.exports = {
     require: ['roomid'],
     type: 'json',
     get: async ({ roomid }) => `https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=${await roomid}`
+  },
+  rankdb: {
+    require: ['mid'],
+    type: 'json',
+    get: async ({ mid }) => `https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=${await mid}`
   }
 }

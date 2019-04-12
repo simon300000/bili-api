@@ -46,5 +46,9 @@ module.exports = {
   anchorScore: {
     require: ['getAnchorInRoom'],
     get: async ({ getAnchorInRoom }) => (await getAnchorInRoom).data.level.anchor_score
+  },
+  areaRank: {
+    require: ['rankdb'],
+    get: async ({ rankdb }) => Number((await rankdb).data.areaRank.rank) || 1001
   }
 }

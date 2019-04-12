@@ -29,3 +29,7 @@ UP主信息
 # \_notice
 
 UP主公告
+
+# rankdb
+
+bilbili直播排行榜

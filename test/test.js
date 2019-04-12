@@ -88,6 +88,11 @@ describe('Bilibili biliAPI', function() {
       let { face } = await biliAPI({ mid: 349991143 }, ['face'])
       assert.isString(face)
     })
+    it('mid -> anchorScore', async function() {
+      let { anchorScore } = await biliAPI({ mid: 349991143 }, ['anchorScore'])
+      assert.isNumber(anchorScore)
+      assert.isNotNaN(anchorScore)
+    })
   })
   context('Route', function() {
     it('Should reject when no require input', function() {

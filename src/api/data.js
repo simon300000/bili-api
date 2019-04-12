@@ -42,5 +42,9 @@ module.exports = {
   face: {
     require: ['info'],
     get: async ({ info }) => (await info).data.face
+  },
+  anchorScore: {
+    require: ['getAnchorInRoom'],
+    get: async ({ getAnchorInRoom }) => (await getAnchorInRoom).data.level.anchor_score
   }
 }

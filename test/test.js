@@ -98,6 +98,13 @@ describe('Bilibili biliAPI', function() {
       assert.isNumber(areaRank)
       assert.isNotNaN(areaRank)
     })
+    it('mid -> areaRank', async function() {
+      let { areaRank } = await biliAPI({ mid: 3499295 }, ['areaRank'])
+      // ">1000" -> 1001
+      assert.isNumber(areaRank)
+      assert.isNotNaN(areaRank)
+      assert.strictEqual(areaRank, 1001)
+    })
   })
   context('Route', function() {
     it('Should reject when no require input', function() {

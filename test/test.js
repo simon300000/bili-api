@@ -100,10 +100,10 @@ describe('Bilibili biliAPI', function() {
     })
     it('mid -> areaRank', async function() {
       let { areaRank } = await biliAPI({ mid: 3499295 }, ['areaRank'])
-      // ">1000" -> 1001
+      // ">1000" -> 1000
       assert.isNumber(areaRank)
       assert.isNotNaN(areaRank)
-      assert.strictEqual(areaRank, 1001)
+      assert.strictEqual(areaRank, 1000)
     })
   })
   context('Route', function() {

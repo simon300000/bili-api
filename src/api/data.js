@@ -49,6 +49,6 @@ module.exports = {
   },
   areaRank: {
     require: ['rankdb'],
-    get: async ({ rankdb }) => Number((await rankdb).data.areaRank.rank) || 1001
+    get: async ({ rankdb }) => Number((await rankdb).data.areaRank.rank.replace('>', ''))
   }
 }

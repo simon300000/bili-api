@@ -45,7 +45,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 296136
+  up.follower // → 296673
 })()
 ```
 
@@ -145,7 +145,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 296136
+    "follower": 296673
   }
 }
 ```
@@ -185,7 +185,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 70841.2,
+    "coins": 71894.5,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -261,8 +261,8 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 6954,
-      "danmaku": 41,
+      "view": 6988,
+      "danmaku": 42,
       "reply": 27,
       "favorite":
 ......
@@ -467,26 +467,27 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
       "uname": "神楽めあOfficial",
       "face": "https://i1.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
       "rank": "10000",
+      "identification": 1,
+      "mobile_verify": 1,
       "platform_user_level": 6,
-      "mobile_verify": 0,
+      "vip_type": 2,
+      "gender": 2,
       "official_verify": {
         "type": 0,
         "desc": "bilibili 知名UP主",
         "role": 1
-      },
-      "vip_type": 2,
-      "gender": 2
+      }
     },
     "level": {
       "uid": 349991143,
       "cost": 632900,
-      "rcost": 3072500263,
+      "rcost": 3078764963,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-13 04:33:48",
+      "update_time": "2019-04-13 19:36:25",
       "master_level": {
         "level": 33,
         "current": [
@@ -498,8 +499,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           36413810
         ],
         "color": 16746162,
-        "anchor_score": 30725002,
-        "upgrade_s
+        "anchor_score": 3
 ......
 ```
 
@@ -532,7 +532,7 @@ https://api.bilibili.com/x/space/notice?mid=349991143
 
 ### <a name="api_rankdb"></a>rankdb
 
-bilbili直播排行榜
+bilibili直播一周元气榜分区排名
 
 ##### 前置信息/参数
 

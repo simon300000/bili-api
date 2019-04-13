@@ -32,4 +32,4 @@ UP主公告
 
 # rankdb
 
-bilbili直播排行榜
+bilibili直播一周元气榜分区排名

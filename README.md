@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 720
+object.guardNum // → 603
 ```
 
 # 目录
@@ -45,7 +45,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 296673
+  up.follower // → 300937
 })()
 ```
 
@@ -145,7 +145,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 296673
+    "follower": 300937
   }
 }
 ```
@@ -185,7 +185,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 71894.5,
+    "coins": 73455.5,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -261,7 +261,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 6988,
+      "view": 7158,
       "danmaku": 42,
       "reply": 27,
       "favorite":
@@ -308,7 +308,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
       "0"
     ],
     "source": [
-      "k-v"
+      "e-r"
     ],
     "d": [
       {
@@ -324,15 +324,15 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
         }
       },
       {
-        "_": "刷CPU的几个意思……",
-        "$": {
-          "p": "45.28400,1,25,16777215,1545353769,0,7907fd34,9548120285773826"
-        }
-      },
-      {
         "_": "刷绘里的几个意思……",
         "$": {
           "p": "12.85700,1,25,16777215,1545353720,0,7907fd34,9548094612439040"
+        }
+      },
+      {
+        "_": "刷CPU的几个意思……",
+        "$": {
+          "p": "45.28400,1,25,16777215,1545353769,0,7907fd34,9548120285773826"
         }
       },
       {
@@ -369,9 +369,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "お昼の激戦区に立ち向かう。",
-    "cover": "https://i0.hdslb.com/bfs/live/user_cover/60bb80e6105cc88f62da2d83ffbfe896007a2e91.jpg",
-    "online": 215768,
+    "title": "私は今回持ちまして。",
+    "cover": "https://i0.hdslb.com/bfs/live/12235923.jpg?04152227",
+    "online": 324701,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -401,27 +401,27 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 720,
-      "page": 72,
+      "num": 603,
+      "page": 60,
       "now": 1
     },
     "list": [
       {
-        "uid": 749030,
+        "uid": 28221,
         "ruid": 349991143,
         "rank": 1,
-        "username": "HakureiMea",
-        "face": "https://i0.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
-        "is_alive": 1,
+        "username": "cjtk",
+        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
+        "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 3501317,
+        "uid": 70836,
         "ruid": 349991143,
         "rank": 2,
-        "username": "ジャンヌ-オルタ",
-        "face": "https://i0.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
-        "is_alive": 1,
+        "username": "我抱头蹲防啦",
+        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
+        "is_alive": 0,
         "guard_level": 2
       },
       {
@@ -436,7 +436,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 1336969,
         "ruid": 349991143,
-   
+        "rank"
 ......
 ```
 
@@ -480,14 +480,14 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     },
     "level": {
       "uid": 349991143,
-      "cost": 632900,
-      "rcost": 3078764963,
+      "cost": 635900,
+      "rcost": 3213881375,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-13 19:36:25",
+      "update_time": "2019-04-16 03:20:28",
       "master_level": {
         "level": 33,
         "current": [
@@ -556,7 +556,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": "45"
+      "rank": "4"
     }
   }
 }

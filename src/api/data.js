@@ -15,9 +15,17 @@ module.exports = {
     require: ['topList'],
     get: async ({ topList }) => (await topList).data.info.num
   },
-  liveStatus: {
+  roomStatus: {
     require: ['getRoomInfoOld'],
-    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.liveStatus
+    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.roomStatus
+  },
+  roundStatus: {
+    require: ['roomStatus', 'getRoomInfoOld'],
+    get: async ({ getRoomInfoOld, roomStatus }) => (await roomStatus) && (await getRoomInfoOld).data.roundStatus
+  },
+  liveStatus: {
+    require: ['roomStatus', 'getRoomInfoOld'],
+    get: async ({ getRoomInfoOld, roomStatus }) => (await roomStatus) && (await getRoomInfoOld).data.liveStatus
   },
   title: {
     require: ['getRoomInfoOld'],

@@ -56,10 +56,43 @@ describe('Bilibili biliAPI', function() {
       let { mid } = await biliAPI({ roomid: 12235923 }, ['mid'])
       assert.strictEqual(mid, 349991143)
     })
+    it('roomid -> roomStatus', async function() {
+      let { roomStatus } = await biliAPI({ roomid: 12235923 }, ['roomStatus'])
+      assert.strictEqual(roomStatus, 1)
+      assert.isNumber(roomStatus)
+      assert.isNotNaN(roomStatus)
+    })
+    it('roomid -> roundStatus', async function() {
+      let { roundStatus } = await biliAPI({ roomid: 12235923 }, ['roundStatus'])
+      assert.isNumber(roundStatus)
+      assert.isNotNaN(roundStatus)
+    })
     it('roomid -> liveStatus', async function() {
       let { liveStatus } = await biliAPI({ roomid: 12235923 }, ['liveStatus'])
       assert.isNumber(liveStatus)
       assert.isNotNaN(liveStatus)
+    })
+    context('Exceptions', function() {
+      context('No live room', function() {
+        it('mid -> roomStatus -> 0', async function() {
+          let { roomStatus } = await biliAPI({ mid: 233 }, ['roomStatus'])
+          assert.strictEqual(roomStatus, 0)
+          assert.isNumber(roomStatus)
+          assert.isNotNaN(roomStatus)
+        })
+        it('mid -> roundStatus -> 0', async function() {
+          let { roundStatus } = await biliAPI({ mid: 233 }, ['roundStatus'])
+          assert.strictEqual(roundStatus, 0)
+          assert.isNumber(roundStatus)
+          assert.isNotNaN(roundStatus)
+        })
+        it('mid -> liveStatus -> 0', async function() {
+          let { liveStatus } = await biliAPI({ mid: 233 }, ['liveStatus'])
+          assert.strictEqual(liveStatus, 0)
+          assert.isNumber(liveStatus)
+          assert.isNotNaN(liveStatus)
+        })
+      })
     })
     it('roomid -> title', async function() {
       let { title } = await biliAPI({ roomid: 12235923 }, ['title'])

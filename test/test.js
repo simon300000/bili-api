@@ -77,20 +77,18 @@ describe('Bilibili biliAPI', function() {
         it('mid -> roomStatus -> 0', async function() {
           let { roomStatus } = await biliAPI({ mid: 233 }, ['roomStatus'])
           assert.strictEqual(roomStatus, 0)
-          assert.isNumber(roomStatus)
-          assert.isNotNaN(roomStatus)
         })
         it('mid -> roundStatus -> 0', async function() {
           let { roundStatus } = await biliAPI({ mid: 233 }, ['roundStatus'])
           assert.strictEqual(roundStatus, 0)
-          assert.isNumber(roundStatus)
-          assert.isNotNaN(roundStatus)
         })
         it('mid -> liveStatus -> 0', async function() {
           let { liveStatus } = await biliAPI({ mid: 233 }, ['liveStatus'])
           assert.strictEqual(liveStatus, 0)
-          assert.isNumber(liveStatus)
-          assert.isNotNaN(liveStatus)
+        })
+        it('mid -> online -> 0', async function() {
+          let { online } = await biliAPI({ mid: 233 }, ['online'])
+          assert.strictEqual(online, 0)
         })
       })
     })

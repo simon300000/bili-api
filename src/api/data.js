@@ -32,8 +32,8 @@ module.exports = {
     get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.title
   },
   online: {
-    require: ['getRoomInfoOld'],
-    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.online
+    require: ['roomStatus', 'getRoomInfoOld'],
+    get: async ({ getRoomInfoOld, roomStatus }) => (await roomStatus) && (await getRoomInfoOld).data.online
   },
   notice: {
     require: ['_notice'],

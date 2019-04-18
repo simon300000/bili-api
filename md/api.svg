@@ -60,7 +60,7 @@
 <text text-anchor="middle" x="196.2514" y="-96.2506" font-family="Times,serif" font-size="14.00" fill="#000000">archiveView</text>
 </g>
 <!-- upstat&#45;&gt;archiveView -->
-<g id="edge20" class="edge">
+<g id="edge21" class="edge">
 <title>upstat&#45;&gt;archiveView</title>
 <path fill="none" stroke="#000000" d="M615.7158,-405.5914C602.9606,-393.1184 584.3141,-375.3929 567.0853,-360.9332 509.2542,-312.3972 498.3612,-293.4705 431.1842,-259.0113 389.6157,-237.6883 371.2011,-251.1355 330.9017,-227.5014 284.7244,-200.4202 241.6365,-154.7968 217.1652,-126.2226"/>
 <polygon fill="#000000" stroke="#000000" points="219.6002,-123.681 210.4774,-118.2934 214.2493,-128.1941 219.6002,-123.681"/>
@@ -72,7 +72,7 @@
 <text text-anchor="middle" x="493.3364" y="-204.5524" font-family="Times,serif" font-size="14.00" fill="#000000">articleView</text>
 </g>
 <!-- upstat&#45;&gt;articleView -->
-<g id="edge21" class="edge">
+<g id="edge22" class="edge">
 <title>upstat&#45;&gt;articleView</title>
 <path fill="none" stroke="#000000" d="M620.3282,-404.1744C596.2642,-367.1433 539.0324,-279.0719 510.3437,-234.9242"/>
 <polygon fill="#000000" stroke="#000000" points="513.2246,-232.9342 504.8409,-226.4562 507.3551,-236.7484 513.2246,-232.9342"/>
@@ -114,7 +114,7 @@
 <text text-anchor="middle" x="252.5775" y="-38.8389" font-family="Times,serif" font-size="14.00" fill="#000000">face</text>
 </g>
 <!-- info&#45;&gt;face -->
-<g id="edge22" class="edge">
+<g id="edge23" class="edge">
 <title>info&#45;&gt;face</title>
 <path fill="none" stroke="#000000" d="M610.4097,-348.3192C565.9551,-318.5513 455.5855,-240.656 383.2255,-155.4011 358.6011,-126.3885 360.0523,-112.2655 331.3392,-87.2926 317.4224,-75.1887 299.6721,-64.867 284.5465,-57.2442"/>
 <polygon fill="#000000" stroke="#000000" points="286.0491,-54.083 275.5257,-52.8548 282.9863,-60.3774 286.0491,-54.083"/>
@@ -132,7 +132,7 @@
 <text text-anchor="middle" x="447.6277" y="-592.3842" font-family="Times,serif" font-size="14.00" fill="#000000">mid</text>
 </g>
 <!-- view&#45;&gt;mid -->
-<g id="edge26" class="edge">
+<g id="edge27" class="edge">
 <title>view&#45;&gt;mid</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M538.8185,-392.1532C521.5848,-430.7877 480.0452,-523.9109 459.5178,-569.929"/>
 <polygon fill="#000000" stroke="#000000" points="456.234,-568.6993 455.3565,-579.2578 462.6268,-571.551 456.234,-568.6993"/>
@@ -144,7 +144,7 @@
 <text text-anchor="middle" x="411.2859" y="-650.5641" font-family="Times,serif" font-size="14.00" fill="#000000">cid</text>
 </g>
 <!-- view&#45;&gt;cid -->
-<g id="edge28" class="edge">
+<g id="edge29" class="edge">
 <title>view&#45;&gt;cid</title>
 <path fill="none" stroke="#000000" d="M534.2568,-390.9044C508.1295,-426.0854 447.27,-513.1572 419.0289,-596.4095 415.774,-606.0045 413.8789,-616.9196 412.7785,-626.6934"/>
 <polygon fill="#000000" stroke="#000000" points="409.2854,-626.4597 411.8696,-636.7345 416.2569,-627.0908 409.2854,-626.4597"/>
@@ -162,7 +162,7 @@
 <text text-anchor="middle" x="673.3072" y="-504.2836" font-family="Times,serif" font-size="14.00" fill="#000000">search</text>
 </g>
 <!-- search&#45;&gt;mid -->
-<g id="edge27" class="edge">
+<g id="edge28" class="edge">
 <title>search&#45;&gt;mid</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M646.5325,-518.9358C605.067,-535.1231 525.4266,-566.2131 480.5203,-583.7436"/>
 <polygon fill="#000000" stroke="#000000" points="479.0016,-580.5792 470.959,-587.4761 481.5472,-587.0999 479.0016,-580.5792"/>
@@ -180,7 +180,7 @@
 <text text-anchor="middle" x="534.9122" y="-141.9716" font-family="Times,serif" font-size="14.00" fill="#000000">notice</text>
 </g>
 <!-- _notice&#45;&gt;notice -->
-<g id="edge19" class="edge">
+<g id="edge20" class="edge">
 <title>_notice&#45;&gt;notice</title>
 <path fill="none" stroke="#000000" d="M711.0308,-375.544C678.2925,-332.9065 592.3257,-220.9454 553.9203,-170.9272"/>
 <polygon fill="#000000" stroke="#000000" points="556.6181,-168.6938 547.7519,-162.8937 551.066,-172.9569 556.6181,-168.6938"/>
@@ -246,7 +246,7 @@
 <text text-anchor="middle" x="506.6801" y="-60.8131" font-family="Times,serif" font-size="14.00" fill="#000000">online</text>
 </g>
 <!-- getRoomInfoOld&#45;&gt;online -->
-<g id="edge18" class="edge">
+<g id="edge19" class="edge">
 <title>getRoomInfoOld&#45;&gt;online</title>
 <path fill="none" stroke="#000000" d="M257.8997,-352.0393C308.8695,-320.3966 416.47,-246.5324 473.4137,-155.5345 485.6288,-136.0143 494.3205,-111.3418 499.7491,-92.6868"/>
 <polygon fill="#000000" stroke="#000000" points="503.1321,-93.5845 502.4309,-83.0129 496.3865,-91.7145 503.1321,-93.5845"/>
@@ -258,7 +258,7 @@
 <text text-anchor="middle" x="507.0877" y="-661.574" font-family="Times,serif" font-size="14.00" fill="#000000">roomid</text>
 </g>
 <!-- getRoomInfoOld&#45;&gt;roomid -->
-<g id="edge30" class="edge">
+<g id="edge31" class="edge">
 <title>getRoomInfoOld&#45;&gt;roomid</title>
 <path fill="none" stroke="#000000" d="M263.5632,-384.4978C287.8707,-396.807 320.6423,-415.3924 345.6753,-436.9675 415.1424,-496.8388 434.1646,-515.2662 476.2266,-596.7588 483.2304,-610.3282 490.2422,-625.8184 495.8083,-638.6808"/>
 <polygon fill="#000000" stroke="#000000" points="492.6119,-640.1079 499.7588,-647.9292 499.0492,-637.3582 492.6119,-640.1079"/>
@@ -294,13 +294,13 @@
 <text text-anchor="middle" x="254.1293" y="-220.1616" font-family="Times,serif" font-size="14.00" fill="#000000">anchorScore</text>
 </g>
 <!-- getAnchorInRoom&#45;&gt;anchorScore -->
-<g id="edge23" class="edge">
+<g id="edge24" class="edge">
 <title>getAnchorInRoom&#45;&gt;anchorScore</title>
 <path fill="none" stroke="#000000" d="M281.9983,-419.0504C291.1006,-405.9855 301.2828,-387.3783 301.8933,-368.8806 303.4037,-323.1151 274.2259,-318.0543 261.7376,-273.9999 259.7886,-267.1244 258.3076,-259.5629 257.1949,-252.4595"/>
 <polygon fill="#000000" stroke="#000000" points="260.6562,-251.938 255.8163,-242.5133 253.7224,-252.8991 260.6562,-251.938"/>
 </g>
 <!-- getAnchorInRoom&#45;&gt;mid -->
-<g id="edge25" class="edge">
+<g id="edge26" class="edge">
 <title>getAnchorInRoom&#45;&gt;mid</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M287.6037,-454.5953C320.9567,-484.1894 387.9048,-543.5922 423.7242,-575.3747"/>
 <polygon fill="#000000" stroke="#000000" points="421.4862,-578.068 431.2892,-582.087 426.1321,-572.832 421.4862,-578.068"/>
@@ -318,7 +318,7 @@
 <text text-anchor="middle" x="428.3196" y="-151.2678" font-family="Times,serif" font-size="14.00" fill="#000000">areaRank</text>
 </g>
 <!-- rankdb&#45;&gt;areaRank -->
-<g id="edge24" class="edge">
+<g id="edge25" class="edge">
 <title>rankdb&#45;&gt;areaRank</title>
 <path fill="none" stroke="#000000" d="M157.745,-469.56C166.1937,-459.3907 177.7852,-446.5402 189.6366,-436.8239 234.736,-399.8495 259.7836,-409.227 301.8933,-368.8806 362.6753,-310.6437 373.6046,-289.3744 410.5042,-213.7146 415.1487,-204.1915 418.8867,-193.2003 421.7162,-183.349"/>
 <polygon fill="#000000" stroke="#000000" points="425.1195,-184.1708 424.336,-173.6049 418.3596,-182.3532 425.1195,-184.1708"/>
@@ -340,6 +340,12 @@
 <title>roomStatus&#45;&gt;liveStatus</title>
 <path fill="none" stroke="#000000" d="M331.9889,-174.3516C335.6425,-178.8513 339.6533,-183.7908 343.5613,-188.6038"/>
 <polygon fill="#000000" stroke="#000000" points="340.9393,-190.9273 349.9599,-196.4843 346.3736,-186.5149 340.9393,-190.9273"/>
+</g>
+<!-- roomStatus&#45;&gt;online -->
+<g id="edge18" class="edge">
+<title>roomStatus&#45;&gt;online</title>
+<path fill="none" stroke="#000000" d="M330.4215,-139.5697C341.5286,-125.4039 359.0909,-106.1663 379.1354,-95.8688 405.851,-82.1442 438.8763,-74.3723 464.6274,-70.0619"/>
+<polygon fill="#000000" stroke="#000000" points="465.4807,-73.4712 474.8214,-68.4709 464.4012,-66.5549 465.4807,-73.4712"/>
 </g>
 <!-- mid&#45;&gt;stat -->
 <g id="edge1" class="edge">
@@ -366,19 +372,19 @@
 <polygon fill="#000000" stroke="#000000" points="704.0166,-418.5573 708.48,-408.9485 698.9987,-413.6766 704.0166,-418.5573"/>
 </g>
 <!-- mid&#45;&gt;getRoomInfoOld -->
-<g id="edge31" class="edge">
+<g id="edge32" class="edge">
 <title>mid&#45;&gt;getRoomInfoOld</title>
 <path fill="none" stroke="#000000" d="M439.6828,-578.9533C424.8245,-547.4567 390.2611,-480.7311 345.6753,-436.9675 325.3129,-416.9806 297.9884,-400.5198 274.984,-388.7714"/>
 <polygon fill="#000000" stroke="#000000" points="276.2643,-385.4994 265.7511,-384.1869 273.1511,-391.7691 276.2643,-385.4994"/>
 </g>
 <!-- mid&#45;&gt;topList -->
-<g id="edge33" class="edge">
+<g id="edge34" class="edge">
 <title>mid&#45;&gt;topList</title>
 <path fill="none" stroke="#000000" d="M426.2599,-585.3199C370.4111,-555.8784 219.7326,-476.4463 151.9453,-440.7114"/>
 <polygon fill="#000000" stroke="#000000" points="153.4272,-437.5361 142.9489,-435.9688 150.1628,-443.7283 153.4272,-437.5361"/>
 </g>
 <!-- mid&#45;&gt;rankdb -->
-<g id="edge36" class="edge">
+<g id="edge37" class="edge">
 <title>mid&#45;&gt;rankdb</title>
 <path fill="none" stroke="#000000" d="M423.8532,-587.9303C371.5479,-568.8915 246.1176,-523.2354 182.7122,-500.1561"/>
 <polygon fill="#000000" stroke="#000000" points="183.6833,-496.785 173.0893,-496.6534 181.289,-503.3628 183.6833,-496.785"/>
@@ -390,13 +396,13 @@
 <polygon fill="#000000" stroke="#000000" points="690.2362,-468.6451 696.5234,-460.1173 686.2905,-462.863 690.2362,-468.6451"/>
 </g>
 <!-- roomid&#45;&gt;topList -->
-<g id="edge32" class="edge">
+<g id="edge33" class="edge">
 <title>roomid&#45;&gt;topList</title>
 <path fill="none" stroke="#000000" d="M484.4923,-651.6643C418.4261,-610.4091 225.4815,-489.9246 149.4292,-442.4337"/>
 <polygon fill="#000000" stroke="#000000" points="151.0864,-439.3421 140.7504,-437.0142 147.3787,-445.2796 151.0864,-439.3421"/>
 </g>
 <!-- roomid&#45;&gt;getAnchorInRoom -->
-<g id="edge35" class="edge">
+<g id="edge36" class="edge">
 <title>roomid&#45;&gt;getAnchorInRoom</title>
 <path fill="none" stroke="#000000" d="M484.0801,-651.7242C467.5711,-641.193 445.1661,-625.9587 427.2251,-610.3194 372.6902,-562.7811 317.3625,-498.1747 288.3555,-462.759"/>
 <polygon fill="#000000" stroke="#000000" points="290.9276,-460.3746 281.9006,-454.828 285.4984,-464.7932 290.9276,-460.3746"/>
@@ -420,7 +426,7 @@
 <text text-anchor="middle" x="337.45" y="-776.673" font-family="Times,serif" font-size="14.00" fill="#000000">p</text>
 </g>
 <!-- p&#45;&gt;cid -->
-<g id="edge29" class="edge">
+<g id="edge30" class="edge">
 <title>p&#45;&gt;cid</title>
 <path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M347.4078,-763.8654C359.9035,-742.5232 381.4598,-705.7058 396.0379,-680.807"/>
 <polygon fill="#000000" stroke="#000000" points="399.2177,-682.3031 401.25,-671.905 393.1769,-678.7663 399.2177,-682.3031"/>
@@ -432,7 +438,7 @@
 <text text-anchor="middle" x="26.6936" y="-284.9934" font-family="Times,serif" font-size="14.00" fill="#000000">page</text>
 </g>
 <!-- page&#45;&gt;topList -->
-<g id="edge34" class="edge">
+<g id="edge35" class="edge">
 <title>page&#45;&gt;topList</title>
 <path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M37.9009,-305.5842C53.4899,-328.3834 81.8811,-369.9058 100.3601,-396.9315"/>
 <polygon fill="#000000" stroke="#000000" points="97.6806,-399.2137 106.2141,-405.493 103.459,-395.2627 97.6806,-399.2137"/>

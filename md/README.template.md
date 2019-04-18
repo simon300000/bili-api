@@ -46,9 +46,11 @@ biliAPI(object, targets, [option])
 
 用处大概是公开信息获取，暂时没有涉及类似"发弹幕/评论"相关API的打算。
 
-以下是两个可能满足类似需求的资料：
+以下是可能满足类似需求的资料：
 
 [fython/BilibiliAPIDocs: Bilibili API (For thrid-party) Documents 哔哩哔哩开放接口第三方文档](https://github.com/fython/BilibiliAPIDocs)
+
+[lovelyyoshino/Bilibili-Live-API: BILIBILI 直播/番剧 API](https://github.com/lovelyyoshino/Bilibili-Live-API)
 
 [Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 

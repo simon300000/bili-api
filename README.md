@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 603
+object.guardNum // → 625
 ```
 
 # 目录
@@ -45,7 +45,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 300937
+  up.follower // → 304093
 })()
 ```
 
@@ -79,9 +79,11 @@ biliAPI(object, targets, [option])
 
 用处大概是公开信息获取，暂时没有涉及类似"发弹幕/评论"相关API的打算。
 
-以下是两个可能满足类似需求的资料：
+以下是可能满足类似需求的资料：
 
 [fython/BilibiliAPIDocs: Bilibili API (For thrid-party) Documents 哔哩哔哩开放接口第三方文档](https://github.com/fython/BilibiliAPIDocs)
+
+[lovelyyoshino/Bilibili-Live-API: BILIBILI 直播/番剧 API](https://github.com/lovelyyoshino/Bilibili-Live-API)
 
 [Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 
@@ -145,7 +147,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 300937
+    "follower": 304094
   }
 }
 ```
@@ -185,7 +187,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 73455.5,
+    "coins": 74895.4,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -198,7 +200,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -261,9 +263,9 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 7158,
+      "view": 7296,
       "danmaku": 42,
-      "reply": 27,
+      "reply": 28,
       "favorite":
 ......
 ```
@@ -308,7 +310,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
       "0"
     ],
     "source": [
-      "e-r"
+      "k-v"
     ],
     "d": [
       {
@@ -330,16 +332,16 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
         }
       },
       {
-        "_": "刷CPU的几个意思……",
-        "$": {
-          "p": "45.28400,1,25,16777215,1545353769,0,7907fd34,9548120285773826"
-        }
-      },
-      {
         "_": "草",
         "$": {
           "p": "116.61600,1,25,16777215,1545803269,0,8b709dfe,9783787808882688"
-     
+        }
+      },
+      {
+        "_": "双核处理器kana？",
+        "$": {
+          "p": "115.41100,1,25,16777215,1546321539,0,66471589,10055510694821888"
+    
 ......
 ```
 
@@ -369,9 +371,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "私は今回持ちまして。",
-    "cover": "https://i0.hdslb.com/bfs/live/12235923.jpg?04152227",
-    "online": 324701,
+    "title": "はじめましてBGMです。",
+    "cover": "https://i0.hdslb.com/bfs/live/room_cover/b401f1166539dae805b9755624ce5b99a418d12c.jpg",
+    "online": 282578,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -401,42 +403,42 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 603,
-      "page": 60,
+      "num": 625,
+      "page": 63,
       "now": 1
     },
     "list": [
       {
-        "uid": 28221,
+        "uid": 749030,
         "ruid": 349991143,
         "rank": 1,
-        "username": "cjtk",
-        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
-        "is_alive": 0,
+        "username": "HakureiMea",
+        "face": "https://i2.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
+        "is_alive": 1,
         "guard_level": 2
       },
       {
-        "uid": 70836,
+        "uid": 1298744,
         "ruid": 349991143,
         "rank": 2,
-        "username": "我抱头蹲防啦",
-        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
-        "is_alive": 0,
+        "username": "抖M的牙刷",
+        "face": "https://i1.hdslb.com/bfs/face/0e28a486c4725266fbfb45f4dcb0623d8601d6f2.jpg",
+        "is_alive": 1,
+        "guard_level": 2
+      },
+      {
+        "uid": 3501317,
+        "ruid": 349991143,
+        "rank": 3,
+        "username": "ジャンヌ-オルタ",
+        "face": "https://i0.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
+        "is_alive": 1,
         "guard_level": 2
       },
       {
         "uid": 730732,
         "ruid": 349991143,
-        "rank": 3,
-        "username": "瓶子君152",
-        "face": "https://i2.hdslb.com/bfs/face/ef8070a00162afaf5205e75a481085b4b33f4cee.jpg",
-        "is_alive": 0,
-        "guard_level": 2
-      },
-      {
-        "uid": 1336969,
-        "ruid": 349991143,
-        "rank"
+    
 ......
 ```
 
@@ -467,27 +469,26 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
       "uname": "神楽めあOfficial",
       "face": "https://i1.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
       "rank": "10000",
-      "identification": 1,
-      "mobile_verify": 1,
       "platform_user_level": 6,
-      "vip_type": 2,
-      "gender": 2,
+      "mobile_verify": 0,
       "official_verify": {
         "type": 0,
         "desc": "bilibili 知名UP主",
         "role": 1
-      }
+      },
+      "vip_type": 2,
+      "gender": 2
     },
     "level": {
       "uid": 349991143,
-      "cost": 635900,
-      "rcost": 3213881375,
+      "cost": 638900,
+      "rcost": 3344914003,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-16 03:20:28",
+      "update_time": "2019-04-18 21:51:56",
       "master_level": {
         "level": 33,
         "current": [
@@ -499,7 +500,8 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           36413810
         ],
         "color": 16746162,
-        "anchor_score": 3
+        "anchor_score": 33449140,
+        "upgrade_s
 ......
 ```
 
@@ -526,7 +528,7 @@ https://api.bilibili.com/x/space/notice?mid=349991143
   "code": 0,
   "message": "0",
   "ttl": 1,
-  "data": "【QQ群】\nMeaMea公国第一国度：431766969\nMeaMea公国第二国度：749547516"
+  "data": "【QQ群】\nMeaMea公国第三国度：860327880\nMeaMea公国第一国度：431766969\nMeaMea公国第二国度：749547516"
 }
 ```
 
@@ -556,7 +558,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": "4"
+      "rank": "2"
     }
   }
 }

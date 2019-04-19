@@ -3,6 +3,8 @@
 /* global it */
 const biliAPI = require('..')
 
+const got = require('got')
+
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
 chai.use(chaiAsPromised)
@@ -100,6 +102,13 @@ describe('Bilibili biliAPI', function() {
       let { online } = await biliAPI({ roomid: 12235923 }, ['online'])
       assert.isNumber(online)
       assert.isNotNaN(online)
+    })
+    it('roomid -> online > 0', async function() {
+      let roomid = JSON.parse((await got('https://api.live.bilibili.com/room/v1/Area/getListByAreaID?areaId=0&sort=online&pageSize=1')).body).data[0].roomid
+      let { online } = await biliAPI({ roomid }, ['online'])
+      assert.isNumber(online)
+      assert.isNotNaN(online)
+      assert.isAbove(online, 0)
     })
     it('mid -> notice', async function() {
       let { notice } = await biliAPI({ mid: 349991143 }, ['notice'])

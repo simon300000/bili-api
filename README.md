@@ -45,7 +45,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 304093
+  up.follower // → 305452
 })()
 ```
 
@@ -147,7 +147,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 304094
+    "follower": 305452
   }
 }
 ```
@@ -187,7 +187,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 74895.4,
+    "coins": 75441.7,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -263,9 +263,9 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 7296,
+      "view": 7384,
       "danmaku": 42,
-      "reply": 28,
+      "reply": 29,
       "favorite":
 ......
 ```
@@ -409,18 +409,9 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
     },
     "list": [
       {
-        "uid": 749030,
-        "ruid": 349991143,
-        "rank": 1,
-        "username": "HakureiMea",
-        "face": "https://i2.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
-        "is_alive": 1,
-        "guard_level": 2
-      },
-      {
         "uid": 1298744,
         "ruid": 349991143,
-        "rank": 2,
+        "rank": 1,
         "username": "抖M的牙刷",
         "face": "https://i1.hdslb.com/bfs/face/0e28a486c4725266fbfb45f4dcb0623d8601d6f2.jpg",
         "is_alive": 1,
@@ -429,16 +420,25 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 3501317,
         "ruid": 349991143,
-        "rank": 3,
+        "rank": 2,
         "username": "ジャンヌ-オルタ",
         "face": "https://i0.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
         "is_alive": 1,
         "guard_level": 2
       },
       {
+        "uid": 28221,
+        "ruid": 349991143,
+        "rank": 3,
+        "username": "cjtk",
+        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
+        "is_alive": 0,
+        "guard_level": 2
+      },
+      {
         "uid": 730732,
         "ruid": 349991143,
-    
+        "ra
 ......
 ```
 
@@ -469,26 +469,27 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
       "uname": "神楽めあOfficial",
       "face": "https://i1.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
       "rank": "10000",
+      "identification": 1,
+      "mobile_verify": 1,
       "platform_user_level": 6,
-      "mobile_verify": 0,
+      "vip_type": 2,
+      "gender": 2,
       "official_verify": {
         "type": 0,
         "desc": "bilibili 知名UP主",
         "role": 1
-      },
-      "vip_type": 2,
-      "gender": 2
+      }
     },
     "level": {
       "uid": 349991143,
       "cost": 638900,
-      "rcost": 3344914003,
+      "rcost": 3365547603,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-18 21:51:56",
+      "update_time": "2019-04-20 01:05:00",
       "master_level": {
         "level": 33,
         "current": [
@@ -500,8 +501,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           36413810
         ],
         "color": 16746162,
-        "anchor_score": 33449140,
-        "upgrade_s
+        "anchor_score": 3
 ......
 ```
 

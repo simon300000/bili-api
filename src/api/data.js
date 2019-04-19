@@ -1,3 +1,5 @@
+const LiveWS = require('bilibili-live-ws')
+
 module.exports = {
   follower: {
     require: ['stat'],
@@ -32,8 +34,18 @@ module.exports = {
     get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.title
   },
   online: {
-    require: ['roomStatus', 'getRoomInfoOld'],
-    get: async ({ getRoomInfoOld, roomStatus }) => (await roomStatus) && (await getRoomInfoOld).data.online
+    require: ['roomid', 'roomStatus', 'liveStatus'],
+    get: async ({ roomid, roomStatus, liveStatus }) => {
+      if (!(await roomStatus)) {
+        return 0
+      } else {
+        let ws = new LiveWS(await roomid)
+        return new Promise(resolve => ws.on('heartbeat', async online => {
+          ws.close()
+          resolve(online * (await liveStatus))
+        }))
+      }
+    }
   },
   notice: {
     require: ['_notice'],

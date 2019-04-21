@@ -6,7 +6,7 @@ const parseStringAsync = promisify(parseString)
 const inflateRawAsync = promisify(inflateRaw)
 
 let parsers = {}
-parsers.json = async url => JSON.parse((await got(new URL(await url))).body)
+parsers.json = async url => (await got(new URL(await url), { json: true })).body
 parsers.xml = async url => parseStringAsync(String(await inflateRawAsync((await got(new URL(await url), { decompress: false })).body)))
 parsers.none = e => e
 

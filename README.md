@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → 神楽めあOfficial
-object.guardNum // → 625
+object.guardNum // → 613
 ```
 
 # 目录
@@ -14,12 +14,19 @@ object.guardNum // → 625
     + [biliAPI Document](#biliapi-document)
     + [Router Graph](#router-graph)
 - [Bilibili API Document](#bilibili-api-document)
-  * [IDs](#ids)
+  * [DATAs](#datas)
     + [mid](#mid)
     + [aid](#aid)
-    + [cid](#cid)
-    + [p](#p)
     + [roomid](#roomid)
+    + [online](#online)
+    + [liveStatus](#livestatus)
+    + [guardNum](#guardnum)
+    + [title](#title)
+    + [notice](#notice)
+    + [video](#video)
+    + [archiveView](#archiveview)
+    + [articleView](#articleview)
+    + [face](#face)
   * [APIs](#apis)
     + [stat](#stat)
     + [info](#info)
@@ -36,7 +43,17 @@ object.guardNum // → 625
 
 ## 安装
 
-npm: `npm install bili-api`
+npm
+
+```sh
+npm install bili-api -S
+```
+
+Yarn
+
+```sh
+yarn add bili-api
+```
 
 ## 用法
 
@@ -45,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 305452
+  up.follower // → 307763
 })()
 ```
 
@@ -64,8 +81,15 @@ const biliAPI = require('bili-api')
 biliAPI(object, targets, [option])
 ```
 
-- `object`: 对象，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
-- `targets`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+- `object`: Object，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
+
+- `targets`: Array，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+
+- `option`: Object，可选设置。
+
+  - `wait`: Number，默认0。
+
+    如果在短时间发起过多请求，可能会被bilibili暂时banIP，所以可以在这里指定一个请求delay，单位 ms 毫秒，每一个网络请求都会暂停一段时间。
 
 <!-- #### Option -->
 
@@ -87,7 +111,7 @@ biliAPI(object, targets, [option])
 
 [Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 
-## IDs
+## DATAs
 
 ### <a name="api_mid"></a>mid
 
@@ -101,19 +125,87 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
 
-### <a name="api_cid"></a>cid
-
-##### 前置信息/参数
-
-<[view](#api_view)>, [[p](#api_p)]
-
-### <a name="api_p"></a>p
-
 ### <a name="api_roomid"></a>roomid
 
-##### 前置信息/参数
+直播房间号
+
+##### 前置
 
 <[getRoomInfoOld](#api_getRoomInfoOld)>
+
+### <a name="api_online"></a>online
+
+直播间当前人气值
+
+非直播状态为0
+
+##### 前置
+
+<[roomid](#api_roomid)>, <[liveStatus](#api_liveStatus)>
+
+### <a name="api_liveStatus"></a>liveStatus
+
+直播状态，直播中为`1`，轮播/没播为`0`
+
+##### 前置
+
+<[roomStatus](#api_roomStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
+
+### <a name="api_guardNum"></a>guardNum
+
+直播舰团
+
+##### 前置
+
+<[topList](#api_topList)>
+
+### <a name="api_title"></a>title
+
+直播间标题
+
+##### 前置
+
+<[getRoomInfoOld](#api_getRoomInfoOld)>
+
+### <a name="api_notice"></a>notice
+
+公告
+
+##### 前置
+
+<[_notice](#api__notice)>
+
+### <a name="api_video"></a>video
+
+UP主的视频数
+
+##### 前置
+
+<[navnum](#api_navnum)>
+
+### <a name="api_archiveView"></a>archiveView
+
+UP主播放数
+
+##### 前置
+
+<[upstat](#api_upstat)>
+
+### <a name="api_articleView"></a>articleView
+
+UP主阅读数
+
+##### 前置
+
+<[upstat](#api_upstat)>
+
+### <a name="api_face"></a>face
+
+UP主头像的链接
+
+##### 前置
+
+<[info](#api_info)>
 
 
 
@@ -123,7 +215,7 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 UP主统计数据
 
-##### 前置信息/参数
+##### 前置
 
 <[mid](#api_mid)>
 
@@ -147,7 +239,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 305452
+    "follower": 307763
   }
 }
 ```
@@ -156,7 +248,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
 
 UP主信息
 
-##### 前置信息/参数
+##### 前置
 
 <[mid](#api_mid)>
 
@@ -187,7 +279,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 75441.7,
+    "coins": 76551.2,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -200,7 +292,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -210,7 +302,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
 
 视频信息
 
-##### 前置信息/参数
+##### 前置
 
 <[aid](#api_aid)>
 
@@ -263,8 +355,8 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 7384,
-      "danmaku": 42,
+      "view": 7549,
+      "danmaku": 43,
       "reply": 29,
       "favorite":
 ......
@@ -274,7 +366,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
 
 弹幕
 
-##### 前置信息/参数
+##### 前置
 
 <[cid](#api_cid)>
 
@@ -347,7 +439,7 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
 
 ### <a name="api_getRoomInfoOld"></a>getRoomInfoOld
 
-##### 前置信息/参数
+##### 前置
 
 <[mid](#api_mid)>
 
@@ -382,7 +474,7 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
 
 ### <a name="api_topList"></a>topList
 
-##### 前置信息/参数
+##### 前置
 
 <[roomid](#api_roomid)>, <[mid](#api_mid)>, [[page](#api_page)]
 
@@ -403,8 +495,8 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 625,
-      "page": 63,
+      "num": 613,
+      "page": 61,
       "now": 1
     },
     "list": [
@@ -418,25 +510,25 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
         "guard_level": 2
       },
       {
-        "uid": 3501317,
+        "uid": 70836,
         "ruid": 349991143,
         "rank": 2,
-        "username": "ジャンヌ-オルタ",
-        "face": "https://i0.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
-        "is_alive": 1,
-        "guard_level": 2
-      },
-      {
-        "uid": 28221,
-        "ruid": 349991143,
-        "rank": 3,
-        "username": "cjtk",
-        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
+        "username": "我抱头蹲防啦",
+        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
         "uid": 730732,
+        "ruid": 349991143,
+        "rank": 3,
+        "username": "瓶子君152",
+        "face": "https://i2.hdslb.com/bfs/face/ef8070a00162afaf5205e75a481085b4b33f4cee.jpg",
+        "is_alive": 0,
+        "guard_level": 2
+      },
+      {
+        "uid": 1336969,
         "ruid": 349991143,
         "ra
 ......
@@ -444,7 +536,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
 
 ### <a name="api_getAnchorInRoom"></a>getAnchorInRoom
 
-##### 前置信息/参数
+##### 前置
 
 <[roomid](#api_roomid)>
 
@@ -482,14 +574,14 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     },
     "level": {
       "uid": 349991143,
-      "cost": 638900,
-      "rcost": 3365547603,
+      "cost": 639000,
+      "rcost": 3406613003,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-20 01:05:00",
+      "update_time": "2019-04-22 11:16:04",
       "master_level": {
         "level": 33,
         "current": [
@@ -509,7 +601,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
 
 UP主公告
 
-##### 前置信息/参数
+##### 前置
 
 <[mid](#api_mid)>
 
@@ -536,7 +628,7 @@ https://api.bilibili.com/x/space/notice?mid=349991143
 
 bilibili直播一周元气榜分区排名
 
-##### 前置信息/参数
+##### 前置
 
 <[mid](#api_mid)>
 
@@ -558,7 +650,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": "2"
+      "rank": ">100"
     }
   }
 }

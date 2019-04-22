@@ -27,7 +27,16 @@ for (let i = 0; i < descriptionFile.length; i++) {
 const maxdepth = 3
 
 const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList', 'getAnchorInRoom', '_notice', 'rankdb']
-const id = ['mid', 'aid', 'cid', 'p', 'roomid']
+// const id = ['mid', 'aid', 'cid', 'p', 'roomid']
+let id = []
+
+for (let key in DESCRIPTIONS) {
+  if (DESCRIPTIONS.hasOwnProperty(key)) {
+    if (!doc.includes(key) && key !== '_current') {
+      id.push(key)
+    }
+  }
+}
 
 const syntax = async name => {
   let object = await biliAPI(testData, [name])
@@ -72,7 +81,7 @@ const apiSection = ({ name, syntax, example, data, type = 'json', description = 
     .replace('NAME', `<a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
     .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
     .replace('SYNTAX', syntax)
-    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置信息/参数', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
+    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
     .replace('EXAMPLE', example)
     .replace('TYPE', type)
     .replace('DATA', data)
@@ -89,7 +98,7 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
   return ID
     .replace('NAME', `<a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
     .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
-    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置信息/参数', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
+    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
 }
 
 ;

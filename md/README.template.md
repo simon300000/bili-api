@@ -41,8 +41,15 @@ EXAMPLE:2
 biliAPI(object, targets, [option])
 ```
 
-- `object`: 对象，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
-- `targets`: 数组，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+- `object`: Object，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
+
+- `targets`: Array，需要的信息，比如 `['follower']`，每个值的说明可以参阅[APIs](#apis)
+
+- `option`: Object，可选设置。
+
+  - `wait`: Number，默认0。
+
+    如果在短时间发起过多请求，可能会被bilibili暂时banIP，所以可以在这里指定一个请求delay，单位 ms 毫秒，每一个网络请求都会暂停一段时间。
 
 <!-- #### Option -->
 
@@ -64,7 +71,7 @@ biliAPI(object, targets, [option])
 
 [Vespa314/bilibili-api: B站API收集整理及开发，测试【开发中】](https://github.com/Vespa314/bilibili-api)
 
-## IDs
+## DATAs
 
 <!-- [[idDocument]] -->
 

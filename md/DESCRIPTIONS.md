@@ -22,6 +22,48 @@ UP主信息
 
 视频信息
 
+# roomid
+
+直播房间号
+
+# online
+
+直播间当前人气值
+
+非直播状态为0
+
+# liveStatus
+
+直播状态，直播中为`1`，轮播/没播为`0`
+
+# guardNum
+
+直播舰团
+
+# title
+
+直播间标题
+
+# notice
+
+公告
+
+# video
+
+UP主的视频数
+
+# archiveView
+
+UP主播放数
+
+# articleView
+
+UP主阅读数
+
+# face
+
+UP主头像的链接
+
 # list
 
 弹幕

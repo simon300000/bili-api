@@ -10,7 +10,17 @@ EXAMPLE:1
 
 ## 安装
 
-npm: `npm install bili-api`
+npm
+
+```sh
+npm install bili-api -S
+```
+
+Yarn
+
+```sh
+yarn add bili-api
+```
 
 ## 用法
 

@@ -6,25 +6,25 @@ const apis = { ...api, ...data, ...input, ...live }
 
 const defaultParser = require('./parser')
 
-let get = (object, target, { parser }) => {
+let get = (object, target, { parser, wait }) => {
   for (let i = 0; i < target.length; i++) {
     if (!object[target[i]]) {
       let targetAPI = apis[target[i]]
       // TODO: Deep Optional Router
       if (targetAPI.require) {
-        get(object, targetAPI.require, { parser })
+        get(object, targetAPI.require, { parser, wait })
       }
       if (targetAPI.oneOf) {
         let { oneOf } = targetAPI
         for (let j = 0; j < oneOf.length; j++) {
           let error = router(object, oneOf[j], [target[i]])
           if (!error) {
-            get(object, oneOf[j], { parser })
+            get(object, oneOf[j], { parser, wait })
             break
           }
         }
       }
-      object[target[i]] = parser(targetAPI.get(object), targetAPI.type)
+      object[target[i]] = parser(targetAPI.get(object), targetAPI.type, { wait })
     }
   }
 }
@@ -70,17 +70,19 @@ let router = (object, targets, map = []) => {
  * @param  {Array}     targets                 需要的目标信息
  * @param  {Function}  [parser=defaultParser]  设置: 自定义url下载/分析器
  * @param  {Function}  [logger=e=>{}]          调试用信息输出
+ * @param  {Number}    [wait=0]                网络请求延迟
  * @return {Promise}                           Resolve一个带有所需targets的Object
  */
 module.exports = async ({ ...object }, [...targets], { // 这里以下属于Options
   parser = defaultParser,
-  logger = e => {}
+  logger = e => {},
+  wait = 0
 } = {}) => {
   let error = router(object, targets)
   if (error) {
     throw new Error(`Target route: ${error.join(' -> ')}`)
   }
-  get(object, targets, { parser })
+  get(object, targets, { parser, wait })
   for (let variable in object) {
     if (object.hasOwnProperty(variable)) {
       object[variable] = await object[variable]

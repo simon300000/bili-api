@@ -178,5 +178,14 @@ describe('Bilibili biliAPI', function() {
       let { stat } = await biliAPI({ mid: 349991143 }, ['stat'], { parser: url => url })
       assert.isString(stat)
     })
+    it('Optinal wait', async function() {
+      this.timeout(20000)
+      let wait = 10000
+      let start = (new Date()).getTime()
+      let { stat } = await biliAPI({ mid: 349991143 }, ['stat'], { wait })
+      let end = (new Date()).getTime()
+      assert.isAbove(end - start, wait)
+      assert.isObject(stat)
+    })
   })
 })

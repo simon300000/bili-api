@@ -13,6 +13,10 @@ module.exports = {
     require: ['info'],
     get: async ({ info }) => (await info).data.sign
   },
+  coins: {
+    require: ['info'],
+    get: async ({ info }) => (await info).data.coins
+  },
   video: {
     require: ['navnum'],
     get: async ({ navnum }) => (await navnum).data.video

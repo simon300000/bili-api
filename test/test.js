@@ -74,6 +74,11 @@ describe('Bilibili biliAPI', function() {
       assert.isNumber(liveStatus)
       assert.isNotNaN(liveStatus)
     })
+    it('mid -> coins', async function() {
+      let { coins } = await biliAPI({ mid: 349991143 }, ['coins'])
+      assert.isNumber(coins)
+      assert.isNotNaN(coins)
+    })
     it('mid -> video', async function() {
       let { video } = await biliAPI({ mid: 349991143 }, ['video'])
       assert.isNumber(video)

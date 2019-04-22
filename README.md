@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 307763
+  up.follower // → 307765
 })()
 ```
 
@@ -113,99 +113,99 @@ biliAPI(object, targets, [option])
 
 ## DATAs
 
-### <a name="api_mid"></a>mid
+* ### <a name="api_mid"></a>mid
 
-大概是 Member ID?
+  大概是 Member ID?
 
-UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`就是这个`mid`了
+  UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`就是这个`mid`了
 
-### <a name="api_aid"></a>aid
+* ### <a name="api_aid"></a>aid
 
-就是av号啦→\_→
+  就是av号啦→\_→
 
-比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
+  比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
 
-### <a name="api_roomid"></a>roomid
+* ### <a name="api_roomid"></a>roomid
 
-直播房间号
+  直播房间号
 
-##### 前置
+  ##### 前置
 
-<[getRoomInfoOld](#api_getRoomInfoOld)>
+  <[getRoomInfoOld](#api_getRoomInfoOld)>
 
-### <a name="api_online"></a>online
+* ### <a name="api_online"></a>online
 
-直播间当前人气值
+  直播间当前人气值
 
-非直播状态为0
+  非直播状态为0
 
-##### 前置
+  ##### 前置
 
-<[roomid](#api_roomid)>, <[liveStatus](#api_liveStatus)>
+  <[roomid](#api_roomid)>, <[liveStatus](#api_liveStatus)>
 
-### <a name="api_liveStatus"></a>liveStatus
+* ### <a name="api_liveStatus"></a>liveStatus
 
-直播状态，直播中为`1`，轮播/没播为`0`
+  直播状态，直播中为`1`，轮播/没播为`0`
 
-##### 前置
+  ##### 前置
 
-<[roomStatus](#api_roomStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
+  <[roomStatus](#api_roomStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
 
-### <a name="api_guardNum"></a>guardNum
+* ### <a name="api_guardNum"></a>guardNum
 
-直播舰团
+  直播舰团
 
-##### 前置
+  ##### 前置
 
-<[topList](#api_topList)>
+  <[topList](#api_topList)>
 
-### <a name="api_title"></a>title
+* ### <a name="api_title"></a>title
 
-直播间标题
+  直播间标题
 
-##### 前置
+  ##### 前置
 
-<[getRoomInfoOld](#api_getRoomInfoOld)>
+  <[getRoomInfoOld](#api_getRoomInfoOld)>
 
-### <a name="api_notice"></a>notice
+* ### <a name="api_notice"></a>notice
 
-公告
+  公告
 
-##### 前置
+  ##### 前置
 
-<[_notice](#api__notice)>
+  <[_notice](#api__notice)>
 
-### <a name="api_video"></a>video
+* ### <a name="api_video"></a>video
 
-UP主的视频数
+  UP主的视频数
 
-##### 前置
+  ##### 前置
 
-<[navnum](#api_navnum)>
+  <[navnum](#api_navnum)>
 
-### <a name="api_archiveView"></a>archiveView
+* ### <a name="api_archiveView"></a>archiveView
 
-UP主播放数
+  UP主播放数
 
-##### 前置
+  ##### 前置
 
-<[upstat](#api_upstat)>
+  <[upstat](#api_upstat)>
 
-### <a name="api_articleView"></a>articleView
+* ### <a name="api_articleView"></a>articleView
 
-UP主阅读数
+  UP主阅读数
 
-##### 前置
+  ##### 前置
 
-<[upstat](#api_upstat)>
+  <[upstat](#api_upstat)>
 
-### <a name="api_face"></a>face
+* ### <a name="api_face"></a>face
 
-UP主头像的链接
+  UP主头像的链接
 
-##### 前置
+  ##### 前置
 
-<[info](#api_info)>
+  <[info](#api_info)>
 
 
 
@@ -239,7 +239,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 307763
+    "follower": 307765
   }
 }
 ```
@@ -279,7 +279,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 76551.2,
+    "coins": 76552.7,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -292,7 +292,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -575,13 +575,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 639000,
-      "rcost": 3406613003,
+      "rcost": 3406686403,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-22 11:16:04",
+      "update_time": "2019-04-22 11:34:50",
       "master_level": {
         "level": 33,
         "current": [

@@ -96,9 +96,9 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
     optional[i] = `\[[${optional[i]}](#api_${optional[i]})\]`
   }
   return ID
-    .replace('NAME', `<a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
-    .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
-    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
+    .replace('NAME', `* ### <a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
+    .replace('DESCRIPTION', description.length ? `  ${[...description].join('\n\n  ')}` : '')
+    .replace('REQUIRES\n\n', [...requires, ...optional].length ? `  ${['##### 前置', [...requires, ...optional].join(', ')].join('\n\n  ')}\n\n` : '')
 }
 
 ;

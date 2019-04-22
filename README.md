@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 307765
+  up.follower // → 307871
 })()
 ```
 
@@ -95,7 +95,7 @@ biliAPI(object, targets, [option])
 
 ### Router Graph
 
-![Graph of apis](md/api.svg)
+![Graph of apis](api.svg)
 
 # Bilibili API Document
 
@@ -239,7 +239,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 307765
+    "follower": 307871
   }
 }
 ```
@@ -279,7 +279,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 76552.7,
+    "coins": 76614.9,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -292,7 +292,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -351,12 +351,12 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
-      "view": 7549,
-      "danmaku": 43,
+      "view": 7569,
+      "danmaku": 44,
       "reply": 29,
       "favorite":
 ......
@@ -575,13 +575,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 639000,
-      "rcost": 3406686403,
+      "rcost": 3408799403,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-22 11:34:50",
+      "update_time": "2019-04-22 16:52:39",
       "master_level": {
         "level": 33,
         "current": [
@@ -650,7 +650,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": ">100"
+      "rank": "79"
     }
   }
 }

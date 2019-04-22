@@ -55,7 +55,7 @@ biliAPI(object, targets, [option])
 
 ### Router Graph
 
-![Graph of apis](md/api.svg)
+![Graph of apis](api.svg)
 
 # Bilibili API Document
 

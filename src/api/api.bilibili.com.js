@@ -9,6 +9,11 @@ module.exports = {
     type: 'json',
     get: async ({ mid }) => `https://api.bilibili.com/x/space/upstat?mid=${await mid}`
   },
+  navnum: {
+    require: ['mid'],
+    type: 'json',
+    get: async ({ mid }) => `https://api.bilibili.com/x/space/navnum?mid=${await mid}`
+  },
   info: {
     require: ['mid'],
     type: 'json',

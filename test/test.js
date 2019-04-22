@@ -74,6 +74,11 @@ describe('Bilibili biliAPI', function() {
       assert.isNumber(liveStatus)
       assert.isNotNaN(liveStatus)
     })
+    it('mid -> video', async function() {
+      let { video } = await biliAPI({ mid: 349991143 }, ['video'])
+      assert.isNumber(video)
+      assert.isNotNaN(video)
+    })
     context('Exceptions', function() {
       context('No live room', function() {
         it('mid -> roomStatus -> 0', async function() {

@@ -1,5 +1,17 @@
 const LiveWS = require('bilibili-live-ws')
 
+const getOnline = roomid => new Promise(async resolve => {
+  let ws = new LiveWS(roomid)
+  ws.on('error', async () => {
+    ws.close()
+    resolve(await getOnline(roomid))
+  })
+  ws.on('heartbeat', async online => {
+    ws.close()
+    resolve(online)
+  })
+})
+
 module.exports = {
   follower: {
     require: ['stat'],
@@ -47,11 +59,7 @@ module.exports = {
       if (!(await liveStatus)) {
         return 0
       } else {
-        let ws = new LiveWS(await roomid)
-        return new Promise(resolve => ws.on('heartbeat', async online => {
-          ws.close()
-          resolve(online)
-        }))
+        return getOnline(await roomid)
       }
     }
   },

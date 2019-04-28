@@ -5,6 +5,7 @@ const input = require('./api/input')
 const apis = { ...api, ...data, ...input, ...live }
 
 const defaultParser = require('./parser')
+const checkTunnel = require('./tunnel')
 
 let get = (object, target, { parser, wait, tunnels }) => {
   for (let i = 0; i < target.length; i++) {
@@ -94,3 +95,10 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
 }
 
 module.exports.apis = { ...apis }
+module.exports.checkTunnels = async tunnels => {
+  let tunnelsChecked = []
+  for (let i = 0; i < tunnels.length; i++) {
+    tunnelsChecked[i] = { ...tunnels[i], state: await checkTunnel(tunnels[i]) }
+  }
+  return tunnelsChecked
+}

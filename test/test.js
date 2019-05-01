@@ -138,6 +138,10 @@ describe('Bilibili biliAPI', function() {
       let { face } = await biliAPI({ mid: 349991143 }, ['face'])
       assert.isString(face)
     })
+    it('mid -> topPhoto', async function() {
+      let { topPhoto } = await biliAPI({ mid: 349991143 }, ['topPhoto'])
+      assert.isString(topPhoto)
+    })
     it('mid -> anchorScore', async function() {
       let { anchorScore } = await biliAPI({ mid: 349991143 }, ['anchorScore'])
       assert.isNumber(anchorScore)

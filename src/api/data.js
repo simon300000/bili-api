@@ -79,6 +79,10 @@ module.exports = {
     require: ['info'],
     get: async ({ info }) => (await info).data.face
   },
+  topPhoto: {
+    require: ['info'],
+    get: async ({ info }) => (await info).data.top_photo
+  },
   anchorScore: {
     require: ['getAnchorInRoom'],
     get: async ({ getAnchorInRoom }) => (await getAnchorInRoom).data.level.anchor_score

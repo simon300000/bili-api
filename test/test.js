@@ -42,6 +42,18 @@ describe('Bilibili biliAPI', function() {
       assert.isNumber(guardNum)
       assert.isNotNaN(guardNum)
     })
+    it('mid -> guards', async function() {
+      this.timeout(1000 * 60)
+      let { guards, guardNum } = await biliAPI({ mid: 349991143 }, ['guards', 'guardNum'], { wait: 200 })
+      assert.isArray(guards)
+      assert.strictEqual(guards.length, guardNum)
+    })
+    it('mid -> guardLevel', async function() {
+      this.timeout(1000 * 60)
+      let { guardLevel, guardNum } = await biliAPI({ mid: 349991143 }, ['guardLevel', 'guardNum'], { wait: 200 })
+      assert.isArray(guardLevel)
+      assert.strictEqual(guardLevel[0] + guardLevel[1] + guardLevel[2], guardNum)
+    })
     it('uname -> mid', async function() {
       let { mid } = await biliAPI({ uname: '神楽めあOfficial' }, ['mid'])
       assert.strictEqual(mid, 349991143)

@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 329116
+  up.follower // → 329119
 })()
 ```
 
@@ -89,7 +89,7 @@ const biliAPI = require('bili-api');
  * @param  {Function}  [option]      设置
  * @return {Promise}                 Resolve一个带有所需targets的Object
  */
-biliAPI(object, targets, [option])
+biliAPI(object, targets[, option])
 ```
 
 - `object`: Object，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
@@ -101,6 +101,8 @@ biliAPI(object, targets, [option])
   - `wait`: Number，默认0。
 
     如果在短时间发起过多请求，可能会被bilibili暂时banIP，所以可以在这里指定一个请求delay，单位 ms 毫秒，每一个网络请求都会暂停一段时间。
+
+    比如上面的获取舰团数据例子就有 200 毫秒延迟，因为它需要遍历舰团的每一页，所以最好设置一个delay。
 
 <!-- #### Option -->
 
@@ -250,7 +252,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 329116
+    "follower": 329119
   }
 }
 ```
@@ -290,7 +292,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 83632.5,
+    "coins": 83634.5,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -303,7 +305,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -585,13 +587,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 642000,
-      "rcost": 4249362403,
+      "rcost": 4249478603,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-05-05 02:56:29",
+      "update_time": "2019-05-05 03:04:31",
       "master_level": {
         "level": 34,
         "current": [
@@ -603,7 +605,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           47813810
         ],
         "color": 16746162,
-        "anchor_score": 42493624,
+        "anchor_score": 42494786,
         "upgrade_
 ......
 ```

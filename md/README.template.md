@@ -42,7 +42,7 @@ EXAMPLE:3
  * @param  {Function}  [option]      设置
  * @return {Promise}                 Resolve一个带有所需targets的Object
  */
-biliAPI(object, targets, [option])
+biliAPI(object, targets[, option])
 ```
 
 - `object`: Object，提供目前知道的信息，比如 `{ mid: 349991143 }`，不同key的说明可以参阅[IDs](#ids)
@@ -54,6 +54,8 @@ biliAPI(object, targets, [option])
   - `wait`: Number，默认0。
 
     如果在短时间发起过多请求，可能会被bilibili暂时banIP，所以可以在这里指定一个请求delay，单位 ms 毫秒，每一个网络请求都会暂停一段时间。
+
+    比如上面的获取舰团数据例子就有 200 毫秒延迟，因为它需要遍历舰团的每一页，所以最好设置一个delay。
 
 <!-- #### Option -->
 

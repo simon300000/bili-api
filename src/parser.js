@@ -10,6 +10,7 @@ const inflateRawAsync = promisify(inflateRaw)
 const delayPromise = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 let parsers = {}
+
 parsers.json = async (url, { wait, tunnels }) => {
   if (wait) await delayPromise(wait)
   if (tunnels.length) {
@@ -27,10 +28,21 @@ parsers.json = async (url, { wait, tunnels }) => {
   }
   return (await got(new URL(await url), { json: true })).body
 }
+
+parsers.jsonArray = async (urlsPromise, { wait, tunnels }) => {
+  let urls = await urlsPromise
+  for (let i = 0; i < urls.length; i++) {
+    if (wait) await delayPromise(wait)
+    urls[i] = parsers.json(urls[i], { tunnels })
+  }
+  return Promise.all(urls)
+}
+
 parsers.xml = async (url, { wait }) => {
   if (wait) await delayPromise(wait)
   return parseStringAsync(String(await inflateRawAsync((await got(new URL(await url), { decompress: false })).body)))
 }
+
 parsers.none = e => e
 
 module.exports = (url, type = 'none', { wait, tunnels }) => parsers[type](url, { wait, tunnels })

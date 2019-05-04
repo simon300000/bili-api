@@ -153,7 +153,7 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
       }
       await eval(['(async()=>{', ...example, '})()'].join('\n'))
       for (let j = 0; j < data.length; j++) {
-        text = text.replace(' // DATA', ` // → ${data[j]}`)
+        text = text.replace(' // DATA', ` // → ${JSON.stringify(data[j])}`)
       }
       readMea[i] = text
     }

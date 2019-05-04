@@ -28,6 +28,10 @@ EXAMPLE:2
 
 以上便是根据<[mid](#api_mid)>查找粉丝数，很简单对不对→\_→
 
+想看看推的VTB有几个舰长，几个提督，有没有石油佬上总督？没问题！
+
+EXAMPLE:3
+
 ### biliAPI Document
 
 ```javascript

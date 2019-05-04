@@ -2,8 +2,8 @@
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
-object.uname // → 神楽めあOfficial
-object.guardNum // → 613
+object.uname // → "神楽めあOfficial"
+object.guardNum // → 752
 ```
 
 # 目录
@@ -62,11 +62,22 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 307871
+  up.follower // → 329116
 })()
 ```
 
 以上便是根据<[mid](#api_mid)>查找粉丝数，很简单对不对→\_→
+
+想看看推的VTB有几个舰长，几个提督，有没有石油佬上总督？没问题！
+
+```javascript
+const biliAPI = require('bili-api');
+
+(async () => {
+  let { guardLevel } = await biliAPI({ mid: 349991143 }, ['guardLevel'], { wait: 200 })
+  guardLevel // → [1,10,741]
+})()
+```
 
 ### biliAPI Document
 
@@ -239,7 +250,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 307871
+    "follower": 329116
   }
 }
 ```
@@ -271,7 +282,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "mid": 349991143,
     "name": "神楽めあOfficial",
     "sex": "女",
-    "face": "http://i1.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
+    "face": "http://i2.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
     "sign": "这里是神楽めあ(KaguraMea)！来自日本的清楚系虚拟YouTuber～weibo:@kaguramea　",
     "rank": 10000,
     "level": 6,
@@ -279,7 +290,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 76614.9,
+    "coins": 83632.5,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -351,13 +362,13 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
-      "view": 7569,
-      "danmaku": 44,
-      "reply": 29,
+      "view": 8477,
+      "danmaku": 51,
+      "reply": 33,
       "favorite":
 ......
 ```
@@ -463,9 +474,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "はじめましてBGMです。",
-    "cover": "https://i0.hdslb.com/bfs/live/room_cover/b401f1166539dae805b9755624ce5b99a418d12c.jpg",
-    "online": 282578,
+    "title": "GWで散々な目にあいました",
+    "cover": "https://i0.hdslb.com/bfs/live/room_cover/2df7be5bf90424a9609935dc678017078b812d5a.jpg",
+    "online": 303084,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -495,42 +506,42 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 613,
-      "page": 61,
+      "num": 752,
+      "page": 75,
       "now": 1
     },
     "list": [
       {
-        "uid": 1298744,
+        "uid": 28221,
         "ruid": 349991143,
         "rank": 1,
-        "username": "抖M的牙刷",
-        "face": "https://i1.hdslb.com/bfs/face/0e28a486c4725266fbfb45f4dcb0623d8601d6f2.jpg",
-        "is_alive": 1,
-        "guard_level": 2
-      },
-      {
-        "uid": 70836,
-        "ruid": 349991143,
-        "rank": 2,
-        "username": "我抱头蹲防啦",
-        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
+        "username": "cjtk",
+        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 730732,
+        "uid": 749030,
+        "ruid": 349991143,
+        "rank": 2,
+        "username": "HakureiMea",
+        "face": "https://i2.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
+        "is_alive": 0,
+        "guard_level": 2
+      },
+      {
+        "uid": 1298744,
         "ruid": 349991143,
         "rank": 3,
-        "username": "瓶子君152",
-        "face": "https://i2.hdslb.com/bfs/face/ef8070a00162afaf5205e75a481085b4b33f4cee.jpg",
+        "username": "凍結の歯ブラシ",
+        "face": "https://i1.hdslb.com/bfs/face/0e28a486c4725266fbfb45f4dcb0623d8601d6f2.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
         "uid": 1336969,
         "ruid": 349991143,
-        "ra
+       
 ......
 ```
 
@@ -559,41 +570,41 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "info": {
       "uid": 349991143,
       "uname": "神楽めあOfficial",
-      "face": "https://i1.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
+      "face": "https://i2.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
       "rank": "10000",
-      "identification": 1,
-      "mobile_verify": 1,
       "platform_user_level": 6,
-      "vip_type": 2,
-      "gender": 2,
+      "mobile_verify": 0,
       "official_verify": {
         "type": 0,
         "desc": "bilibili 知名UP主",
         "role": 1
-      }
+      },
+      "vip_type": 2,
+      "gender": 2
     },
     "level": {
       "uid": 349991143,
-      "cost": 639000,
-      "rcost": 3408799403,
+      "cost": 642000,
+      "rcost": 4249362403,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-04-22 16:52:39",
+      "update_time": "2019-05-05 02:56:29",
       "master_level": {
-        "level": 33,
+        "level": 34,
         "current": [
-          6700000,
-          27313810
-        ],
-        "next": [
           9100000,
           36413810
         ],
+        "next": [
+          11400000,
+          47813810
+        ],
         "color": 16746162,
-        "anchor_score": 3
+        "anchor_score": 42493624,
+        "upgrade_
 ......
 ```
 
@@ -650,7 +661,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": "79"
+      "rank": "28"
     }
   }
 }

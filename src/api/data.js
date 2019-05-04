@@ -45,6 +45,17 @@ module.exports = {
     require: ['fullTopList'],
     get: async ({ fullTopList }) => [...(await fullTopList)[0].data.top3].concat(...(await fullTopList).map(topList => topList.data.list))
   },
+  guardLevel: {
+    require: ['guards'],
+    get: async ({ guards }) => {
+      let level = [0, 0, 0]
+      let guardArray = await guards
+      for (let i = 0; i < guardArray.length; i++) {
+        level[guardArray[i].guard_level - 1]++
+      }
+      return level
+    }
+  },
   roomStatus: {
     require: ['getRoomInfoOld'],
     get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.roomStatus

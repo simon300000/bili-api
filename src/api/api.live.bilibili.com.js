@@ -10,6 +10,11 @@ module.exports = {
     optional: ['page'],
     get: async ({ roomid, mid, page = 1 }) => `https://api.live.bilibili.com/guard/topList?roomid=${await roomid}&page=${await page}&ruid=${await mid}`
   },
+  fullTopList: {
+    require: ['roomid', 'mid', 'topListPage'],
+    type: 'jsonArray',
+    get: async ({ roomid, mid, topListPage }) => Promise.all(Array(await topListPage).fill(undefined).map(async (a, i) => `https://api.live.bilibili.com/guard/topList?roomid=${await roomid}&page=${i + 1}&ruid=${await mid}`))
+  },
   getAnchorInRoom: {
     require: ['roomid'],
     type: 'json',

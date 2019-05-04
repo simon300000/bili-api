@@ -41,6 +41,10 @@ module.exports = {
     require: ['topList'],
     get: async ({ topList }) => (await topList).data.info.page
   },
+  guards: {
+    require: ['fullTopList'],
+    get: async ({ fullTopList }) => [...(await fullTopList)[0].data.top3].concat(...(await fullTopList).map(topList => topList.data.list))
+  },
   roomStatus: {
     require: ['getRoomInfoOld'],
     get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.roomStatus

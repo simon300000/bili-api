@@ -37,6 +37,10 @@ module.exports = {
     require: ['topList'],
     get: async ({ topList }) => (await topList).data.info.num
   },
+  topListPage: {
+    require: ['topList'],
+    get: async ({ topList }) => (await topList).data.info.page
+  },
   roomStatus: {
     require: ['getRoomInfoOld'],
     get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.roomStatus

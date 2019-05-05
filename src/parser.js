@@ -17,7 +17,7 @@ parsers.json = async (url, { wait, tunnels }) => {
     let agent = tunnel.httpsOverHttp({
       proxy: tunnels[Math.floor(Math.random() * tunnels.length)]
     })
-    let request = got(new URL(await url), { json: true, agent })
+    let request = got(new URL(url), { json: true, agent })
     setTimeout(() => {
       request.cancel()
     }, 1000)
@@ -26,11 +26,10 @@ parsers.json = async (url, { wait, tunnels }) => {
       return data.body
     }
   }
-  return (await got(new URL(await url), { json: true })).body
+  return (await got(new URL(url), { json: true })).body
 }
 
-parsers.jsonArray = async (urlsPromise, { wait, tunnels }) => {
-  let urls = await urlsPromise
+parsers.jsonArray = async (urls, { wait, tunnels }) => {
   for (let i = 0; i < urls.length; i++) {
     if (wait) await delayPromise(wait)
     urls[i] = parsers.json(urls[i], { tunnels })
@@ -40,7 +39,7 @@ parsers.jsonArray = async (urlsPromise, { wait, tunnels }) => {
 
 parsers.xml = async (url, { wait }) => {
   if (wait) await delayPromise(wait)
-  return parseStringAsync(String(await inflateRawAsync((await got(new URL(await url), { decompress: false })).body)))
+  return parseStringAsync(String(await inflateRawAsync((await got(new URL(url), { decompress: false })).body)))
 }
 
 parsers.none = e => e

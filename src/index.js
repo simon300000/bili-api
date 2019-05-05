@@ -26,7 +26,7 @@ let get = (object, target, { parser, wait, tunnels }) => {
       if (!targetAPI.require) {
         targetAPI.require = []
       }
-      object[target[i]] = (async () => parser(targetAPI.get(Object.assign(...await Promise.all(targetAPI.require.concat(...oneOf).map(async v => ({ [v]: await object[v] }))))), targetAPI.type, { wait, tunnels }))()
+      object[target[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(targetAPI.require.concat(...oneOf).map(async v => ({ [v]: await object[v] }))))), targetAPI.type, { wait, tunnels }))()
       // Hiahiahia
     }
   }

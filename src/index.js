@@ -13,8 +13,8 @@ let get = (object, target, { parser, wait, tunnels }) => {
       let targetAPI = apis[target[i]]
       let { oneOf = [] } = targetAPI
       // TODO: Deep Optional Router
-      if (targetAPI.require) {
-        get(object, targetAPI.require, { parser, wait, tunnels })
+      if (targetAPI.demand) {
+        get(object, targetAPI.demand, { parser, wait, tunnels })
       }
       for (let j = 0; j < oneOf.length; j++) {
         let error = router(object, oneOf[j], [target[i]])
@@ -23,10 +23,10 @@ let get = (object, target, { parser, wait, tunnels }) => {
           break
         }
       }
-      if (!targetAPI.require) {
-        targetAPI.require = []
+      if (!targetAPI.demand) {
+        targetAPI.demand = []
       }
-      object[target[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(targetAPI.require.concat(...oneOf).map(async v => ({ [v]: await object[v] }))))), targetAPI.type, { wait, tunnels }))()
+      object[target[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(targetAPI.demand.concat(...oneOf).map(async v => ({ [v]: await object[v] }))))), targetAPI.type, { wait, tunnels }))()
       // Hiahiahia
     }
   }
@@ -44,8 +44,8 @@ let router = (object, targets, map = []) => {
     if (map.includes(target)) {
       return [target, 'LOOP']
     }
-    if (apis[target].require) {
-      let route = router(object, apis[target].require, [...map, target])
+    if (apis[target].demand) {
+      let route = router(object, apis[target].demand, [...map, target])
       if (route) {
         return [target, ...route]
       }

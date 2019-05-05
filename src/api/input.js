@@ -19,14 +19,14 @@ module.exports = {
   },
   // TODO: aid: {},
   cid: {
-    require: ['view'],
+    demand: ['view'],
     optional: ['p'],
     get: ({ view, p }) => view.data.pages[p || 0].cid
   },
   // TODO: p: {},
   // TODO: page: {},
   roomid: {
-    require: ['getRoomInfoOld'],
+    demand: ['getRoomInfoOld'],
     get: ({ getRoomInfoOld }) => getRoomInfoOld.data.roomid
   }
 }

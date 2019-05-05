@@ -15,39 +15,39 @@ const getOnline = roomid => new Promise(async resolve => {
 
 module.exports = {
   follower: {
-    require: ['stat'],
+    demand: ['stat'],
     get: ({ stat }) => stat.data.follower
   },
   uname: {
-    require: ['info'],
+    demand: ['info'],
     get: ({ info }) => info.data.name
   },
   sign: {
-    require: ['info'],
+    demand: ['info'],
     get: ({ info }) => info.data.sign
   },
   coins: {
-    require: ['info'],
+    demand: ['info'],
     get: ({ info }) => info.data.coins
   },
   video: {
-    require: ['navnum'],
+    demand: ['navnum'],
     get: ({ navnum }) => navnum.data.video
   },
   guardNum: {
-    require: ['topList'],
+    demand: ['topList'],
     get: ({ topList }) => topList.data.info.num
   },
   topListPage: {
-    require: ['topList'],
+    demand: ['topList'],
     get: ({ topList }) => topList.data.info.page
   },
   guards: {
-    require: ['fullTopList'],
+    demand: ['fullTopList'],
     get: ({ fullTopList }) => [...(fullTopList)[0].data.top3].concat(...(fullTopList).map(topList => topList.data.list))
   },
   guardLevel: {
-    require: ['guards'],
+    demand: ['guards'],
     get: ({ guards }) => {
       let level = [0, 0, 0]
       let guardArray = guards
@@ -58,23 +58,23 @@ module.exports = {
     }
   },
   roomStatus: {
-    require: ['getRoomInfoOld'],
+    demand: ['getRoomInfoOld'],
     get: ({ getRoomInfoOld }) => getRoomInfoOld.data.roomStatus
   },
   roundStatus: {
-    require: ['roomStatus', 'getRoomInfoOld'],
+    demand: ['roomStatus', 'getRoomInfoOld'],
     get: ({ getRoomInfoOld, roomStatus }) => roomStatus && getRoomInfoOld.data.roundStatus
   },
   liveStatus: {
-    require: ['roomStatus', 'getRoomInfoOld'],
+    demand: ['roomStatus', 'getRoomInfoOld'],
     get: ({ getRoomInfoOld, roomStatus }) => roomStatus && getRoomInfoOld.data.liveStatus
   },
   title: {
-    require: ['getRoomInfoOld'],
+    demand: ['getRoomInfoOld'],
     get: ({ getRoomInfoOld }) => getRoomInfoOld.data.title
   },
   online: {
-    require: ['roomid', 'liveStatus'],
+    demand: ['roomid', 'liveStatus'],
     get: ({ roomid, liveStatus }) => {
       if (!liveStatus) {
         return 0
@@ -84,31 +84,31 @@ module.exports = {
     }
   },
   notice: {
-    require: ['_notice'],
+    demand: ['_notice'],
     get: ({ _notice }) => _notice.data
   },
   archiveView: {
-    require: ['upstat'],
+    demand: ['upstat'],
     get: ({ upstat }) => upstat.data.archive.view
   },
   articleView: {
-    require: ['upstat'],
+    demand: ['upstat'],
     get: ({ upstat }) => upstat.data.article.view
   },
   face: {
-    require: ['info'],
+    demand: ['info'],
     get: ({ info }) => info.data.face
   },
   topPhoto: {
-    require: ['info'],
+    demand: ['info'],
     get: ({ info }) => info.data.top_photo
   },
   anchorScore: {
-    require: ['getAnchorInRoom'],
+    demand: ['getAnchorInRoom'],
     get: ({ getAnchorInRoom }) => getAnchorInRoom.data.level.anchor_score
   },
   areaRank: {
-    require: ['rankdb'],
+    demand: ['rankdb'],
     get: ({ rankdb }) => Number(rankdb.data.areaRank.rank.replace('>', ''))
   }
 }

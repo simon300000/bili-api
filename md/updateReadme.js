@@ -41,8 +41,8 @@ for (let key in DESCRIPTIONS) {
 const syntax = async name => {
   let object = await biliAPI(testData, [name])
   object[name] = undefined
-  for (let i = 0; i < apis[name].require.length; i++) {
-    object[apis[name].require[i]] = `<${apis[name].require[i]}>`
+  for (let i = 0; i < apis[name].demand.length; i++) {
+    object[apis[name].demand[i]] = `<${apis[name].demand[i]}>`
   }
   if (apis[name].optional) {
     for (let i = 0; i < apis[name].optional.length; i++) {
@@ -65,14 +65,14 @@ const exampleData = async name => {
   return object
 }
 
-const apiSection = ({ name, syntax, example, data, type = 'json', description = [], requires = [], optional = [] }) => {
+const apiSection = ({ name, syntax, example, data, type = 'json', description = [], demands = [], optional = [] }) => {
   console.log(`apiSection: ${name}`)
   if (data.length > 1000) {
     data = data.slice(0, 1000)
     data += '\n......'
   }
-  for (let i = 0; i < requires.length; i++) {
-    requires[i] = `\<[${requires[i]}](#api_${requires[i]})\>`
+  for (let i = 0; i < demands.length; i++) {
+    demands[i] = `\<[${demands[i]}](#api_${demands[i]})\>`
   }
   for (let i = 0; i < optional.length; i++) {
     optional[i] = `\[[${optional[i]}](#api_${optional[i]})\]`
@@ -81,16 +81,16 @@ const apiSection = ({ name, syntax, example, data, type = 'json', description = 
     .replace('NAME', `<a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
     .replace('DESCRIPTION\n\n', description.length ? [...description, ''].join('\n\n') : '')
     .replace('SYNTAX', syntax)
-    .replace('REQUIRES\n\n', [...requires, ...optional].length ? ['##### 前置', [...requires, ...optional].join(', '), ''].join('\n\n') : '')
+    .replace('DEMANDS\n\n', [...demands, ...optional].length ? ['##### 前置', [...demands, ...optional].join(', '), ''].join('\n\n') : '')
     .replace('EXAMPLE', example)
     .replace('TYPE', type)
     .replace('DATA', data)
 }
 
-const idSection = ({ name, description = [], requires = [], optional = [] }) => {
+const idSection = ({ name, description = [], demands = [], optional = [] }) => {
   console.log(`idSection: ${name}`)
-  for (let i = 0; i < requires.length; i++) {
-    requires[i] = `\<[${requires[i]}](#api_${requires[i]})\>`
+  for (let i = 0; i < demands.length; i++) {
+    demands[i] = `\<[${demands[i]}](#api_${demands[i]})\>`
   }
   for (let i = 0; i < optional.length; i++) {
     optional[i] = `\[[${optional[i]}](#api_${optional[i]})\]`
@@ -98,7 +98,7 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
   return ID
     .replace('NAME', `* ### <a name="api_${name}"></a>${name.replace(/\_/g, '\\_')}`)
     .replace('DESCRIPTION', description.length ? `  ${[...description].join('\n\n  ')}` : '')
-    .replace('REQUIRES\n\n', [...requires, ...optional].length ? `  ${['##### 前置', [...requires, ...optional].join(', ')].join('\n\n  ')}\n\n` : '')
+    .replace('DEMANDS\n\n', [...demands, ...optional].length ? `  ${['##### 前置', [...demands, ...optional].join(', ')].join('\n\n  ')}\n\n` : '')
 }
 
 ;
@@ -114,7 +114,7 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
       syntax: (await biliAPI(await syntax(name), [name], { parser: url => url }))[name],
       example: (await biliAPI(await exampleData(name), [name], { parser: url => url }))[name],
       type: apis[name].type,
-      requires: [...(apis[name].require || [])],
+      demands: [...(apis[name].demand || [])],
       optional: [...(apis[name].optional || [])],
       data: JSON.stringify((await biliAPI(testData, [name]))[name], 0, 2)
     })
@@ -125,7 +125,7 @@ const idSection = ({ name, description = [], requires = [], optional = [] }) => 
     idSections[i] = idSection({
       name,
       description: DESCRIPTIONS[name],
-      requires: apis[name] && [...(apis[name].require || [])],
+      demands: apis[name] && [...(apis[name].demand || [])],
       optional: apis[name] && [...(apis[name].optional || [])]
     })
   }

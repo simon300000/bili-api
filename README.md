@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 329119
+  up.follower // → 329224
 })()
 ```
 
@@ -252,7 +252,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 329119
+    "follower": 329225
   }
 }
 ```
@@ -292,7 +292,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 83634.5,
+    "coins": 83713.9,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -305,7 +305,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i1.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -368,7 +368,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 8477,
+      "view": 8491,
       "danmaku": 51,
       "reply": 33,
       "favorite":
@@ -493,7 +493,7 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
 
 ##### API地址
 
-`https://api.live.bilibili.com/guard/topList?roomid=<roomid>&page=[page]&ruid=<mid>`
+`https://api.live.bilibili.com/guard/topList?roomid=<roomid>&page=1&ruid=<mid>`
 
 ##### 实例:
 
@@ -514,11 +514,11 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
     },
     "list": [
       {
-        "uid": 28221,
+        "uid": 70836,
         "ruid": 349991143,
         "rank": 1,
-        "username": "cjtk",
-        "face": "https://i2.hdslb.com/bfs/face/03eda5b37ee521e103da104638d67aadb80f5345.jpg",
+        "username": "我抱头蹲防啦",
+        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
@@ -532,18 +532,18 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
         "guard_level": 2
       },
       {
-        "uid": 1298744,
+        "uid": 1336969,
         "ruid": 349991143,
         "rank": 3,
-        "username": "凍結の歯ブラシ",
-        "face": "https://i1.hdslb.com/bfs/face/0e28a486c4725266fbfb45f4dcb0623d8601d6f2.jpg",
+        "username": "T-_3",
+        "face": "https://i1.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 1336969,
+        "uid": 1935136,
         "ruid": 349991143,
-       
+        
 ......
 ```
 
@@ -587,13 +587,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 642000,
-      "rcost": 4249478603,
+      "rcost": 4250689903,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-05-05 03:04:31",
+      "update_time": "2019-05-05 09:57:03",
       "master_level": {
         "level": 34,
         "current": [
@@ -605,7 +605,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           47813810
         ],
         "color": 16746162,
-        "anchor_score": 42494786,
+        "anchor_score": 42506899,
         "upgrade_
 ......
 ```

@@ -2,7 +2,7 @@
 
 DESCRIPTION
 
-REQUIRES
+DEMANDS
 
 ##### API地址
 

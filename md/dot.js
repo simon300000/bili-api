@@ -25,9 +25,9 @@ for (let variable in apis) {
 
 for (let variable in BiliAPI.apis) {
   if (BiliAPI.apis.hasOwnProperty(variable)) {
-    if (BiliAPI.apis[variable].require) {
-      for (let i = 0; i < BiliAPI.apis[variable].require.length; i++) {
-        dot += `${BiliAPI.apis[variable].require[i]}->${variable};`
+    if (BiliAPI.apis[variable].demand) {
+      for (let i = 0; i < BiliAPI.apis[variable].demand.length; i++) {
+        dot += `${BiliAPI.apis[variable].demand[i]}->${variable};`
       }
     }
     if (BiliAPI.apis[variable].optional) {

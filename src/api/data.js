@@ -11,45 +11,46 @@ const getOnline = roomid => new Promise(async resolve => {
     resolve(online)
   })
 })
+// FIXME: Max trial or just remove
 
 module.exports = {
   follower: {
     require: ['stat'],
-    get: async ({ stat }) => (await stat).data.follower
+    get: ({ stat }) => stat.data.follower
   },
   uname: {
     require: ['info'],
-    get: async ({ info }) => (await info).data.name
+    get: ({ info }) => info.data.name
   },
   sign: {
     require: ['info'],
-    get: async ({ info }) => (await info).data.sign
+    get: ({ info }) => info.data.sign
   },
   coins: {
     require: ['info'],
-    get: async ({ info }) => (await info).data.coins
+    get: ({ info }) => info.data.coins
   },
   video: {
     require: ['navnum'],
-    get: async ({ navnum }) => (await navnum).data.video
+    get: ({ navnum }) => navnum.data.video
   },
   guardNum: {
     require: ['topList'],
-    get: async ({ topList }) => (await topList).data.info.num
+    get: ({ topList }) => topList.data.info.num
   },
   topListPage: {
     require: ['topList'],
-    get: async ({ topList }) => (await topList).data.info.page
+    get: ({ topList }) => topList.data.info.page
   },
   guards: {
     require: ['fullTopList'],
-    get: async ({ fullTopList }) => [...(await fullTopList)[0].data.top3].concat(...(await fullTopList).map(topList => topList.data.list))
+    get: ({ fullTopList }) => [...(fullTopList)[0].data.top3].concat(...(fullTopList).map(topList => topList.data.list))
   },
   guardLevel: {
     require: ['guards'],
-    get: async ({ guards }) => {
+    get: ({ guards }) => {
       let level = [0, 0, 0]
-      let guardArray = await guards
+      let guardArray = guards
       for (let i = 0; i < guardArray.length; i++) {
         level[guardArray[i].guard_level - 1]++
       }
@@ -58,56 +59,56 @@ module.exports = {
   },
   roomStatus: {
     require: ['getRoomInfoOld'],
-    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.roomStatus
+    get: ({ getRoomInfoOld }) => getRoomInfoOld.data.roomStatus
   },
   roundStatus: {
     require: ['roomStatus', 'getRoomInfoOld'],
-    get: async ({ getRoomInfoOld, roomStatus }) => (await roomStatus) && (await getRoomInfoOld).data.roundStatus
+    get: ({ getRoomInfoOld, roomStatus }) => roomStatus && getRoomInfoOld.data.roundStatus
   },
   liveStatus: {
     require: ['roomStatus', 'getRoomInfoOld'],
-    get: async ({ getRoomInfoOld, roomStatus }) => (await roomStatus) && (await getRoomInfoOld).data.liveStatus
+    get: ({ getRoomInfoOld, roomStatus }) => roomStatus && getRoomInfoOld.data.liveStatus
   },
   title: {
     require: ['getRoomInfoOld'],
-    get: async ({ getRoomInfoOld }) => (await getRoomInfoOld).data.title
+    get: ({ getRoomInfoOld }) => getRoomInfoOld.data.title
   },
   online: {
     require: ['roomid', 'liveStatus'],
-    get: async ({ roomid, liveStatus }) => {
-      if (!(await liveStatus)) {
+    get: ({ roomid, liveStatus }) => {
+      if (!liveStatus) {
         return 0
       } else {
-        return getOnline(await roomid)
+        return getOnline(roomid)
       }
     }
   },
   notice: {
     require: ['_notice'],
-    get: async ({ _notice }) => (await _notice).data
+    get: ({ _notice }) => _notice.data
   },
   archiveView: {
     require: ['upstat'],
-    get: async ({ upstat }) => (await upstat).data.archive.view
+    get: ({ upstat }) => upstat.data.archive.view
   },
   articleView: {
     require: ['upstat'],
-    get: async ({ upstat }) => (await upstat).data.article.view
+    get: ({ upstat }) => upstat.data.article.view
   },
   face: {
     require: ['info'],
-    get: async ({ info }) => (await info).data.face
+    get: ({ info }) => info.data.face
   },
   topPhoto: {
     require: ['info'],
-    get: async ({ info }) => (await info).data.top_photo
+    get: ({ info }) => info.data.top_photo
   },
   anchorScore: {
     require: ['getAnchorInRoom'],
-    get: async ({ getAnchorInRoom }) => (await getAnchorInRoom).data.level.anchor_score
+    get: ({ getAnchorInRoom }) => getAnchorInRoom.data.level.anchor_score
   },
   areaRank: {
     require: ['rankdb'],
-    get: async ({ rankdb }) => Number((await rankdb).data.areaRank.rank.replace('>', ''))
+    get: ({ rankdb }) => Number(rankdb.data.areaRank.rank.replace('>', ''))
   }
 }

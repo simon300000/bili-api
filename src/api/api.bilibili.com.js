@@ -2,41 +2,41 @@ module.exports = {
   stat: {
     require: ['mid'],
     type: 'json',
-    get: async ({ mid }) => `https://api.bilibili.com/x/relation/stat?vmid=${await mid}`
+    get: ({ mid }) => `https://api.bilibili.com/x/relation/stat?vmid=${mid}`
   },
   upstat: {
     require: ['mid'],
     type: 'json',
-    get: async ({ mid }) => `https://api.bilibili.com/x/space/upstat?mid=${await mid}`
+    get: ({ mid }) => `https://api.bilibili.com/x/space/upstat?mid=${mid}`
   },
   navnum: {
     require: ['mid'],
     type: 'json',
-    get: async ({ mid }) => `https://api.bilibili.com/x/space/navnum?mid=${await mid}`
+    get: ({ mid }) => `https://api.bilibili.com/x/space/navnum?mid=${mid}`
   },
   info: {
     require: ['mid'],
     type: 'json',
-    get: async ({ mid }) => `https://api.bilibili.com/x/space/acc/info?mid=${await mid}`
+    get: ({ mid }) => `https://api.bilibili.com/x/space/acc/info?mid=${mid}`
   },
   view: {
     require: ['aid'],
     type: 'json',
-    get: async ({ aid }) => `https://api.bilibili.com/x/web-interface/view?aid=${await aid}`
+    get: ({ aid }) => `https://api.bilibili.com/x/web-interface/view?aid=${aid}`
   },
   list: {
     require: ['cid'],
     type: 'xml',
-    get: async ({ cid }) => `https://api.bilibili.com/x/v1/dm/list.so?oid=${await cid}`
+    get: ({ cid }) => `https://api.bilibili.com/x/v1/dm/list.so?oid=${cid}`
   },
   search: {
     require: ['uname'],
     type: 'json',
-    get: async ({ uname }) => `https://api.bilibili.com/x/web-interface/search/type?jsonp=jsonp&search_type=bili_user&keyword=${await uname}`
+    get: ({ uname }) => `https://api.bilibili.com/x/web-interface/search/type?jsonp=jsonp&search_type=bili_user&keyword=${uname}`
   },
   _notice: {
     require: ['mid'],
     type: 'json',
-    get: async ({ mid }) => `https://api.bilibili.com/x/space/notice?mid=${await mid}`
+    get: ({ mid }) => `https://api.bilibili.com/x/space/notice?mid=${mid}`
   }
 }

@@ -1,5 +1,5 @@
 const got = require('got')
-const tunnel = require('tunnel')
+// const tunnel = require('tunnel')
 
 const { parseString } = require('xml2js')
 const { inflateRaw } = require('zlib')
@@ -13,19 +13,19 @@ let parsers = {}
 
 parsers.json = async (url, { wait, tunnels }) => {
   if (wait) await delayPromise(wait)
-  if (tunnels.length) {
-    let agent = tunnel.httpsOverHttp({
-      proxy: tunnels[Math.floor(Math.random() * tunnels.length)]
-    })
-    let request = got(new URL(url), { json: true, agent })
-    setTimeout(() => {
-      request.cancel()
-    }, 1000)
-    let data = await request.catch(() => undefined)
-    if (data) {
-      return data.body
-    }
-  }
+  // if (tunnels.length) {
+  //   let agent = tunnel.httpsOverHttp({
+  //     proxy: tunnels[Math.floor(Math.random() * tunnels.length)]
+  //   })
+  //   let request = got(new URL(url), { json: true, agent })
+  //   setTimeout(() => {
+  //     request.cancel()
+  //   }, 1000)
+  //   let data = await request.catch(() => undefined)
+  //   if (data) {
+  //     return data.body
+  //   }
+  // }
   return (await got(new URL(url), { json: true })).body
 }
 

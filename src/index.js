@@ -5,7 +5,7 @@ const input = require('./api/input')
 const apis = { ...api, ...data, ...input, ...live }
 
 const defaultParser = require('./parser')
-const checkTunnel = require('./tunnel')
+// const checkTunnel = require('./tunnel')
 
 let get = (object, target, { parser, wait, tunnels }) => {
   for (let i = 0; i < target.length; i++) {
@@ -74,7 +74,6 @@ let router = (object, targets, map = []) => {
  * @param  {Function}  [parser=defaultParser]  设置: 自定义url下载/分析器
  * @param  {Function}  [logger=e=>{}]          调试用信息输出
  * @param  {Number}    [wait=0]                网络请求延迟
- * @param  {Array}     [tunnels=[]]            代理
  * @return {Promise}                           Resolve一个带有所需targets的Object
  */
 module.exports = async ({ ...object }, [...targets], { // 这里以下属于Options
@@ -96,10 +95,10 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
 }
 
 module.exports.apis = { ...apis }
-module.exports.checkTunnels = async tunnels => {
-  let tunnelsChecked = []
-  for (let i = 0; i < tunnels.length; i++) {
-    tunnelsChecked[i] = { ...tunnels[i], state: await checkTunnel(tunnels[i]) }
-  }
-  return tunnelsChecked
-}
+// module.exports.checkTunnels = async tunnels => {
+//   let tunnelsChecked = []
+//   for (let i = 0; i < tunnels.length; i++) {
+//     tunnelsChecked[i] = { ...tunnels[i], state: await checkTunnel(tunnels[i]) }
+//   }
+//   return tunnelsChecked
+// }

@@ -7,26 +7,21 @@ const apis = { ...api, ...data, ...input, ...live }
 const defaultParser = require('./parser')
 // const checkTunnel = require('./tunnel')
 
-let get = (object, target, { parser, wait, tunnels }) => {
-  for (let i = 0; i < target.length; i++) {
-    if (!object[target[i]]) {
-      let targetAPI = apis[target[i]]
-      let { oneOf = [] } = targetAPI
+let get = (object, targets, { parser, wait, tunnels }) => {
+  for (let i = 0; i < targets.length; i++) {
+    if (!object[targets[i]]) {
+      let targetAPI = apis[targets[i]]
+      let { oneOf = [], demand = [] } = targetAPI
       // TODO: Deep Optional Router
-      if (targetAPI.demand) {
-        get(object, targetAPI.demand, { parser, wait, tunnels })
-      }
+      get(object, demand, { parser, wait, tunnels })
       for (let j = 0; j < oneOf.length; j++) {
-        let error = router(object, oneOf[j], [target[i]])
+        let error = router(object, oneOf[j], [targets[i]])
         if (!error) {
           get(object, oneOf[j], { parser, wait, tunnels })
           break
         }
       }
-      if (!targetAPI.demand) {
-        targetAPI.demand = []
-      }
-      object[target[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(targetAPI.demand.concat(...oneOf).map(async v => ({ [v]: await object[v] }))))), targetAPI.type, { wait, tunnels }))()
+      object[targets[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(demand.concat(...oneOf).map(async v => ({ [v]: await object[v] }))))), targetAPI.type, { wait, tunnels }))()
       // Hiahiahia
     }
   }
@@ -53,15 +48,15 @@ let router = (object, targets, map = []) => {
 
     let { oneOf } = apis[target]
     if (oneOf) {
-      let error
+      let error = []
       for (let j = 0; j < oneOf.length; j++) {
         let route = router(object, oneOf[j], [...map, target])
         if (!route) {
           return
         }
-        error = route
+        error.push(route.join(' -> '))
       }
-      return error
+      return [target, `oneOf: [${error.join(', ')}]`]
     }
   }
 }

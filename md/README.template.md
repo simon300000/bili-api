@@ -32,6 +32,14 @@ EXAMPLE:2
 
 EXAMPLE:3
 
+部分API支持不同来源分支查询，比如通过用户名查找 mid，后查找其余信息。
+
+EXAMPLE:uname
+
+通过视频 av 号查找UP主 mid，后查找UP主其余信息。
+
+EXAMPLE:aid
+
 ### biliAPI Document
 
 ```javascript

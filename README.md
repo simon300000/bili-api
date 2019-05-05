@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 329224
+  up.follower // → 329258
 })()
 ```
 
@@ -76,6 +76,29 @@ const biliAPI = require('bili-api');
 (async () => {
   let { guardLevel } = await biliAPI({ mid: 349991143 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [1,10,741]
+})()
+```
+
+部分API支持不同来源分支查询，比如通过用户名查找 mid，后查找其余信息。
+
+```javascript
+const biliAPI = require('bili-api');
+
+(async () => {
+  let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
+  guardNum // → 112
+})()
+```
+
+通过视频 av 号查找UP主 mid，后查找UP主其余信息。
+
+```javascript
+const biliAPI = require('bili-api');
+
+(async () => {
+  // 一 般 友 情 夏 色 祭
+  let { uname } = await biliAPI({ aid: 33342306 }, ['uname'])
+  uname // → "夏色祭Official"
 })()
 ```
 
@@ -252,7 +275,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 130,
     "whisper": 0,
     "black": 0,
-    "follower": 329225
+    "follower": 329258
   }
 }
 ```
@@ -292,7 +315,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 83713.9,
+    "coins": 83736,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -305,7 +328,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
     "theme": {}
   }
 }
@@ -368,7 +391,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 8491,
+      "view": 8495,
       "danmaku": 51,
       "reply": 33,
       "favorite":
@@ -587,13 +610,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 642000,
-      "rcost": 4250689903,
+      "rcost": 4251022103,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-05-05 09:57:03",
+      "update_time": "2019-05-05 10:52:09",
       "master_level": {
         "level": 34,
         "current": [
@@ -605,7 +628,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           47813810
         ],
         "color": 16746162,
-        "anchor_score": 42506899,
+        "anchor_score": 42510221,
         "upgrade_
 ......
 ```

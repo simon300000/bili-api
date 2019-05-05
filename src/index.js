@@ -88,12 +88,11 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
     throw new Error(`Target route: ${error.join(' -> ')}`)
   }
   get(object, targets, { parser, wait, tunnels })
-  for (let variable in object) {
-    if (object.hasOwnProperty(variable)) {
-      object[variable] = await object[variable]
-    }
-  }
-  return object
+  // for (let i = 0; i < Object.keys(object).length; i++) {
+  //   object[Object.keys(object)[i]] = await object[Object.keys(object)[i]]
+  // }
+  // return object
+  return Object.assign(...await Promise.all(Object.keys(object).map(async key => ({ [key]: await object[key] }))))
 }
 
 module.exports.apis = { ...apis }

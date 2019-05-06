@@ -21,7 +21,9 @@ let get = ({ object, targets }, { parser, wait, tunnels }) => {
           break
         }
       }
-      object[targets[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(demand.concat(...oneOf).map(async v => ({ [v]: await object[v] }))))), targetAPI.type, { wait, tunnels }))()
+      object[targets[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(demand.concat(...oneOf).map(async v => ({
+        [v]: await object[v]
+      }))))), targetAPI.type, { wait, tunnels }))()
       // Hiahiahia
     }
   }
@@ -30,33 +32,32 @@ let get = ({ object, targets }, { parser, wait, tunnels }) => {
 let router = (object, targets, map = []) => {
   for (let i = 0; i < targets.length; i++) {
     let target = targets[i]
-    if (object[target]) {
-      return {}
-    }
-    if (!apis[target]) {
-      return { error: [target, '?'] }
-    }
-    if (map.includes(target)) {
-      return { error: [target, 'LOOP'] }
-    }
-    if (apis[target].demand) {
-      let { error } = router(object, apis[target].demand, [...map, target])
-      if (error) {
-        return { error: [target, ...error] }
+    if (object[target] === undefined) {
+      if (!apis[target]) {
+        return { error: [target, '?'] }
       }
-    }
-
-    let { oneOf } = apis[target]
-    if (oneOf) {
-      let errors = []
-      for (let j = 0; j < oneOf.length; j++) {
-        let { error } = router(object, oneOf[j], [...map, target])
-        if (!error) {
-          return {}
+      if (map.includes(target)) {
+        return { error: [target, 'LOOP'] }
+      }
+      if (apis[target].demand) {
+        let { error } = router(object, apis[target].demand, [...map, target])
+        if (error) {
+          return { error: [target, ...error] }
         }
-        errors.push(error.join(' -> '))
       }
-      return { error: [target, `oneOf: [${errors.join(', ')}]`] }
+
+      let { oneOf } = apis[target]
+      if (oneOf) {
+        let errors = []
+        for (let j = 0; j < oneOf.length; j++) {
+          let { error } = router(object, oneOf[j], [...map, target])
+          if (!error) {
+            return {}
+          }
+          errors.push(error.join(' -> '))
+        }
+        return { error: [target, `oneOf: [${errors.join(', ')}]`] }
+      }
     }
   }
   return {}
@@ -87,7 +88,9 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
   //   object[Object.keys(object)[i]] = await object[Object.keys(object)[i]]
   // }
   // return object
-  return Object.assign(...await Promise.all(Object.keys(object).map(async key => ({ [key]: await object[key] }))))
+  return Object.assign(...await Promise.all(Object.keys(object).map(async key => ({
+    [key]: await object[key]
+  }))))
 }
 
 module.exports.apis = { ...apis }

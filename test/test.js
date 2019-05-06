@@ -126,7 +126,7 @@ describe('Bilibili biliAPI', function() {
       assert.isNotNaN(online)
     })
     it('roomid -> online > 0', async function() {
-      let roomid = JSON.parse((await got('https://api.live.bilibili.com/room/v1/Area/getListByAreaID?areaId=0&sort=online&pageSize=1')).body).data[0].roomid
+      let roomid = JSON.parse((await got('https://api.live.bilibili.com/room/v1/Area/getListByAreaID?areaId=0&sort=online&pageSize=10')).body).data[9].roomid
       let { online } = await biliAPI({ roomid }, ['online'])
       assert.isNumber(online)
       assert.isNotNaN(online)

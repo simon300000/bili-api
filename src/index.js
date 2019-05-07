@@ -7,21 +7,18 @@ const apis = { ...api, ...data, ...input, ...live }
 const defaultParser = require('./parser')
 // const checkTunnel = require('./tunnel')
 
-let get = ({ object, targets }, { parser, wait, tunnels }) => {
+let get = ({ object, targets = [], preRoute }, { parser, wait, tunnels }) => {
   for (let i = 0; i < targets.length; i++) {
-    if (!object[targets[i]]) {
-      let targetAPI = apis[targets[i]]
+    let target = targets[i]
+    if (!object[target]) {
+      let targetAPI = apis[target]
       let { oneOf = [], demand = [] } = targetAPI
       // TODO: Deep Optional Router
-      get({ object, targets: demand }, { parser, wait, tunnels })
-      for (let j = 0; j < oneOf.length; j++) {
-        let { error } = router(object, oneOf[j], [targets[i]])
-        if (!error) {
-          get({ object, targets: oneOf[j] }, { parser, wait, tunnels })
-          break
-        }
+      get({ object, targets: demand, preRoute }, { parser, wait, tunnels })
+      if (oneOf.length) {
+        get({ object, targets: oneOf[preRoute[target]], preRoute }, { parser, wait, tunnels })
       }
-      object[targets[i]] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(demand.concat(...oneOf).map(async v => ({
+      object[target] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(demand.concat(...oneOf).map(async v => ({
         [v]: await object[v]
       }))))), targetAPI.type, { wait, tunnels }))()
       // Hiahiahia
@@ -29,10 +26,10 @@ let get = ({ object, targets }, { parser, wait, tunnels }) => {
   }
 }
 
-let router = (object, targets, map = []) => {
+let router = ({ object, targets = [], map = [], preRoute = {} }) => {
   for (let i = 0; i < targets.length; i++) {
     let target = targets[i]
-    if (object[target] === undefined) {
+    if (!object[target]) {
       if (!apis[target]) {
         return { error: [target, '?'] }
       }
@@ -40,7 +37,7 @@ let router = (object, targets, map = []) => {
         return { error: [target, 'LOOP'] }
       }
       if (apis[target].demand) {
-        let { error } = router(object, apis[target].demand, [...map, target])
+        let { error } = router({ object, targets: apis[target].demand, map: [...map, target], preRoute })
         if (error) {
           return { error: [target, ...error] }
         }
@@ -49,18 +46,22 @@ let router = (object, targets, map = []) => {
       let { oneOf } = apis[target]
       if (oneOf) {
         let errors = []
-        for (let j = 0; j < oneOf.length; j++) {
-          let { error } = router(object, oneOf[j], [...map, target])
+        for (let j = 0; j < oneOf.length && preRoute[target] === undefined; j++) {
+          let { error } = router({ object, targets: oneOf[j], map: [...map, target], preRoute })
           if (!error) {
-            return {}
+            preRoute[target] = j
           }
-          errors.push(error.join(' -> '))
+          if (error) {
+            errors.push(error.join(' -> '))
+          }
         }
-        return { error: [target, `oneOf: [${errors.join(', ')}]`] }
+        if (preRoute[target] === undefined) {
+          return { error: [target, `oneOf: [${errors.join(', ')}]`] }
+        }
       }
     }
   }
-  return {}
+  return { preRoute }
 }
 
 /**
@@ -79,11 +80,11 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
   wait = 0,
   tunnels = []
 } = {}) => {
-  let { error } = router(object, targets)
+  let { error, preRoute } = router({ object, targets })
   if (error) {
     throw new Error(`Target route: ${error.join(' -> ')}`)
   }
-  get({ object, targets }, { parser, wait, tunnels })
+  get({ object, targets, preRoute }, { parser, wait, tunnels })
   // for (let i = 0; i < Object.keys(object).length; i++) {
   //   object[Object.keys(object)[i]] = await object[Object.keys(object)[i]]
   // }

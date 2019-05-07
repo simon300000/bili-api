@@ -13,11 +13,7 @@ let get = ({ object, targets = [], preRoute }, { parser, wait, tunnels }) => {
     if (!object[target]) {
       let targetAPI = apis[target]
       let { oneOf = [], demand = [] } = targetAPI
-      // TODO: Deep Optional Router
-      get({ object, targets: demand, preRoute }, { parser, wait, tunnels })
-      if (oneOf.length) {
-        get({ object, targets: oneOf[preRoute[target]], preRoute }, { parser, wait, tunnels })
-      }
+      get({ object, targets: [...demand, ...(oneOf[preRoute[target]] || [])], preRoute }, { parser, wait, tunnels })
       object[target] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(demand.concat(...oneOf).map(async v => ({
         [v]: await object[v]
       }))))), targetAPI.type, { wait, tunnels }))()

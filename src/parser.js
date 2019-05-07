@@ -42,6 +42,4 @@ parsers.xml = async (url, { wait }) => {
   return parseStringAsync(String(await inflateRawAsync((await got(new URL(url), { decompress: false })).body)))
 }
 
-parsers.none = e => e
-
-module.exports = (url, type = 'none', { wait, tunnels }) => parsers[type](url, { wait, tunnels })
+module.exports = parsers

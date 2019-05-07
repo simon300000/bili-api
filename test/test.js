@@ -196,7 +196,7 @@ describe('Bilibili biliAPI', function() {
       assert.isObject({ stat })
     })
     it('Optinal parser', async function() {
-      let { stat } = await biliAPI({ mid: 349991143 }, ['stat'], { parser: url => url })
+      let { stat } = await biliAPI({ mid: 349991143 }, ['stat'], { parsers: { json: url => url } })
       assert.isString(stat)
     })
     it('Optinal wait', async function() {

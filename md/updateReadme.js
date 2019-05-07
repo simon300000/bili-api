@@ -28,6 +28,15 @@ const maxdepth = 3
 
 const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList', 'getAnchorInRoom', '_notice', 'rankdb']
 // const id = ['mid', 'aid', 'cid', 'p', 'roomid']
+
+let parsers = {}
+
+parsers.json = url => url
+
+parsers.jsonArray = url => url
+
+parsers.xml = url => url
+
 let id = []
 
 for (let key in DESCRIPTIONS) {
@@ -111,8 +120,8 @@ const idSection = ({ name, description = [], demands = [], optional = [] }) => {
     apiSections[i] = apiSection({
       name,
       description: DESCRIPTIONS[name],
-      syntax: (await biliAPI(await syntax(name), [name], { parser: url => url }))[name],
-      example: (await biliAPI(await exampleData(name), [name], { parser: url => url }))[name],
+      syntax: (await biliAPI(await syntax(name), [name], { parsers }))[name],
+      example: (await biliAPI(await exampleData(name), [name], { parsers }))[name],
       type: apis[name].type,
       demands: [...(apis[name].demand || [])],
       optional: [...(apis[name].optional || [])],

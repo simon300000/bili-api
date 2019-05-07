@@ -7,13 +7,13 @@ const apis = { ...api, ...data, ...input, ...live }
 const defaultParser = require('./parser')
 // const checkTunnel = require('./tunnel')
 
-let get = ({ object, targets = [], preRoute }, { parser, wait, tunnels }) => {
+let get = ({ object, targets = [], preRoute, parser }, { wait, tunnels }) => {
   for (let i = 0; i < targets.length; i++) {
     let target = targets[i]
     if (!object[target]) {
       let targetAPI = apis[target]
       let { oneOf = [], demand = [] } = targetAPI
-      get({ object, targets: [...demand, ...(oneOf[preRoute[target]] || [])], preRoute }, { parser, wait, tunnels })
+      get({ object, targets: [...demand, ...(oneOf[preRoute[target]] || [])], preRoute, parser }, { wait, tunnels })
       object[target] = (async () => parser(await targetAPI.get(Object.assign(...await Promise.all(demand.concat(...oneOf).map(async v => ({
         [v]: await object[v]
       }))))), targetAPI.type, { wait, tunnels }))()
@@ -80,7 +80,7 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
   if (error) {
     throw new Error(`Target route: ${error.join(' -> ')}`)
   }
-  get({ object, targets, preRoute }, { parser, wait, tunnels })
+  get({ object, targets, preRoute, parser }, { wait, tunnels })
   // for (let i = 0; i < Object.keys(object).length; i++) {
   //   object[Object.keys(object)[i]] = await object[Object.keys(object)[i]]
   // }

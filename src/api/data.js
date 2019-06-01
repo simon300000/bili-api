@@ -118,5 +118,9 @@ module.exports = {
   areaRank: {
     demand: ['rankdb'],
     get: ({ rankdb }) => Number(rankdb.data.areaRank.rank.replace('>', ''))
+  },
+  cids: {
+    demand: ['view'],
+    get: ({ view }) => view.data.pages.map(({ cid }) => cid)
   }
 }

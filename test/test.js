@@ -175,6 +175,10 @@ describe('Bilibili biliAPI', function() {
       let { allVideos } = await biliAPI({ mid: 349991143 }, ['allVideos'])
       assert.isArray(allVideos)
     })
+    it('aid -> cids', async function() {
+      let { cids } = await biliAPI({ aid: 27702699 }, ['cids'])
+      assert.isArray(cids)
+    })
   })
   context('Route', function() {
     it('Should reject when no require input', function() {

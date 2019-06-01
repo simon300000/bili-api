@@ -21,7 +21,7 @@ module.exports = {
   cid: {
     demand: ['view'],
     optional: ['p'],
-    get: ({ view, p }) => view.data.pages[p || 0].cid
+    get: ({ view, p = 0 }) => view.data.pages[p].cid
   },
   // TODO: p: {},
   // TODO: page: {},

@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽めあOfficial"
-object.guardNum // → 752
+object.guardNum // → 1015
 ```
 
 # 目录
@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 329258
+  up.follower // → 359682
 })()
 ```
 
@@ -75,7 +75,11 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardLevel } = await biliAPI({ mid: 349991143 }, ['guardLevel'], { wait: 200 })
-  guardLevel // → [1,10,741]
+  guardLevel // → [
+  //  1,
+  //  16,
+  //  998
+  //]
 })()
 ```
 
@@ -86,7 +90,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
-  guardNum // → 112
+  guardNum // → 64
 })()
 ```
 
@@ -128,6 +132,68 @@ biliAPI(object, targets[, option])
     比如上面的获取舰团数据例子就有 200 毫秒延迟，因为它需要遍历舰团的每一页，所以最好设置一个delay。
 
 <!-- #### Option -->
+
+#### 更多例子:
+
+##### 获取所有视频
+
+```javascript
+const biliAPI = require('bili-api');
+
+(async () => {
+  let { allVideos } = await biliAPI({ mid: 286700005 }, ['allVideos'])
+  allVideos.length  // → 542
+  allVideos[0]  // → {
+  //  "comment": 56,
+  //  "typeid": 17,
+  //  "play": 5872,
+  //  "pic": "//i1.hdslb.com/bfs/archive/a56c60806c846dd72bd473f752f142a5b9f8346b.png",
+  //  "subtitle": "",
+  //  "description": "无",
+  //  "copyright": "",
+  //  "title": "【しょぼんのアクション2】やる(´･ω･`)にかいめ【ホロライブ_戌神ころね】",
+  //  "review": 0,
+  //  "author": "hololive",
+  //  "mid": 286700005,
+  //  "is_union_video": 0,
+  //  "created": 1559227767,
+  //  "length": "59:22",
+  //  "video_review": 0,
+  //  "is_pay": 0,
+  //  "favorites": 86,
+  //  "aid": 54083874,
+  //  "hide_click": false
+  //}
+})()
+```
+
+##### 获取视频分P的所有cid
+
+```javascript
+const biliAPI = require('bili-api');
+
+(async () => {
+  let { cids } = await biliAPI({ aid: 27702699 }, ['cids'])
+  cids // → [
+  //  94227448,
+  //  94789318,
+  //  94254317,
+  //  93784890,
+  //  94257750,
+  //  94317035,
+  //  94319102,
+  //  94319353,
+  //  94319982,
+  //  94320142,
+  //  94320271,
+  //  94320723,
+  //  94320982,
+  //  94320998,
+  //  94321024,
+  //  47780428
+  //]
+})()
+```
 
 ### Router Graph
 
@@ -272,10 +338,10 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
   "ttl": 1,
   "data": {
     "mid": 349991143,
-    "following": 130,
+    "following": 32,
     "whisper": 0,
     "black": 0,
-    "follower": 329258
+    "follower": 359682
   }
 }
 ```
@@ -315,7 +381,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     "moral": 0,
     "silence": 0,
     "birthday": "08-02",
-    "coins": 83736,
+    "coins": 0,
     "fans_badge": true,
     "official": {
       "role": 1,
@@ -328,7 +394,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i0.hdslb.com/bfs/space/e408642238b3cd999b229af3aefd5da6746f5d7d.png",
+    "top_photo": "http://i2.hdslb.com/bfs/space/cde2a0fe3273ae4466d135541d965e21c58a7454.png",
     "theme": {}
   }
 }
@@ -391,10 +457,10 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 8495,
-      "danmaku": 51,
-      "reply": 33,
-      "favorite":
+      "view": 10324,
+      "danmaku": 63,
+      "reply": 36,
+      "favorite"
 ......
 ```
 
@@ -454,12 +520,6 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
         }
       },
       {
-        "_": "刷绘里的几个意思……",
-        "$": {
-          "p": "12.85700,1,25,16777215,1545353720,0,7907fd34,9548094612439040"
-        }
-      },
-      {
         "_": "草",
         "$": {
           "p": "116.61600,1,25,16777215,1545803269,0,8b709dfe,9783787808882688"
@@ -469,7 +529,14 @@ https://api.bilibili.com/x/v1/dm/list.so?oid=53534698
         "_": "双核处理器kana？",
         "$": {
           "p": "115.41100,1,25,16777215,1546321539,0,66471589,10055510694821888"
-    
+        }
+      },
+      {
+        "_": "活结草",
+        "$": {
+          "p": "96.67800,1,25,16777215,1546963088,0,24bac661,10391867015823364"
+        }
+
 ......
 ```
 
@@ -499,9 +566,9 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "GWで散々な目にあいました",
-    "cover": "https://i0.hdslb.com/bfs/live/room_cover/2df7be5bf90424a9609935dc678017078b812d5a.jpg",
-    "online": 303084,
+    "title": "【B限】MeAqua 協力お料理!!!!",
+    "cover": "https://i0.hdslb.com/bfs/live/room_cover/ae573d2ae6f5903c7d1186019da35871434597a1.jpg",
+    "online": 349331,
     "roomid": 12235923,
     "broadcast_type": 0
   }
@@ -531,8 +598,8 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 752,
-      "page": 75,
+      "num": 1015,
+      "page": 102,
       "now": 1
     },
     "list": [
@@ -546,27 +613,27 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
         "guard_level": 2
       },
       {
-        "uid": 749030,
+        "uid": 154817,
         "ruid": 349991143,
         "rank": 2,
-        "username": "HakureiMea",
-        "face": "https://i2.hdslb.com/bfs/face/7bb24266f576ba89b8911191da95e9974d6f547b.jpg",
+        "username": "パッションマン",
+        "face": "https://i0.hdslb.com/bfs/face/cb7680a91f6d68ff69fc2ee8ec81bf9ea1ca066b.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 1336969,
+        "uid": 620173,
         "ruid": 349991143,
         "rank": 3,
-        "username": "T-_3",
-        "face": "https://i1.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg",
+        "username": "HaoCheer",
+        "face": "https://i1.hdslb.com/bfs/face/626a7580e9338a868f29960e62adcc7a749b5a5e.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 1935136,
+        "uid": 730732,
         "ruid": 349991143,
-        
+       
 ......
 ```
 
@@ -609,27 +676,27 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     },
     "level": {
       "uid": 349991143,
-      "cost": 642000,
-      "rcost": 4251022103,
+      "cost": 648000,
+      "rcost": 5604024474,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-05-05 10:52:09",
+      "update_time": "2019-06-01 16:12:21",
       "master_level": {
-        "level": 34,
+        "level": 35,
         "current": [
-          9100000,
-          36413810
-        ],
-        "next": [
           11400000,
           47813810
         ],
+        "next": [
+          14200000,
+          62013810
+        ],
         "color": 16746162,
-        "anchor_score": 42510221,
-        "upgrade_
+        "anchor_score": 56040244,
+        "upgrade
 ......
 ```
 
@@ -656,7 +723,7 @@ https://api.bilibili.com/x/space/notice?mid=349991143
   "code": 0,
   "message": "0",
   "ttl": 1,
-  "data": "【QQ群】\nMeaMea公国第三国度：860327880\nMeaMea公国第一国度：431766969\nMeaMea公国第二国度：749547516"
+  "data": ""
 }
 ```
 
@@ -686,7 +753,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": "28"
+      "rank": "5"
     }
   }
 }

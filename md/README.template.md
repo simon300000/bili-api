@@ -67,6 +67,16 @@ biliAPI(object, targets[, option])
 
 <!-- #### Option -->
 
+#### 更多例子:
+
+##### 获取所有视频
+
+EXAMPLE:allVideos
+
+##### 获取视频分P的所有cid
+
+EXAMPLE:cids
+
 ### Router Graph
 
 ![Graph of apis](api.svg)

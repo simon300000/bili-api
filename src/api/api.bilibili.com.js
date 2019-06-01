@@ -29,6 +29,17 @@ module.exports = {
     type: 'xml',
     get: ({ cid }) => `https://api.bilibili.com/x/v1/dm/list.so?oid=${cid}`
   },
+  getSubmitVideos: {
+    demand: ['mid'],
+    type: 'json',
+    optional: ['page'],
+    get: ({ mid, page = 1 }) => `https://space.bilibili.com/ajax/member/getSubmitVideos?mid=${mid}&pagesize=100&page=${page}`
+  },
+  getAllSubmitVideos: {
+    demand: ['getSubmitVideosPage', 'mid'],
+    type: 'jsonArray',
+    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((a, i) => `https://space.bilibili.com/ajax/member/getSubmitVideos?mid=${mid}&pagesize=100&page=${i + 1}`)
+  },
   search: {
     demand: ['uname'],
     type: 'json',

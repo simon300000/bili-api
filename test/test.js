@@ -171,6 +171,10 @@ describe('Bilibili biliAPI', function() {
       assert.isNotNaN(areaRank)
       assert.strictEqual(areaRank, 1000)
     })
+    it('mid -> allVideos', async function() {
+      let { allVideos } = await biliAPI({ mid: 349991143 }, ['allVideos'])
+      assert.isArray(allVideos)
+    })
   })
   context('Route', function() {
     it('Should reject when no require input', function() {

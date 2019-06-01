@@ -42,9 +42,17 @@ module.exports = {
     demand: ['topList'],
     get: ({ topList }) => topList.data.info.page
   },
+  getSubmitVideosPage: {
+    demand: ['getSubmitVideos'],
+    get: ({ getSubmitVideos }) => getSubmitVideos.data.pages
+  },
   guards: {
     demand: ['fullTopList'],
     get: ({ fullTopList }) => [...(fullTopList)[0].data.top3].concat(...(fullTopList).map(topList => topList.data.list))
+  },
+  allVideos: {
+    demand: ['getAllSubmitVideos'],
+    get: ({ getAllSubmitVideos }) => [].concat(...getAllSubmitVideos.map(({ data }) => data.vlist))
   },
   guardLevel: {
     demand: ['guards'],

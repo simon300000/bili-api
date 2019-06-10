@@ -1,10 +1,14 @@
 const LiveWS = require('bilibili-live-ws')
 
-const getOnline = roomid => new Promise(async resolve => {
+const getOnline = (roomid, trial = 0) => new Promise(async resolve => {
   let ws = new LiveWS(roomid)
   ws.on('error', async () => {
     ws.close()
-    resolve(await getOnline(roomid))
+    if (trial <= 8) {
+      resolve(await getOnline(roomid, trial + 1))
+    } else {
+      resolve(0)
+    }
   })
   ws.on('heartbeat', async online => {
     ws.close()

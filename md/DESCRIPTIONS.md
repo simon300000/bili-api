@@ -22,6 +22,10 @@ UP主信息
 
 视频信息
 
+# topPhoto
+
+个人空间头图
+
 # roomid
 
 直播房间号
@@ -36,9 +40,21 @@ UP主信息
 
 直播状态，直播中为`1`，轮播/没播为`0`
 
+# roundStatus
+
+轮播状态，轮播中为`1`
+
 # guardNum
 
 直播舰团
+
+# guards
+
+舰团列表
+
+# guardLevel
+
+舰团各等级数
 
 # title
 

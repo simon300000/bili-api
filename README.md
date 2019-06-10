@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽めあOfficial"
-object.guardNum // → 1015
+object.guardNum // → 970
 ```
 
 # 目录
@@ -17,10 +17,14 @@ object.guardNum // → 1015
   * [DATAs](#datas)
     + [mid](#mid)
     + [aid](#aid)
+    + [topPhoto](#topphoto)
     + [roomid](#roomid)
     + [online](#online)
     + [liveStatus](#livestatus)
+    + [roundStatus](#roundstatus)
     + [guardNum](#guardnum)
+    + [guards](#guards)
+    + [guardLevel](#guardlevel)
     + [title](#title)
     + [notice](#notice)
     + [video](#video)
@@ -62,7 +66,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 359682
+  up.follower // → 366204
 })()
 ```
 
@@ -77,8 +81,8 @@ const biliAPI = require('bili-api');
   let { guardLevel } = await biliAPI({ mid: 349991143 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [
   //  1,
-  //  16,
-  //  998
+  //  15,
+  //  954
   //]
 })()
 ```
@@ -90,7 +94,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
-  guardNum // → 64
+  guardNum // → 43
 })()
 ```
 
@@ -142,26 +146,26 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 286700005 }, ['allVideos'])
-  allVideos.length  // → 542
+  allVideos.length  // → 593
   allVideos[0]  // → {
-  //  "comment": 56,
-  //  "typeid": 17,
-  //  "play": 5872,
-  //  "pic": "//i1.hdslb.com/bfs/archive/a56c60806c846dd72bd473f752f142a5b9f8346b.png",
+  //  "comment": 6,
+  //  "typeid": 25,
+  //  "play": 317,
+  //  "pic": "//i2.hdslb.com/bfs/archive/14ac4d7503f001cd6049aea1f9771394c8e9c297.jpg",
   //  "subtitle": "",
   //  "description": "无",
   //  "copyright": "",
-  //  "title": "【しょぼんのアクション2】やる(´･ω･`)にかいめ【ホロライブ_戌神ころね】",
+  //  "title": "【ポケモンスタジアム金銀】バリヤードのやつ難しい【猫又おかゆ】",
   //  "review": 0,
   //  "author": "hololive",
   //  "mid": 286700005,
   //  "is_union_video": 0,
-  //  "created": 1559227767,
-  //  "length": "59:22",
+  //  "created": 1560106838,
+  //  "length": "60:05",
   //  "video_review": 0,
   //  "is_pay": 0,
-  //  "favorites": 86,
-  //  "aid": 54083874,
+  //  "favorites": 8,
+  //  "aid": 55098820,
   //  "hide_click": false
   //}
 })()
@@ -175,6 +179,8 @@ const biliAPI = require('bili-api');
 (async () => {
   let { cids } = await biliAPI({ aid: 27702699 }, ['cids'])
   cids // → [
+  //  96396213,
+  //  96396029,
   //  94227448,
   //  94789318,
   //  94254317,
@@ -227,6 +233,14 @@ const biliAPI = require('bili-api');
 
   比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
 
+* ### <a name="api_topPhoto"></a>topPhoto
+
+  个人空间头图
+
+  ##### 前置
+
+  <[info](#api_info)>
+
 * ### <a name="api_roomid"></a>roomid
 
   直播房间号
@@ -253,6 +267,14 @@ const biliAPI = require('bili-api');
 
   <[roomStatus](#api_roomStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
 
+* ### <a name="api_roundStatus"></a>roundStatus
+
+  轮播状态，轮播中为`1`
+
+  ##### 前置
+
+  <[roomStatus](#api_roomStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
+
 * ### <a name="api_guardNum"></a>guardNum
 
   直播舰团
@@ -260,6 +282,22 @@ const biliAPI = require('bili-api');
   ##### 前置
 
   <[topList](#api_topList)>
+
+* ### <a name="api_guards"></a>guards
+
+  舰团列表
+
+  ##### 前置
+
+  <[fullTopList](#api_fullTopList)>
+
+* ### <a name="api_guardLevel"></a>guardLevel
+
+  舰团各等级数
+
+  ##### 前置
+
+  <[guards](#api_guards)>
 
 * ### <a name="api_title"></a>title
 
@@ -341,7 +379,7 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
     "following": 32,
     "whisper": 0,
     "black": 0,
-    "follower": 359682
+    "follower": 366204
   }
 }
 ```
@@ -394,7 +432,7 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
       "theme_type": 0
     },
     "is_followed": false,
-    "top_photo": "http://i2.hdslb.com/bfs/space/cde2a0fe3273ae4466d135541d965e21c58a7454.png",
+    "top_photo": "http://i0.hdslb.com/bfs/space/cde2a0fe3273ae4466d135541d965e21c58a7454.png",
     "theme": {}
   }
 }
@@ -457,7 +495,7 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     },
     "stat": {
       "aid": 30669363,
-      "view": 10324,
+      "view": 11248,
       "danmaku": 63,
       "reply": 36,
       "favorite"
@@ -598,15 +636,24 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 1015,
-      "page": 102,
+      "num": 970,
+      "page": 97,
       "now": 1
     },
     "list": [
       {
-        "uid": 70836,
+        "uid": 12511670,
         "ruid": 349991143,
         "rank": 1,
+        "username": "神楽祭",
+        "face": "https://i0.hdslb.com/bfs/face/bb8a86b6a213354b555e17d129d635a9fc5d16e8.jpg",
+        "is_alive": 1,
+        "guard_level": 2
+      },
+      {
+        "uid": 70836,
+        "ruid": 349991143,
+        "rank": 2,
         "username": "我抱头蹲防啦",
         "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
         "is_alive": 0,
@@ -615,7 +662,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 154817,
         "ruid": 349991143,
-        "rank": 2,
+        "rank": 3,
         "username": "パッションマン",
         "face": "https://i0.hdslb.com/bfs/face/cb7680a91f6d68ff69fc2ee8ec81bf9ea1ca066b.jpg",
         "is_alive": 0,
@@ -624,16 +671,7 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
       {
         "uid": 620173,
         "ruid": 349991143,
-        "rank": 3,
-        "username": "HaoCheer",
-        "face": "https://i1.hdslb.com/bfs/face/626a7580e9338a868f29960e62adcc7a749b5a5e.jpg",
-        "is_alive": 0,
-        "guard_level": 2
-      },
-      {
-        "uid": 730732,
-        "ruid": 349991143,
-       
+        "ran
 ......
 ```
 
@@ -677,13 +715,13 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     "level": {
       "uid": 349991143,
       "cost": 648000,
-      "rcost": 5604024474,
+      "rcost": 5747320400,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-06-01 16:12:21",
+      "update_time": "2019-06-10 11:59:06",
       "master_level": {
         "level": 35,
         "current": [
@@ -695,7 +733,7 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
           62013810
         ],
         "color": 16746162,
-        "anchor_score": 56040244,
+        "anchor_score": 57473204,
         "upgrade
 ......
 ```
@@ -753,7 +791,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": "5"
+      "rank": "2"
     }
   }
 }

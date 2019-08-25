@@ -55,8 +55,8 @@ describe('Bilibili biliAPI', function() {
       assert.strictEqual(guardLevel[0] + guardLevel[1] + guardLevel[2], guardNum)
     })
     it('uname -> mid', async function() {
-      let { mid } = await biliAPI({ uname: '神楽めあOfficial' }, ['mid'])
-      assert.strictEqual(mid, 349991143)
+      let { mid } = await biliAPI({ uname: 'simon3000' }, ['mid'])
+      assert.strictEqual(mid, 3499295)
     })
     it('aid -> mid', async function() {
       let { mid } = await biliAPI({ aid: 31779330 }, ['mid'])

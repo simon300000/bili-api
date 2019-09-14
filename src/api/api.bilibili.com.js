@@ -50,7 +50,13 @@ module.exports = {
     demand: ['mid', 'getFollowersPage'],
     type: 'jsonArray',
     optional: ['SESSDATA'],
-    get: ({ mid, getFollowersPage, SESSDATA }) => Array(SESSDATA ? getFollowersPage : Math.min(5, getFollowersPage)).fill().map((_, i) => `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${i + 1}&ps=20`)
+    get: ({ mid, getFollowersPage, SESSDATA }) => Array(SESSDATA ? getFollowersPage : Math.min(5, getFollowersPage)).fill().map((_, i) => {
+      const url = `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${i + 1}&ps=20`
+      if (SESSDATA) {
+        return { cookie: { SESSDATA }, url: `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${i + 1}&ps=20` }
+      }
+      return url
+    })
   },
   search: {
     demand: ['uname'],

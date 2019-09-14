@@ -11,7 +11,11 @@ const delayPromise = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 let parsers = {}
 
-parsers.json = async (url, { wait, tunnels }) => {
+parsers.json = async (urlInfo, { wait, tunnels }) => {
+  if (typeof urlInfo === 'string') {
+    urlInfo = { url: urlInfo }
+  }
+  const { url, cookie = {} } = urlInfo
   if (wait) await delayPromise(wait)
   // if (tunnels.length) {
   //   let agent = tunnel.httpsOverHttp({
@@ -26,7 +30,7 @@ parsers.json = async (url, { wait, tunnels }) => {
   //     return data.body
   //   }
   // }
-  return (await got(new URL(url), { json: true })).body
+  return (await got(new URL(url), { json: true, headers: { Cookie: Object.entries(cookie).map(([k, v]) => `${k}=${v}`).join('; ') } })).body
 }
 
 parsers.jsonArray = async (urls, { wait, tunnels }) => {

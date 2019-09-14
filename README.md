@@ -2,8 +2,8 @@
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
-object.uname // → "神楽めあOfficial"
-object.guardNum // → 970
+object.uname // → "神楽Mea_Official"
+object.guardNum // → 426
 ```
 
 # 目录
@@ -66,7 +66,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 366204
+  up.follower // → 459209
 })()
 ```
 
@@ -81,8 +81,8 @@ const biliAPI = require('bili-api');
   let { guardLevel } = await biliAPI({ mid: 349991143 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [
   //  1,
-  //  15,
-  //  954
+  //  7,
+  //  418
   //]
 })()
 ```
@@ -94,7 +94,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
-  guardNum // → 43
+  guardNum // → 80
 })()
 ```
 
@@ -146,26 +146,26 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 286700005 }, ['allVideos'])
-  allVideos.length  // → 593
+  allVideos.length  // → 1456
   allVideos[0]  // → {
-  //  "comment": 6,
-  //  "typeid": 25,
-  //  "play": 317,
-  //  "pic": "//i2.hdslb.com/bfs/archive/14ac4d7503f001cd6049aea1f9771394c8e9c297.jpg",
+  //  "comment": 112,
+  //  "typeid": 27,
+  //  "play": 8064,
+  //  "pic": "//i2.hdslb.com/bfs/archive/c70c6b1abcb13385fb21c5d040f3aa887373274c.jpg",
   //  "subtitle": "",
-  //  "description": "无",
+  //  "description": "幻夜字幕组译制\n翻译：太郎\n时轴/后期：万年2位",
   //  "copyright": "",
-  //  "title": "【ポケモンスタジアム金銀】バリヤードのやつ難しい【猫又おかゆ】",
+  //  "title": "【早安hololive】9月14日",
   //  "review": 0,
   //  "author": "hololive",
   //  "mid": 286700005,
   //  "is_union_video": 0,
-  //  "created": 1560106838,
-  //  "length": "60:05",
-  //  "video_review": 0,
+  //  "created": 1568413809,
+  //  "length": "02:00",
+  //  "video_review": 247,
   //  "is_pay": 0,
-  //  "favorites": 8,
-  //  "aid": 55098820,
+  //  "favorites": 119,
+  //  "aid": 67649251,
   //  "hide_click": false
   //}
 })()
@@ -179,6 +179,61 @@ const biliAPI = require('bili-api');
 (async () => {
   let { cids } = await biliAPI({ aid: 27702699 }, ['cids'])
   cids // → [
+  //  117348519,
+  //  117346761,
+  //  117345948,
+  //  117343514,
+  //  117349741,
+  //  117349698,
+  //  116186644,
+  //  114763979,
+  //  114638549,
+  //  114418415,
+  //  114230987,
+  //  113685416,
+  //  113606632,
+  //  112946049,
+  //  112305652,
+  //  112299881,
+  //  112249982,
+  //  112249847,
+  //  112249715,
+  //  111800712,
+  //  111823761,
+  //  111806238,
+  //  111805606,
+  //  111804322,
+  //  110947294,
+  //  110946620,
+  //  113607080,
+  //  110945683,
+  //  108734088,
+  //  108728098,
+  //  108721702,
+  //  108721496,
+  //  107242490,
+  //  107147481,
+  //  113607702,
+  //  106752299,
+  //  106738746,
+  //  106011326,
+  //  105885163,
+  //  105883722,
+  //  105131095,
+  //  103894110,
+  //  103893362,
+  //  103025841,
+  //  103029620,
+  //  100426228,
+  //  100438286,
+  //  100073514,
+  //  100067702,
+  //  100064630,
+  //  98140930,
+  //  98176581,
+  //  97497904,
+  //  97074496,
+  //  98171575,
   //  96396213,
   //  96396029,
   //  94227448,
@@ -196,6 +251,32 @@ const biliAPI = require('bili-api');
   //  94320982,
   //  94320998,
   //  94321024,
+  //  97056382,
+  //  96535734,
+  //  96534727,
+  //  96534219,
+  //  96533304,
+  //  96541034,
+  //  103127764,
+  //  103128533,
+  //  103129216,
+  //  103129712,
+  //  103129922,
+  //  103130328,
+  //  103130885,
+  //  103130897,
+  //  103131464,
+  //  103132696,
+  //  103132455,
+  //  103132879,
+  //  103111181,
+  //  103112536,
+  //  103113244,
+  //  103114950,
+  //  103117360,
+  //  103118025,
+  //  103118461,
+  //  103119415,
   //  47780428
   //]
 })()
@@ -376,10 +457,10 @@ https://api.bilibili.com/x/relation/stat?vmid=349991143
   "ttl": 1,
   "data": {
     "mid": 349991143,
-    "following": 32,
+    "following": 72,
     "whisper": 0,
     "black": 0,
-    "follower": 366204
+    "follower": 459209
   }
 }
 ```
@@ -409,10 +490,10 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
   "ttl": 1,
   "data": {
     "mid": 349991143,
-    "name": "神楽めあOfficial",
+    "name": "神楽Mea_Official",
     "sex": "女",
-    "face": "http://i2.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
-    "sign": "这里是神楽めあ(KaguraMea)！来自日本的清楚系虚拟YouTuber～weibo:@kaguramea　",
+    "face": "http://i0.hdslb.com/bfs/face/ed0a3a864b38ef0f4bc1ee35c863f70ec50b6271.jpg",
+    "sign": "别看我啊",
     "rank": 10000,
     "level": 6,
     "jointime": 0,
@@ -433,7 +514,8 @@ https://api.bilibili.com/x/space/acc/info?mid=349991143
     },
     "is_followed": false,
     "top_photo": "http://i0.hdslb.com/bfs/space/cde2a0fe3273ae4466d135541d965e21c58a7454.png",
-    "theme": {}
+    "theme": {},
+    "sys_notice": {}
   }
 }
 ```
@@ -491,14 +573,14 @@ https://api.bilibili.com/x/web-interface/view?aid=30669363
     "owner": {
       "mid": 37736515,
       "name": "精鋭の見張り員",
-      "face": "http://i1.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
+      "face": "http://i2.hdslb.com/bfs/face/37d684a236f078baa1e00539d9c16d667b4a6f1f.jpg"
     },
     "stat": {
       "aid": 30669363,
-      "view": 11248,
-      "danmaku": 63,
-      "reply": 36,
-      "favorite"
+      "view": 18288,
+      "danmaku": 117,
+      "reply": 49,
+      "favorite
 ......
 ```
 
@@ -597,18 +679,19 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
 ```json
 {
   "code": 0,
-  "msg": "ok",
-  "message": "ok",
+  "message": "0",
+  "ttl": 1,
   "data": {
     "roomStatus": 1,
     "roundStatus": 0,
     "liveStatus": 0,
     "url": "https://live.bilibili.com/12235923",
-    "title": "【B限】MeAqua 協力お料理!!!!",
-    "cover": "https://i0.hdslb.com/bfs/live/room_cover/ae573d2ae6f5903c7d1186019da35871434597a1.jpg",
-    "online": 349331,
+    "title": "b限　请给我钱　 我很可爱",
+    "cover": "http://i0.hdslb.com/bfs/live/room_cover/b401f1166539dae805b9755624ce5b99a418d12c.jpg",
+    "online": 312914,
     "roomid": 12235923,
-    "broadcast_type": 0
+    "broadcast_type": 0,
+    "online_hidden": 0
   }
 }
 ```
@@ -621,7 +704,7 @@ https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=349991143
 
 ##### API地址
 
-`https://api.live.bilibili.com/guard/topList?roomid=<roomid>&page=1&ruid=<mid>`
+`https://api.live.bilibili.com/guard/topList?roomid=<roomid>&page=[page]&ruid=<mid>`
 
 ##### 实例:
 
@@ -636,42 +719,42 @@ https://api.live.bilibili.com/guard/topList?roomid=12235923&page=1&ruid=34999114
   "message": "success",
   "data": {
     "info": {
-      "num": 970,
-      "page": 97,
-      "now": 1
+      "num": 426,
+      "page": 43,
+      "now": 1,
+      "achievement_level": 2
     },
     "list": [
       {
-        "uid": 12511670,
+        "uid": 1336969,
         "ruid": 349991143,
         "rank": 1,
-        "username": "神楽祭",
-        "face": "https://i0.hdslb.com/bfs/face/bb8a86b6a213354b555e17d129d635a9fc5d16e8.jpg",
-        "is_alive": 1,
+        "username": "T-_3",
+        "face": "https://i1.hdslb.com/bfs/face/5032391c42751f362c783a685e563883dd6870b2.jpg",
+        "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 70836,
+        "uid": 3446994,
         "ruid": 349991143,
         "rank": 2,
-        "username": "我抱头蹲防啦",
-        "face": "https://i2.hdslb.com/bfs/face/bc7a7b985e562c2bd4369cb704973866b1988c42.jpg",
+        "username": "G線上のアリア",
+        "face": "https://i2.hdslb.com/bfs/face/3c131ab362797fe1f03cd3f2a8240de37eab523d.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 154817,
+        "uid": 3501317,
         "ruid": 349991143,
         "rank": 3,
-        "username": "パッションマン",
-        "face": "https://i0.hdslb.com/bfs/face/cb7680a91f6d68ff69fc2ee8ec81bf9ea1ca066b.jpg",
+        "username": "ジャンヌ-オルタ",
+        "face": "https://i2.hdslb.com/bfs/face/645f5d0f2370dfc3267c77d822c56a643296f884.jpg",
         "is_alive": 0,
         "guard_level": 2
       },
       {
-        "uid": 620173,
-        "ruid": 349991143,
-        "ran
+        "uid": 38608128,
+  
 ......
 ```
 
@@ -699,8 +782,8 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
   "data": {
     "info": {
       "uid": 349991143,
-      "uname": "神楽めあOfficial",
-      "face": "https://i2.hdslb.com/bfs/face/49e143e1cae7f9e51b36c6c670976a95cc41ce12.jpg",
+      "uname": "神楽Mea_Official",
+      "face": "https://i0.hdslb.com/bfs/face/ed0a3a864b38ef0f4bc1ee35c863f70ec50b6271.jpg",
       "rank": "10000",
       "platform_user_level": 6,
       "mobile_verify": 0,
@@ -714,27 +797,27 @@ https://api.live.bilibili.com/live_user/v1/UserInfo/get_anchor_in_room?roomid=12
     },
     "level": {
       "uid": 349991143,
-      "cost": 648000,
-      "rcost": 5747320400,
+      "cost": 669900,
+      "rcost": 12180421785,
       "user_score": "0",
       "vip": 0,
       "vip_time": "2018-08-03 13:56:27",
       "svip": 0,
       "svip_time": "0000-00-00 00:00:00",
-      "update_time": "2019-06-10 11:59:06",
+      "update_time": "2019-09-14 22:44:49",
       "master_level": {
-        "level": 35,
+        "level": 38,
         "current": [
-          11400000,
-          47813810
+          20000000,
+          99513810
         ],
         "next": [
-          14200000,
-          62013810
+          22500000,
+          122013810
         ],
         "color": 16746162,
-        "anchor_score": 57473204,
-        "upgrade
+        "anchor_score": 121804217,
+        "up
 ......
 ```
 
@@ -761,7 +844,7 @@ https://api.bilibili.com/x/space/notice?mid=349991143
   "code": 0,
   "message": "0",
   "ttl": 1,
-  "data": ""
+  "data": "Oo♡ 和Mea的约定 ♡oO\n▪ 直播时请不要和其他观众进行版聊。\n▪ 若是性质低劣的评论一直出现会视情况进行封禁。\n▪ 请各位观众不要单方面地提及其他主播的名字。在他人直播间也是同样的，主播未提及时，请尽量不要提起神乐Mea的话题\n▪ 一起遵守礼仪然后享受（？）直播吧！"
 }
 ```
 
@@ -791,7 +874,7 @@ https://api.live.bilibili.com/rankdb/v1/Common/roomInfo?ruid=349991143
   "data": {
     "areaRank": {
       "index": 4,
-      "rank": "2"
+      "rank": "5"
     }
   }
 }

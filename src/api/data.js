@@ -58,6 +58,14 @@ module.exports = {
     demand: ['getAllSubmitVideos'],
     get: ({ getAllSubmitVideos }) => [].concat(...getAllSubmitVideos.map(({ data }) => data.vlist))
   },
+  getFollowersPage: {
+    demand: ['getFollowers'],
+    get: ({ getFollowers: { data: { total } } }) => Math.ceil(total / 20)
+  },
+  allFollowers: {
+    demand: ['getAllFollowers'],
+    get: ({ getAllFollowers }) => getAllFollowers.flatMap(({ data: { list } }) => list)
+  },
   guardLevel: {
     demand: ['guards'],
     get: ({ guards }) => {

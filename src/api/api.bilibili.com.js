@@ -38,7 +38,19 @@ module.exports = {
   getAllSubmitVideos: {
     demand: ['getSubmitVideosPage', 'mid'],
     type: 'jsonArray',
-    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((a, i) => `https://space.bilibili.com/ajax/member/getSubmitVideos?mid=${mid}&pagesize=100&page=${i + 1}`)
+    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((_, i) => `https://space.bilibili.com/ajax/member/getSubmitVideos?mid=${mid}&pagesize=100&page=${i + 1}`)
+  },
+  getFollowers: {
+    demand: ['mid'],
+    type: 'json',
+    optional: ['page'],
+    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${page}&ps=20`
+  },
+  getAllFollowers: {
+    demand: ['mid', 'getFollowersPage'],
+    type: 'jsonArray',
+    optional: ['SESSDATA'],
+    get: ({ mid, getFollowersPage, SESSDATA }) => Array(SESSDATA ? getFollowersPage : Math.min(5, getFollowersPage)).fill().map((_, i) => `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${i + 1}&ps=20`)
   },
   search: {
     demand: ['uname'],

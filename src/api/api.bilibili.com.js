@@ -44,16 +44,16 @@ module.exports = {
     demand: ['mid'],
     type: 'json',
     optional: ['page'],
-    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${page}&ps=20`
+    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${page}&ps=50`
   },
   getAllFollowers: {
     demand: ['mid', 'getFollowersPage'],
     type: 'jsonArray',
     optional: ['SESSDATA'],
     get: ({ mid, getFollowersPage, SESSDATA }) => Array(SESSDATA ? getFollowersPage : Math.min(5, getFollowersPage)).fill().map((_, i) => {
-      const url = `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${i + 1}&ps=20`
+      const url = `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${i + 1}&ps=50`
       if (SESSDATA) {
-        return { cookie: { SESSDATA }, url: `https://api.bilibili.com/x/relation/followers?vmid=${mid}&pn=${i + 1}&ps=20` }
+        return { cookie: { SESSDATA }, url }
       }
       return url
     })

@@ -60,7 +60,7 @@ module.exports = {
   },
   getFollowersPage: {
     demand: ['getFollowers'],
-    get: ({ getFollowers: { data: { total } } }) => Math.ceil(total / 20)
+    get: ({ getFollowers: { data: { total } } }) => Math.ceil(total / 50)
   },
   allFollowers: {
     demand: ['getAllFollowers'],

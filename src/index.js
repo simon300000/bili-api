@@ -1,3 +1,4 @@
+const got = require('got')
 const { RelationX } = require('relationx')
 const api = require('./api/api.bilibili.com')
 const live = require('./api/api.live.bilibili.com')
@@ -7,6 +8,10 @@ const apis = { ...api, ...data, ...input, ...live }
 
 const defaultParser = require('./parser')
 // const checkTunnel = require('./tunnel')
+
+const defaultGot = async ({ url, cookie = {} }) => {
+  return (await got(new URL(url), { json: true, headers: { Cookie: Object.entries(cookie).map(([k, v]) => `${k}=${v}`).join('; ') } })).body
+}
 
 /**
  * 程序主入口
@@ -22,8 +27,9 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
   parsers = {},
   logger = e => {},
   wait = 0,
-  tunnels = []
-} = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).solve({ object, targets, options: { wait, tunnels } })
+  tunnels = [],
+  got = defaultGot
+} = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).solve({ object, targets, options: { wait, tunnels, got } })
 
 module.exports.apis = { ...apis }
 // module.exports.checkTunnels = async tunnels => {

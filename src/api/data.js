@@ -1,7 +1,7 @@
 const LiveWS = require('bilibili-live-ws')
 
-const getOnline = (roomid, trial = 0) => new Promise(async resolve => {
-  let ws = new LiveWS(roomid)
+const getOnline = (roomid, trial = 0) => new Promise(resolve => {
+  const ws = new LiveWS(roomid)
   ws.on('error', async () => {
     ws.close()
     if (trial <= 8) {
@@ -52,7 +52,7 @@ module.exports = {
   },
   guards: {
     demand: ['fullTopList'],
-    get: ({ fullTopList }) => [...(fullTopList)[0].data.top3].concat(...(fullTopList).map(topList => topList.data.list))
+    get: ({ fullTopList }) => [...new Map([...fullTopList[0].data.top3, ...fullTopList.flatMap(topList => topList.data.list)].map(({ uid, ...rest }) => [uid, { uid, ...rest }])).values()]
   },
   allVideos: {
     demand: ['getAllSubmitVideos'],
@@ -69,8 +69,8 @@ module.exports = {
   guardLevel: {
     demand: ['guards'],
     get: ({ guards }) => {
-      let level = [0, 0, 0]
-      let guardArray = guards
+      const level = [0, 0, 0]
+      const guardArray = guards
       for (let i = 0; i < guardArray.length; i++) {
         level[guardArray[i].guard_level - 1]++
       }

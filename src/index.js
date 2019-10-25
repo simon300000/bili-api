@@ -1,5 +1,5 @@
 const got = require('got')
-const { RelationX } = require('relationx')
+const RelationX = require('relationx')
 const api = require('./api/api.bilibili.com')
 const live = require('./api/api.live.bilibili.com')
 const data = require('./api/data')
@@ -29,7 +29,7 @@ module.exports = async ({ ...object }, [...targets], { // 这里以下属于Opti
   wait = 0,
   tunnels = [],
   got = defaultGot
-} = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).solve({ object, targets, options: { wait, tunnels, got } })
+} = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).relation(object, targets, { wait, tunnels, got })
 
 module.exports.apis = { ...apis }
 // module.exports.checkTunnels = async tunnels => {

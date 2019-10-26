@@ -7,7 +7,7 @@
     "test": "npm run unit",
     "unit": "nyc mocha --reporter=landing",
     "lint": "eslint --fix .",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "mkdir coverage; nyc report --reporter=text-lcov >> ./coverage/lcov.info",
     "readme": "npm run dot && npm run md",
     "md": "node md/updateReadme",
     "dot": "node md/dot; fdp -Tsvg md/api.dot > api.svg"

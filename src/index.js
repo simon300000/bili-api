@@ -19,17 +19,17 @@ const defaultGot = async ({ url, cookie = {} }) => {
  * @param  {Object}    object                  输入的信息
  * @param  {Array}     targets                 需要的目标信息
  * @param  {Function}  [parsers={}]            设置: 自定义url下载/分析器
- * @param  {Function}  [logger=e=>{}]          调试用信息输出
+ * @param  {Function}  [log=(...e)=>{}]             调试用信息输出
  * @param  {Number}    [wait=0]                网络请求延迟
  * @return {Promise}                           Resolve一个带有所需targets的Object
  */
 module.exports = async ({ ...object }, [...targets], { // 这里以下属于Options
   parsers = {},
-  logger = e => {},
+  log = () => {},
   wait = 0,
   tunnels = [],
   got = defaultGot
-} = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).relation(object, targets, { wait, tunnels, got })
+} = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).relation(object, targets, { wait, tunnels, got, log })
 
 module.exports.apis = { ...apis }
 // module.exports.checkTunnels = async tunnels => {

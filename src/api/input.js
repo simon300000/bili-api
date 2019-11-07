@@ -17,7 +17,7 @@ module.exports = {
       }
     }
   },
-  // TODO: aid: {},
+  aid: { demand: ['aid'] },
   cid: {
     demand: ['view'],
     optional: ['p'],

@@ -9,7 +9,7 @@
     "lint": "eslint --fix .",
     "coverage": "mkdir coverage; nyc report --reporter=text-lcov >> ./coverage/lcov.info",
     "readme": "npm run dot && npm run md",
-    "md": "node md/updateReadme",
+    "md": "node md/update",
     "dot": "node md/dot; fdp -Tsvg md/api.dot > api.svg"
   },
   "repository": "github:simon300000/bili-api",

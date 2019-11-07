@@ -99,10 +99,6 @@ EXAMPLE:cids
 
 <!-- [[idDocument]] -->
 
-## APIs
-
-<!-- [[apiDocument]] -->
-
 # Contribution
 
 欢迎各种Issue和Pull Request

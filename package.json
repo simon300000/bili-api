@@ -38,7 +38,7 @@
     "nyc": "^14.0.0"
   },
   "dependencies": {
-    "bilibili-live-ws": "^1.1.5",
+    "bilibili-live-ws": "^3.1.0",
     "got": "^9.6.0",
     "relationx": "^0.4.1",
     "xml2js": "^0.4.19"

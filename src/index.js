@@ -9,9 +9,7 @@ const apis = { ...api, ...data, ...input, ...live }
 const defaultParser = require('./parser')
 // const checkTunnel = require('./tunnel')
 
-const defaultGot = async ({ url, cookie = {} }) => {
-  return (await got(new URL(url), { json: true, headers: { Cookie: Object.entries(cookie).map(([k, v]) => `${k}=${v}`).join('; ') } })).body
-}
+const defaultGot = async ({ url, cookie = {} }) => got(new URL(url), { headers: { Cookie: Object.entries(cookie).map(([k, v]) => `${k}=${v}`).join('; ') } }).json()
 
 /**
  * 程序主入口

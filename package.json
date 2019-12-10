@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "bilibili-live-ws": "^3.1.0",
-    "got": "^9.6.0",
+    "got": "^10.0.3",
     "relationx": "^0.4.1",
     "xml2js": "^0.4.19"
   }

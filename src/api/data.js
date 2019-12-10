@@ -1,17 +1,16 @@
-const LiveWS = require('bilibili-live-ws')
+const { LiveTCP } = require('bilibili-live-ws')
 
 const getOnline = (roomid, trial = 0) => new Promise(resolve => {
-  const ws = new LiveWS(roomid)
-  ws.on('error', async () => {
-    ws.close()
+  const live = new LiveTCP(roomid)
+  live.on('error', () => {
     if (trial <= 8) {
-      resolve(await getOnline(roomid, trial + 1))
+      resolve(getOnline(roomid, trial + 1))
     } else {
       resolve(0)
     }
   })
-  ws.on('heartbeat', async online => {
-    ws.close()
+  live.on('heartbeat', async online => {
+    live.close()
     resolve(online)
   })
 })

@@ -1,6 +1,6 @@
 {
   "name": "bili-api",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Bilibili API 接口",
   "main": "index.js",
   "scripts": {

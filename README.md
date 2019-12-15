@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 532259
+  up.follower // → 532266
 })()
 ```
 
@@ -146,7 +146,7 @@ const biliAPI = require('bili-api');
   allVideos[0]  // → {
   //  "comment": 4,
   //  "typeid": 17,
-  //  "play": 529,
+  //  "play": 590,
   //  "pic": "//i1.hdslb.com/bfs/archive/26aef8c6850196d68a958986e25291bdfb2a89d0.jpg",
   //  "subtitle": "",
   //  "description": "ツイッタータグ　#生神ころね\n\n前回→https://www.youtube.com/watch?v=BkBN1...\n\n\nｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ\n\n\n\n\nころねのちゃんねる\n→https://www.youtube.com/channel/UChAn...\n\n\nころねのついったー\n→https://twitter.com/inugamikorone\n\n\n\n\n\nｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ",
@@ -437,7 +437,7 @@ const biliAPI = require('bili-api');
   直播间当前人气值
   非直播状态为0
   
-  *前置:* <[roomid](#api_roomid)>, <[liveStatus](#api_liveStatus)>
+  *前置:* <[liveStatus](#api_liveStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
 
 * ### <a name="api_notice"></a>notice
 

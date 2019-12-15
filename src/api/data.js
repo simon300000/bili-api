@@ -1,21 +1,3 @@
-const { LiveTCP } = require('bilibili-live-ws')
-
-const getOnline = (roomid, trial = 0) => new Promise(resolve => {
-  const live = new LiveTCP(roomid)
-  live.on('error', () => {
-    if (trial <= 8) {
-      resolve(getOnline(roomid, trial + 1))
-    } else {
-      resolve(0)
-    }
-  })
-  live.on('heartbeat', async online => {
-    live.close()
-    resolve(online)
-  })
-})
-// FIXME: Max trial or just remove
-
 module.exports = {
   follower: {
     demand: ['stat'],
@@ -93,12 +75,12 @@ module.exports = {
     get: ({ getRoomInfoOld }) => getRoomInfoOld.data.title
   },
   online: {
-    demand: ['roomid', 'liveStatus'],
-    get: ({ roomid, liveStatus }) => {
+    demand: ['liveStatus', 'getRoomInfoOld'],
+    get: ({ liveStatus, getRoomInfoOld }) => {
       if (!liveStatus) {
         return 0
       } else {
-        return getOnline(roomid)
+        return getRoomInfoOld.data.online
       }
     }
   },

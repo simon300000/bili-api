@@ -1,9 +1,9 @@
-# Bili-api [![Travis (.com)](https://img.shields.io/travis/com/simon300000/bili-api.svg)](https://travis-ci.com/simon300000/bili-api) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api) [![npm](https://img.shields.io/npm/v/bili-api.svg)](https://www.npmjs.com/package/bili-api)
+# Bili-api ![Node CI](https://github.com/simon300000/bili-api/workflows/Node%20CI/badge.svg) [![Coveralls github](https://img.shields.io/coveralls/github/simon300000/bili-api.svg)](https://coveralls.io/github/simon300000/bili-api) [![npm](https://img.shields.io/npm/v/bili-api.svg)](https://www.npmjs.com/package/bili-api)
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽Mea_Official"
-object.guardNum // → 273
+object.guardNum // → 332
 ```
 
 # 目录
@@ -62,7 +62,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 493223
+  up.follower // → 532259
 })()
 ```
 
@@ -77,8 +77,8 @@ const biliAPI = require('bili-api');
   let { guardLevel } = await biliAPI({ mid: 415578378 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [
   //  2,
-  //  6,
-  //  103
+  //  7,
+  //  102
   //]
 })()
 ```
@@ -90,7 +90,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
-  guardNum // → 54
+  guardNum // → 62
 })()
 ```
 
@@ -142,26 +142,26 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 286700005 }, ['allVideos'])
-  allVideos.length  // → 2414
+  allVideos.length  // → 3112
   allVideos[0]  // → {
-  //  "comment": 100,
-  //  "typeid": 27,
-  //  "play": 7383,
-  //  "pic": "//i2.hdslb.com/bfs/archive/4fde07653536e5aa4de28f08c34d1c859c2d75b2.jpg",
+  //  "comment": 4,
+  //  "typeid": 17,
+  //  "play": 529,
+  //  "pic": "//i1.hdslb.com/bfs/archive/26aef8c6850196d68a958986e25291bdfb2a89d0.jpg",
   //  "subtitle": "",
-  //  "description": "幻夜字幕组译制\n翻译：飞电或人\n校对：太郎 \n时轴/后期：柏苍",
+  //  "description": "ツイッタータグ　#生神ころね\n\n前回→https://www.youtube.com/watch?v=BkBN1...\n\n\nｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ\n\n\n\n\nころねのちゃんねる\n→https://www.youtube.com/channel/UChAn...\n\n\nころねのついったー\n→https://twitter.com/inugamikorone\n\n\n\n\n\nｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ",
   //  "copyright": "",
-  //  "title": "【早安hololive】11月7日",
+  //  "title": "【妖怪ウォッチ1】５回目のウォッチッチ♪【戌神ころね_ホロライブ】",
   //  "review": 0,
   //  "author": "hololive",
   //  "mid": 286700005,
   //  "is_union_video": 0,
-  //  "created": 1573079451,
-  //  "length": "01:40",
-  //  "video_review": 182,
+  //  "created": 1576364831,
+  //  "length": "171:15",
+  //  "video_review": 1,
   //  "is_pay": 0,
-  //  "favorites": 137,
-  //  "aid": 74775827,
+  //  "favorites": 4,
+  //  "aid": 79203520,
   //  "is_steins_gate": 0,
   //  "hide_click": false
   //}
@@ -176,6 +176,35 @@ const biliAPI = require('bili-api');
 (async () => {
   let { cids } = await biliAPI({ aid: 27702699 }, ['cids'])
   cids // → [
+  //  135178666,
+  //  135081523,
+  //  135082155,
+  //  134965028,
+  //  134890616,
+  //  134686293,
+  //  134482642,
+  //  134383394,
+  //  134383290,
+  //  134072123,
+  //  134686834,
+  //  133674390,
+  //  132804903,
+  //  132250522,
+  //  132252236,
+  //  132251210,
+  //  131783391,
+  //  131490715,
+  //  131095190,
+  //  130775348,
+  //  130679944,
+  //  130544896,
+  //  130064858,
+  //  130064687,
+  //  130065169,
+  //  129494135,
+  //  129471844,
+  //  128741177,
+  //  128328466,
   //  127911562,
   //  127882591,
   //  126961245,

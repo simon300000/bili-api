@@ -14,12 +14,10 @@ const defaultGot = async ({ url, cookie = {} }) => got(new URL(url), { headers: 
 /**
  * 程序主入口
  * @method exports
- * @param  {Object}    object                  输入的信息
- * @param  {Array}     targets                 需要的目标信息
- * @param  {Function}  [parsers={}]            设置: 自定义url下载/分析器
- * @param  {Function}  [log=(...e)=>{}]             调试用信息输出
- * @param  {Number}    [wait=0]                网络请求延迟
- * @return {Promise}                           Resolve一个带有所需targets的Object
+ * @param  {Object}    object     输入的信息
+ * @param  {Array}     targets    需要的目标信息
+ * @param  {Object}    options    设置
+ * @return {Promise}              Resolve一个带有所需targets的Object
  */
 module.exports = async ({ ...object }, [...targets], { // 这里以下属于Options
   parsers = {},

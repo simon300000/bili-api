@@ -18,6 +18,10 @@ module.exports = {
     }
   },
   aid: { demand: ['aid'] },
+  bvid: {
+    demand: ['archiveStat'],
+    get: ({ archiveStat }) => archiveStat.data.bvid
+  },
   cid: {
     demand: ['view'],
     optional: ['p'],

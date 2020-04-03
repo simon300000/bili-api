@@ -13,6 +13,7 @@ const assert = chai.assert
 // test data
 // mid: 349991143
 // aid: 31779330
+// bvid: BV1ZW411r7DU
 // uname: '神楽めあOfficial'
 // roomid: 12235923
 
@@ -183,6 +184,10 @@ describe('Bilibili biliAPI', function() {
     it('mid -> allFollower', async function() {
       const { allFollowers } = await biliAPI({ mid: 3499295 }, ['allFollowers'], { wait: 200 })
       assert.isArray(allFollowers)
+    })
+    it('aid -> bvid', async function() {
+      const { bvid } = await biliAPI({ aid: 31779330 }, ['bvid'])
+      assert.strictEqual(bvid, 'BV1ZW411r7DU')
     })
   })
   context('Route', function() {

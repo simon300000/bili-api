@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽Mea_Official"
-object.guardNum // → 332
+object.guardNum // → 431
 ```
 
 # 目录
@@ -35,6 +35,7 @@ object.guardNum // → 332
     + [topPhoto](#topphoto)
     + [mid](#mid)
     + [aid](#aid)
+    + [bvid](#bvid)
     + [roomid](#roomid)
     + [rankdb](#rankdb)
 - [Contribution](#contribution)
@@ -62,7 +63,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 532266
+  up.follower // → 719122
 })()
 ```
 
@@ -76,9 +77,9 @@ const biliAPI = require('bili-api');
 (async () => {
   let { guardLevel } = await biliAPI({ mid: 415578378 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [
-  //  2,
-  //  7,
-  //  102
+  //  1,
+  //  5,
+  //  145
   //]
 })()
 ```
@@ -90,7 +91,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
-  guardNum // → 62
+  guardNum // → 143
 })()
 ```
 
@@ -142,26 +143,26 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 286700005 }, ['allVideos'])
-  allVideos.length  // → 3112
+  allVideos.length  // → 3537
   allVideos[0]  // → {
-  //  "comment": 4,
-  //  "typeid": 17,
-  //  "play": 590,
-  //  "pic": "//i1.hdslb.com/bfs/archive/26aef8c6850196d68a958986e25291bdfb2a89d0.jpg",
+  //  "comment": 736,
+  //  "typeid": 27,
+  //  "play": 84732,
+  //  "pic": "//i0.hdslb.com/bfs/archive/2afbee363ae3825b6cb5682fd0f2742f9e5eb46a.jpg",
   //  "subtitle": "",
-  //  "description": "ツイッタータグ　#生神ころね\n\n前回→https://www.youtube.com/watch?v=BkBN1...\n\n\nｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ\n\n\n\n\nころねのちゃんねる\n→https://www.youtube.com/channel/UChAn...\n\n\nころねのついったー\n→https://twitter.com/inugamikorone\n\n\n\n\n\nｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ",
+  //  "description": "早安hololive字幕组译制\n字幕制作：太郎",
   //  "copyright": "",
-  //  "title": "【妖怪ウォッチ1】５回目のウォッチッチ♪【戌神ころね_ホロライブ】",
+  //  "title": "【早安hololive】NG集#5",
   //  "review": 0,
   //  "author": "hololive",
   //  "mid": 286700005,
   //  "is_union_video": 0,
-  //  "created": 1576364831,
-  //  "length": "171:15",
-  //  "video_review": 1,
+  //  "created": 1585903908,
+  //  "length": "02:19",
+  //  "video_review": 734,
   //  "is_pay": 0,
-  //  "favorites": 4,
-  //  "aid": 79203520,
+  //  "favorites": 3567,
+  //  "aid": 837502816,
   //  "is_steins_gate": 0,
   //  "hide_click": false
   //}
@@ -176,6 +177,46 @@ const biliAPI = require('bili-api');
 (async () => {
   let { cids } = await biliAPI({ aid: 27702699 }, ['cids'])
   cids // → [
+  //  154130876,
+  //  153368014,
+  //  153022084,
+  //  152986511,
+  //  152985543,
+  //  152425880,
+  //  152002045,
+  //  150297919,
+  //  149694024,
+  //  148577829,
+  //  148579293,
+  //  148575538,
+  //  147100251,
+  //  146848245,
+  //  146854231,
+  //  146834824,
+  //  144775534,
+  //  144342789,
+  //  144606741,
+  //  144044432,
+  //  144039296,
+  //  144044987,
+  //  141818927,
+  //  141375841,
+  //  140200064,
+  //  140201152,
+  //  140201635,
+  //  138312230,
+  //  138314190,
+  //  138313436,
+  //  138095411,
+  //  138313721,
+  //  137399592,
+  //  138300762,
+  //  137513774,
+  //  137354408,
+  //  136834104,
+  //  136415428,
+  //  136413554,
+  //  136205486,
   //  135178666,
   //  135081523,
   //  135082155,
@@ -193,7 +234,7 @@ const biliAPI = require('bili-api');
   //  132252236,
   //  132251210,
   //  131783391,
-  //  131490715,
+  //  138302683,
   //  131095190,
   //  130775348,
   //  130679944,
@@ -376,7 +417,7 @@ const biliAPI = require('bili-api');
 
   视频信息
   
-  *前置:* <[aid](#api_aid)>
+  *前置:* <[bvid](#api_bvid)>
 
 * ### <a name="api_list"></a>list
 
@@ -479,9 +520,16 @@ const biliAPI = require('bili-api');
 * ### <a name="api_aid"></a>aid
 
   就是av号啦→\_→
-  比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
+  比如视频 <https://www.bilibili.com/video/av2134250/> 中的`2134250`就是`aid`
   
   *前置:* <[aid](#api_aid)>
+
+* ### <a name="api_bvid"></a>bvid
+
+  就是bv号，新出的www
+  比如视频 <https://www.bilibili.com/video/BV1Xs411S77y> 中的`BV1Xs411S77y`就是`bvid`
+  
+  *前置:* <[archiveStat](#api_archiveStat)>
 
 * ### <a name="api_roomid"></a>roomid
 

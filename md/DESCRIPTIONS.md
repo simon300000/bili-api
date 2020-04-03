@@ -8,7 +8,13 @@ UP主个人空间地址 <https://space.bilibili.com/43222001/> 中的`43222001`�
 
 就是av号啦→\_→
 
-比如视频 https://www.bilibili.com/video/av2134250/ 中的`2134250`就是`aid`
+比如视频 <https://www.bilibili.com/video/av2134250/> 中的`2134250`就是`aid`
+
+# bvid
+
+就是bv号，新出的www
+
+比如视频 <https://www.bilibili.com/video/BV1Xs411S77y> 中的`BV1Xs411S77y`就是`bvid`
 
 # stat
 

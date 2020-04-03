@@ -4,6 +4,11 @@ module.exports = {
     type: 'json',
     get: ({ mid }) => `https://api.bilibili.com/x/relation/stat?vmid=${mid}`
   },
+  archiveStat: {
+    demand: ['aid'],
+    type: 'json',
+    get: ({ aid }) => `https://api.bilibili.com/x/web-interface/archive/stat?aid=${aid}`
+  },
   upstat: {
     demand: ['mid'],
     type: 'json',
@@ -20,9 +25,9 @@ module.exports = {
     get: ({ mid }) => `https://api.bilibili.com/x/space/acc/info?mid=${mid}`
   },
   view: {
-    demand: ['aid'],
+    demand: ['bvid'],
     type: 'json',
-    get: ({ aid }) => `https://api.bilibili.com/x/web-interface/view?aid=${aid}`
+    get: ({ bvid }) => `https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`
   },
   list: {
     demand: ['cid'],

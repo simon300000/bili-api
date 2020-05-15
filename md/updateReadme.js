@@ -26,7 +26,7 @@ for (let i = 0; i < descriptionFile.length; i++) {
 
 const maxdepth = 3
 
-const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList', 'getAnchorInRoom', '_notice', 'rankdb']
+const doc = ['stat', 'info', 'view', 'list', 'getRoomInfoOld', 'topList', 'getInfoByRoom', '_notice', 'rankdb']
 // const id = ['mid', 'aid', 'cid', 'p', 'roomid']
 
 let parsers = {}

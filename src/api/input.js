@@ -1,13 +1,13 @@
 module.exports = {
   mid: {
     oneOf: [
-      ['getAnchorInRoom'],
+      ['getInfoByRoom'],
       ['view'],
       ['search']
     ],
-    get: ({ getAnchorInRoom, view, search }) => {
-      if (getAnchorInRoom) {
-        return getAnchorInRoom.data.info.uid
+    get: ({ getInfoByRoom, view, search }) => {
+      if (getInfoByRoom) {
+        return getInfoByRoom.data.room_info.uid
       }
       if (view) {
         return view.data.owner.mid

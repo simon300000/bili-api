@@ -105,8 +105,8 @@ module.exports = {
     get: ({ info }) => info.data.top_photo
   },
   anchorScore: {
-    demand: ['getAnchorInRoom'],
-    get: ({ getAnchorInRoom }) => getAnchorInRoom.data.level.anchor_score
+    demand: ['getInfoByRoom'],
+    get: ({ getInfoByRoom }) => getInfoByRoom.data.anchor_info.live_info.score
   },
   areaRank: {
     demand: ['rankdb'],
@@ -115,5 +115,9 @@ module.exports = {
   cids: {
     demand: ['view'],
     get: ({ view }) => view.data.pages.map(({ cid }) => cid)
+  },
+  liveStartTime: {
+    demand: ['getInfoByRoom'],
+    get: ({ getInfoByRoom: { data = { room_info: { live_start_time: 0 } } } }) => data.room_info.live_start_time * 1000
   }
 }

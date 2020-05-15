@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽Mea_Official"
-object.guardNum // → 431
+object.guardNum // → 369
 ```
 
 # 目录
@@ -33,6 +33,7 @@ object.guardNum // → 431
     + [articleView](#articleview)
     + [face](#face)
     + [topPhoto](#topphoto)
+    + [liveStartTime](#livestarttime)
     + [mid](#mid)
     + [aid](#aid)
     + [bvid](#bvid)
@@ -63,7 +64,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 719122
+  up.follower // → 769650
 })()
 ```
 
@@ -77,9 +78,9 @@ const biliAPI = require('bili-api');
 (async () => {
   let { guardLevel } = await biliAPI({ mid: 415578378 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [
-  //  1,
-  //  5,
-  //  145
+  //  2,
+  //  7,
+  //  162
   //]
 })()
 ```
@@ -91,7 +92,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
-  guardNum // → 143
+  guardNum // → 74
 })()
 ```
 
@@ -143,26 +144,26 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 286700005 }, ['allVideos'])
-  allVideos.length  // → 3537
+  allVideos.length  // → 3550
   allVideos[0]  // → {
-  //  "comment": 736,
+  //  "comment": 552,
   //  "typeid": 27,
-  //  "play": 84732,
-  //  "pic": "//i0.hdslb.com/bfs/archive/2afbee363ae3825b6cb5682fd0f2742f9e5eb46a.jpg",
+  //  "play": 231244,
+  //  "pic": "//i2.hdslb.com/bfs/archive/c658ac3a197507385db42a2fa7b3b5154e0e3d30.jpg",
   //  "subtitle": "",
-  //  "description": "早安hololive字幕组译制\n字幕制作：太郎",
+  //  "description": "hololive所属VTuber的短篇动画「holo的涂鸦」第五十四集！\n——————————\n出场的所有hololive成员在B站都有官方频道\n平时每天都有直播，带字幕录像也在不断更新\n喜欢的话多多关注哦♡\n\n\n——————————\n第一集【荒野行动】APEX\nav51574677\n\n第二集【速报】女高中生成为了内阁官房长官\nav52384443\n\n第三集 上回的lovelive！\nav53071539\n\n第四集 【Hololive小剧场】假如给偶像三亿元\nav53702071\n\n第五集 【悲报】右手有",
   //  "copyright": "",
-  //  "title": "【早安hololive】NG集#5",
+  //  "title": "【hololive小剧场】1分钟就能看懂的格林童话",
   //  "review": 0,
   //  "author": "hololive",
   //  "mid": 286700005,
   //  "is_union_video": 0,
-  //  "created": 1585903908,
-  //  "length": "02:19",
-  //  "video_review": 734,
+  //  "created": 1589166450,
+  //  "length": "01:47",
+  //  "video_review": 893,
   //  "is_pay": 0,
-  //  "favorites": 3567,
-  //  "aid": 837502816,
+  //  "favorites": 5473,
+  //  "aid": 925694851,
   //  "is_steins_gate": 0,
   //  "hide_click": false
   //}
@@ -509,6 +510,12 @@ const biliAPI = require('bili-api');
   个人空间头图
   
   *前置:* <[info](#api_info)>
+
+* ### <a name="api_liveStartTime"></a>liveStartTime
+
+  直播开始时间
+  
+  *前置:* <[getInfoByRoom](#api_getInfoByRoom)>
 
 * ### <a name="api_mid"></a>mid
 

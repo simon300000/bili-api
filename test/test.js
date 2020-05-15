@@ -189,6 +189,11 @@ describe('Bilibili biliAPI', function() {
       const { bvid } = await biliAPI({ aid: 31779330 }, ['bvid'])
       assert.strictEqual(bvid, 'BV1ZW411r7DU')
     })
+    it('mid -> liveStartTime', async function() {
+      const { liveStartTime } = await biliAPI({ mid: 349991143 }, ['liveStartTime'])
+      assert.isNumber(liveStartTime)
+      assert.isNotNaN(liveStartTime)
+    })
   })
   context('Route', function() {
     it('Should reject when no require input', function() {

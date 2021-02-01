@@ -194,6 +194,14 @@ describe('Bilibili biliAPI', function() {
       assert.isNumber(liveStartTime)
       assert.isNotNaN(liveStartTime)
     })
+    it('mid -> dynamics (head)', async function() {
+      const { dynamics } = await biliAPI({ mid: 349991143 }, [ 'dynamics'] )
+      assert(dynamics)
+    })
+    it('mid -> dynamics (continue)', async function() {
+      const { dynamics } = await biliAPI({ mid: 349991143, dynamicOffset: 485810137475565100 }, [ 'dynamics'] )
+      assert(dynamics)
+    })
   })
   context('Route', function() {
     it('Should reject when no require input', function() {

@@ -4,7 +4,9 @@ const api = require('./api/api.bilibili.com')
 const live = require('./api/api.live.bilibili.com')
 const data = require('./api/data')
 const input = require('./api/input')
-const apis = { ...api, ...data, ...input, ...live }
+const api_vc = require('./api/api.vc.bilibili.com')
+
+const apis = { ...api, ...data, ...input, ...live, ...api_vc }
 
 const defaultParser = require('./parser')
 // const checkTunnel = require('./tunnel')

@@ -1,34 +1,49 @@
 {
-  "name": "bili-api",
-  "version": "1.5.0",
-  "description": "Bilibili API 接口",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm run unit",
-    "unit": "nyc mocha --reporter=landing",
-    "lint": "eslint --fix .",
-    "coverage": "mkdir coverage; nyc report --reporter=text-lcov >> ./coverage/lcov.info",
-    "readme": "npm run dot && npm run md",
-    "md": "node md/update",
-    "dot": "node md/dot; fdp -Tsvg md/api.dot > api.svg"
+  "_from": "bili-api",
+  "_id": "bili-api@1.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-hmQyHynU3ypbmriz3+E1Iv1aCvF/INGjUtaR7pzIsnFQ006PGgSXyVlbeuQnoaE6eXe+2p2+JmUAzAA1mwA/wg==",
+  "_location": "/bili-api",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "bili-api",
+    "name": "bili-api",
+    "escapedName": "bili-api",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "repository": "github:simon300000/bili-api",
-  "keywords": [
-    "bilibili",
-    "api"
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "author": "simon3000 <simon3000@163.com>",
-  "license": "MIT",
+  "_resolved": "https://mirrors.huaweicloud.com/repository/npm/bili-api/-/bili-api-1.5.0.tgz",
+  "_shasum": "261c8a1fdfab289b4d50e6521b00d6b0847beb53",
+  "_spec": "bili-api",
+  "_where": "C:\\Users\\leezi\\Documents\\Coder\\bili-onebot",
+  "author": {
+    "name": "simon3000",
+    "email": "simon3000@163.com"
+  },
   "bugs": {
     "url": "https://github.com/simon300000/bili-api/issues"
   },
-  "homepage": "https://github.com/simon300000/bili-api#readme",
+  "bundleDependencies": false,
+  "dependencies": {
+    "got": "^10.0.3",
+    "relationx": "^0.4.1",
+    "xml2js": "^0.4.19"
+  },
+  "deprecated": false,
+  "description": "Bilibili API 接口",
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.3",
-    "eslint-config-standard": "^14.1.0",
     "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.0.1",
@@ -37,9 +52,26 @@
     "mocha": "^7.0.0",
     "nyc": "^15.0.0"
   },
-  "dependencies": {
-    "got": "^10.0.3",
-    "relationx": "^0.4.1",
-    "xml2js": "^0.4.19"
-  }
+  "homepage": "https://github.com/simon300000/bili-api#readme",
+  "keywords": [
+    "bilibili",
+    "api"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "bili-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simon300000/bili-api.git"
+  },
+  "scripts": {
+    "coverage": "mkdir coverage; nyc report --reporter=text-lcov >> ./coverage/lcov.info",
+    "dot": "node md/dot; fdp -Tsvg md/api.dot > api.svg",
+    "lint": "eslint --fix .",
+    "md": "node md/update",
+    "readme": "npm run dot && npm run md",
+    "test": "npm run unit",
+    "unit": "nyc mocha --reporter=landing"
+  },
+  "version": "1.5.0"
 }

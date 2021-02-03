@@ -10,6 +10,8 @@ const chaiAsPromised = require('chai-as-promised')
 chai.use(chaiAsPromised)
 const assert = chai.assert
 
+biliAPI.setDefaultWait(1000)
+
 // test data
 // mid: 349991143
 // aid: 31779330

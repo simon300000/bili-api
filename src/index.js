@@ -21,15 +21,22 @@ const defaultGot = async ({ url, cookie = {} }) => got(new URL(url), { headers: 
  * @param  {Object}    options    设置
  * @return {Promise}              Resolve一个带有所需targets的Object
  */
+
+let defaultWait = 0
+
 module.exports = async ({ ...object }, [...targets], { // 这里以下属于Options
   parsers = {},
   log = () => {},
-  wait = 0,
+  wait = defaultWait,
   tunnels = [],
   got = defaultGot
 } = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).relation(object, targets, { wait, tunnels, got, log })
 
 module.exports.apis = { ...apis }
+
+module.exports.setDefaultWait = ms => {
+  defaultWait = ms
+}
 // module.exports.checkTunnels = async tunnels => {
 //   let tunnelsChecked = []
 //   for (let i = 0; i < tunnels.length; i++) {

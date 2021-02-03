@@ -16,8 +16,8 @@ module.exports = {
     get: ({ info }) => info.data.coins
   },
   video: {
-    demand: ['navnum'],
-    get: ({ navnum }) => navnum.data.video
+    demand: ['spaceSearch'],
+    get: ({ spaceSearch }) => spaceSearch.data.page.count
   },
   guardNum: {
     demand: ['topList'],

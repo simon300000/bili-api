@@ -66,7 +66,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 849109
+  up.follower // → 849110
 })()
 ```
 
@@ -150,7 +150,7 @@ const biliAPI = require('bili-api');
   allVideos[0]  // → {
   //  "comment": 66,
   //  "typeid": 17,
-  //  "play": 11400,
+  //  "play": 11477,
   //  "pic": "//i0.hdslb.com/bfs/archive/59963a9223f6b23b459328ad25683b200f30f8c8.jpg",
   //  "subtitle": "",
   //  "description": "2020年9月26日油管直播节选\n──────────────────────────────────────────\n剪辑：真名看破\n翻译：东方\n时轴：银河猫喵喵\n校对：千里光\n──────────────────────────────────────────\n【日月咪玉】\n推特：https://twitter.com/HizukiMiu\n油管：https://www.youtube.com/channel/UCM6iy_rSgSMbFjx10Z6VVGA\n【樱月花音】\n推特：https://twit",
@@ -438,7 +438,7 @@ const biliAPI = require('bili-api');
 
   UP主的视频数
   
-  *前置:* <[navnum](#api_navnum)>
+  *前置:* <[spaceSearch](#api_spaceSearch)>
 
 * ### <a name="api_guardNum"></a>guardNum
 

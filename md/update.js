@@ -7,6 +7,7 @@ const biliAPI = require('..')
 const { apis } = biliAPI
 
 const maxdepth = 3
+biliAPI.setDefaultWait(5000)
 
 const parseDescriptions = DESCRIPTIONS => DESCRIPTIONS
   .split('\n')
@@ -23,7 +24,16 @@ const parseDescriptions = DESCRIPTIONS => DESCRIPTIONS
   }, { descriptions: {} })
   .descriptions
 
+let exampleWaiting = Promise.resolve()
+
 const evalExample = async exampleName => {
+  let done
+  const wait = exampleWaiting
+  exampleWaiting = new Promise(resolve => {
+    done = resolve
+  })
+  await wait
+  await new Promise(resolve => setTimeout(resolve, 5000))
   console.log(`EXAMPLE: ${exampleName}`)
   const example = String(await readFile(`examples/${exampleName}.js`)).split('\n')
   let text = ['```javascript', ...example, '```'].join('\n').replace('\n\n```', '\n```')
@@ -45,6 +55,7 @@ const evalExample = async exampleName => {
   for (let j = 0; j < data.length; j++) {
     text = text.replace(' // DATA', ` // → ${JSON.stringify(data[j], 0, 2).replace(/\n/g, '\n  //')}`)
   }
+  done()
   return text
 }
 

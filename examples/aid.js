@@ -1,7 +1,7 @@
 const biliAPI = require('bili-api');
 
 (async () => {
-  // 一 般 友 情 夏 色 祭
-  let { uname } = await biliAPI({ aid: 33342306 }, ['uname'])
+  // 迷 迭 迷 迭 帕 里 桑
+  let { uname } = await biliAPI({ aid: 54299141 }, ['uname'])
   uname // DATA
 })()

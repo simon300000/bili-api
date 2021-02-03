@@ -10,6 +10,8 @@ const chaiAsPromised = require('chai-as-promised')
 chai.use(chaiAsPromised)
 const assert = chai.assert
 
+biliAPI.setDefaultWait(1000)
+
 // test data
 // mid: 349991143
 // aid: 31779330
@@ -193,6 +195,14 @@ describe('Bilibili biliAPI', function() {
       const { liveStartTime } = await biliAPI({ mid: 349991143 }, ['liveStartTime'])
       assert.isNumber(liveStartTime)
       assert.isNotNaN(liveStartTime)
+    })
+    it('mid -> dynamics (head)', async function() {
+      const { dynamics } = await biliAPI({ mid: 349991143 }, [ 'dynamics'] )
+      assert(dynamics)
+    })
+    it('mid -> dynamics (continue)', async function() {
+      const { dynamics } = await biliAPI({ mid: 349991143, dynamicOffset: 485810137475565100 }, [ 'dynamics'] )
+      assert(dynamics)
     })
   })
   context('Route', function() {

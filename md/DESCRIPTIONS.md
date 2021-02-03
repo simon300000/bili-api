@@ -32,6 +32,14 @@ UP主信息
 
 个人空间头图
 
+# dynamics
+
+UP主的动态
+
+# dynamicOffset
+
+获取动态的起点。留空或设置为`0`可获取最新动态。使用上一次请求中的`next_offset`可获取下一页动态。
+
 # roomid
 
 直播房间号

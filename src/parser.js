@@ -34,8 +34,11 @@ const xml = async (url, { wait, log }) => {
   return parseStringAsync(String(await inflateRawAsync((await got(new URL(url), { decompress: false })).body)))
 }
 
+const transparent = (data) => data
+
 module.exports = {
   json,
   jsonArray,
-  xml
+  xml,
+  transparent
 }

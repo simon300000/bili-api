@@ -16,8 +16,8 @@ module.exports = {
     get: ({ info }) => info.data.coins
   },
   video: {
-    demand: ['navnum'],
-    get: ({ navnum }) => navnum.data.video
+    demand: ['spaceSearch'],
+    get: ({ spaceSearch }) => spaceSearch.data.page.count
   },
   guardNum: {
     demand: ['topList'],
@@ -28,8 +28,8 @@ module.exports = {
     get: ({ topList }) => topList.data.info.page
   },
   getSubmitVideosPage: {
-    demand: ['getSubmitVideos'],
-    get: ({ getSubmitVideos }) => getSubmitVideos.data.pages
+    demand: ['spaceSearch'],
+    get: ({ spaceSearch }) => Math.ceil(spaceSearch.data.page.count / spaceSearch.data.page.ps)
   },
   guards: {
     demand: ['fullTopList'],
@@ -37,7 +37,7 @@ module.exports = {
   },
   allVideos: {
     demand: ['getAllSubmitVideos'],
-    get: ({ getAllSubmitVideos }) => [].concat(...getAllSubmitVideos.map(({ data }) => data.vlist))
+    get: ({ getAllSubmitVideos }) => getAllSubmitVideos.flatMap(({ data }) => data.list.vlist)
   },
   getFollowersPage: {
     demand: ['getFollowers'],

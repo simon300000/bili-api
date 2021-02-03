@@ -14,11 +14,6 @@ module.exports = {
     type: 'json',
     get: ({ mid }) => `https://api.bilibili.com/x/space/upstat?mid=${mid}`
   },
-  navnum: {
-    demand: ['mid'],
-    type: 'json',
-    get: ({ mid }) => `https://api.bilibili.com/x/space/navnum?mid=${mid}`
-  },
   info: {
     demand: ['mid'],
     type: 'json',
@@ -34,16 +29,16 @@ module.exports = {
     type: 'xml',
     get: ({ cid }) => `https://api.bilibili.com/x/v1/dm/list.so?oid=${cid}`
   },
-  getSubmitVideos: {
+  spaceSearch: {
     demand: ['mid'],
     type: 'json',
     optional: ['page'],
-    get: ({ mid, page = 1 }) => `https://space.bilibili.com/ajax/member/getSubmitVideos?mid=${mid}&pagesize=100&page=${page}`
+    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=100&pn=${page}`
   },
   getAllSubmitVideos: {
     demand: ['getSubmitVideosPage', 'mid'],
     type: 'jsonArray',
-    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((_, i) => `https://space.bilibili.com/ajax/member/getSubmitVideos?mid=${mid}&pagesize=100&page=${i + 1}`)
+    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((_, i) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=100&tid=0&pn=${i + 1}`)
   },
   getFollowers: {
     demand: ['mid'],

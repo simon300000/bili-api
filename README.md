@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽Mea_Official"
-object.guardNum // → 369
+object.guardNum // → 316
 ```
 
 # 目录
@@ -39,6 +39,8 @@ object.guardNum // → 369
     + [bvid](#bvid)
     + [roomid](#roomid)
     + [rankdb](#rankdb)
+    + [dynamics](#dynamics)
+    + [dynamicOffset](#dynamicoffset)
 - [Contribution](#contribution)
 
 # biliAPI
@@ -64,7 +66,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 769650
+  up.follower // → 849110
 })()
 ```
 
@@ -78,9 +80,9 @@ const biliAPI = require('bili-api');
 (async () => {
   let { guardLevel } = await biliAPI({ mid: 415578378 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [
+  //  0,
   //  2,
-  //  7,
-  //  162
+  //  11
   //]
 })()
 ```
@@ -91,8 +93,8 @@ const biliAPI = require('bili-api');
 const biliAPI = require('bili-api');
 
 (async () => {
-  let { guardNum } = await biliAPI({ uname: '白上吹雪Official' }, ['guardNum'])
-  guardNum // → 74
+  let { guardNum } = await biliAPI({ uname: '帕里_Paryi' }, ['guardNum'])
+  guardNum // → 50
 })()
 ```
 
@@ -102,9 +104,9 @@ const biliAPI = require('bili-api');
 const biliAPI = require('bili-api');
 
 (async () => {
-  // 一 般 友 情 夏 色 祭
-  let { uname } = await biliAPI({ aid: 33342306 }, ['uname'])
-  uname // → "夏色祭Official"
+  // 迷 迭 迷 迭 帕 里 桑
+  let { uname } = await biliAPI({ aid: 54299141 }, ['uname'])
+  uname // → "德國马牌酸菜客服汉斯"
 })()
 ```
 
@@ -143,29 +145,29 @@ biliAPI(object, targets[, option])
 const biliAPI = require('bili-api');
 
 (async () => {
-  let { allVideos } = await biliAPI({ mid: 286700005 }, ['allVideos'])
-  allVideos.length  // → 3550
+  let { allVideos } = await biliAPI({ mid: 380829248 }, ['allVideos'])
+  allVideos.length  // → 394
   allVideos[0]  // → {
-  //  "comment": 552,
-  //  "typeid": 27,
-  //  "play": 231244,
-  //  "pic": "//i2.hdslb.com/bfs/archive/c658ac3a197507385db42a2fa7b3b5154e0e3d30.jpg",
+  //  "comment": 66,
+  //  "typeid": 17,
+  //  "play": 11477,
+  //  "pic": "//i0.hdslb.com/bfs/archive/59963a9223f6b23b459328ad25683b200f30f8c8.jpg",
   //  "subtitle": "",
-  //  "description": "hololive所属VTuber的短篇动画「holo的涂鸦」第五十四集！\n——————————\n出场的所有hololive成员在B站都有官方频道\n平时每天都有直播，带字幕录像也在不断更新\n喜欢的话多多关注哦♡\n\n\n——————————\n第一集【荒野行动】APEX\nav51574677\n\n第二集【速报】女高中生成为了内阁官房长官\nav52384443\n\n第三集 上回的lovelive！\nav53071539\n\n第四集 【Hololive小剧场】假如给偶像三亿元\nav53702071\n\n第五集 【悲报】右手有",
+  //  "description": "2020年9月26日油管直播节选\n──────────────────────────────────────────\n剪辑：真名看破\n翻译：东方\n时轴：银河猫喵喵\n校对：千里光\n──────────────────────────────────────────\n【日月咪玉】\n推特：https://twitter.com/HizukiMiu\n油管：https://www.youtube.com/channel/UCM6iy_rSgSMbFjx10Z6VVGA\n【樱月花音】\n推特：https://twit",
   //  "copyright": "",
-  //  "title": "【hololive小剧场】1分钟就能看懂的格林童话",
+  //  "title": "【花园Serena×樱月花音×日月咪玉】惊恐PACIFY",
   //  "review": 0,
-  //  "author": "hololive",
-  //  "mid": 286700005,
-  //  "is_union_video": 0,
-  //  "created": 1589166450,
-  //  "length": "01:47",
-  //  "video_review": 893,
+  //  "author": "花园Serena",
+  //  "mid": 380829248,
+  //  "created": 1612267806,
+  //  "length": "10:01",
+  //  "video_review": 26,
+  //  "aid": 798880110,
+  //  "bvid": "BV1vy4y117S8",
+  //  "hide_click": false,
   //  "is_pay": 0,
-  //  "favorites": 5473,
-  //  "aid": 925694851,
-  //  "is_steins_gate": 0,
-  //  "hide_click": false
+  //  "is_union_video": 0,
+  //  "is_steins_gate": 0
   //}
 })()
 ```
@@ -436,7 +438,7 @@ const biliAPI = require('bili-api');
 
   UP主的视频数
   
-  *前置:* <[navnum](#api_navnum)>
+  *前置:* <[spaceSearch](#api_spaceSearch)>
 
 * ### <a name="api_guardNum"></a>guardNum
 
@@ -549,6 +551,18 @@ const biliAPI = require('bili-api');
   bilibili直播一周元气榜分区排名
   
   *前置:* <[mid](#api_mid)>
+
+* ### <a name="api_dynamics"></a>dynamics
+
+  UP主的动态
+  
+  *前置:* <[dynamicsRaw](#api_dynamicsRaw)>
+
+* ### <a name="api_dynamicOffset"></a>dynamicOffset
+
+  获取动态的起点。留空或设置为`0`可获取最新动态。使用上一次请求中的`next_offset`可获取下一页动态。
+  
+  
 
 # Contribution
 

@@ -10,8 +10,8 @@
 
 ### README.md
 
-请不要直接修改 README.md 文件，README.md 文件是由 `updateReadme.js` 生成的，模版是 README.template.md 和 DOC.template.md，
+请不要直接修改 README.md 文件，README.md 文件是由 `update.js` 生成的，模版是 README.template.md 和 DOC.template.md，
 
 上面提到的Markdown模版都存在`md`目录里面。
 
-想要修改的话可以根据 `updateReadme.js` 修改 README.template.md 和 DOC.template.md，然后用指令 `npm run readme` 更新 README.md 文件。
+想要修改的话可以根据 `update.js` 修改 README.template.md 和 DOC.template.md，然后用指令 `npm run readme` 更新 README.md 文件。

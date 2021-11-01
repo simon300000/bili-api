@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽Mea_Official"
-object.guardNum // → 316
+object.guardNum // → 183
 ```
 
 # 目录
@@ -66,7 +66,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 849110
+  up.follower // → 853437
 })()
 ```
 
@@ -81,8 +81,8 @@ const biliAPI = require('bili-api');
   let { guardLevel } = await biliAPI({ mid: 415578378 }, ['guardLevel'], { wait: 200 })
   guardLevel // → [
   //  0,
-  //  2,
-  //  11
+  //  0,
+  //  3
   //]
 })()
 ```
@@ -94,7 +94,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '帕里_Paryi' }, ['guardNum'])
-  guardNum // → 50
+  guardNum // → 17
 })()
 ```
 
@@ -146,28 +146,29 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 380829248 }, ['allVideos'])
-  allVideos.length  // → 394
+  allVideos.length  // → 561
   allVideos[0]  // → {
-  //  "comment": 66,
+  //  "comment": 101,
   //  "typeid": 17,
-  //  "play": 11477,
-  //  "pic": "//i0.hdslb.com/bfs/archive/59963a9223f6b23b459328ad25683b200f30f8c8.jpg",
+  //  "play": 12611,
+  //  "pic": "http://i0.hdslb.com/bfs/archive/315edc54b83375ac836ad28601944e215488a19d.jpg",
   //  "subtitle": "",
-  //  "description": "2020年9月26日油管直播节选\n──────────────────────────────────────────\n剪辑：真名看破\n翻译：东方\n时轴：银河猫喵喵\n校对：千里光\n──────────────────────────────────────────\n【日月咪玉】\n推特：https://twitter.com/HizukiMiu\n油管：https://www.youtube.com/channel/UCM6iy_rSgSMbFjx10Z6VVGA\n【樱月花音】\n推特：https://twit",
-  //  "copyright": "",
-  //  "title": "【花园Serena×樱月花音×日月咪玉】惊恐PACIFY",
+  //  "description": "【猫之夜曲】PC下载链接：https://akiyamamio.xyz/neko3\n──────────────────────────────────────────\n2021年10月04日B站直播节选\n──────────────────────────────────────────\n剪辑：真名看破\n翻译：咸鱼\n时轴：咸鱼\n校对：咸鱼\n美工：术士\n──────────────────────────────────────────\n推特：https://twitter.com/hanazono_se",
+  //  "copyright": "1",
+  //  "title": "【十分钟看猫猫】开局金色传说，下一刻却迎来破产危机？！【猫之夜曲序章下】",
   //  "review": 0,
   //  "author": "花园Serena",
   //  "mid": 380829248,
-  //  "created": 1612267806,
+  //  "created": 1635591606,
   //  "length": "10:01",
-  //  "video_review": 26,
-  //  "aid": 798880110,
-  //  "bvid": "BV1vy4y117S8",
+  //  "video_review": 18,
+  //  "aid": 208857024,
+  //  "bvid": "BV1Eh41187aB",
   //  "hide_click": false,
   //  "is_pay": 0,
   //  "is_union_video": 0,
-  //  "is_steins_gate": 0
+  //  "is_steins_gate": 0,
+  //  "is_live_playback": 0
   //}
 })()
 ```
@@ -462,26 +463,26 @@ const biliAPI = require('bili-api');
 
   轮播状态，轮播中为`1`
   
-  *前置:* <[roomStatus](#api_roomStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
+  *前置:* <[roomStatus](#api_roomStatus)>, <[liveRoom](#api_liveRoom)>
 
 * ### <a name="api_liveStatus"></a>liveStatus
 
   直播状态，直播中为`1`，轮播/没播为`0`
   
-  *前置:* <[roomStatus](#api_roomStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
+  *前置:* <[roomStatus](#api_roomStatus)>, <[liveRoom](#api_liveRoom)>
 
 * ### <a name="api_title"></a>title
 
   直播间标题
   
-  *前置:* <[getRoomInfoOld](#api_getRoomInfoOld)>
+  *前置:* <[liveRoom](#api_liveRoom)>
 
 * ### <a name="api_online"></a>online
 
   直播间当前人气值
   非直播状态为0
   
-  *前置:* <[liveStatus](#api_liveStatus)>, <[getRoomInfoOld](#api_getRoomInfoOld)>
+  *前置:* <[liveStatus](#api_liveStatus)>, <[liveRoom](#api_liveRoom)>
 
 * ### <a name="api_notice"></a>notice
 
@@ -544,7 +545,7 @@ const biliAPI = require('bili-api');
 
   直播房间号
   
-  *前置:* <[getRoomInfoOld](#api_getRoomInfoOld)>
+  *前置:* <[liveRoom](#api_liveRoom)>
 
 * ### <a name="api_rankdb"></a>rankdb
 

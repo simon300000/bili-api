@@ -58,29 +58,33 @@ module.exports = {
       return level
     }
   },
+  liveRoom: {
+    demand: ['info'],
+    get: ({ info }) => info.data.live_room
+  },
   roomStatus: {
-    demand: ['getRoomInfoOld'],
-    get: ({ getRoomInfoOld }) => getRoomInfoOld.data.roomStatus
+    demand: ['liveRoom'],
+    get: ({ liveRoom }) => liveRoom.roomStatus
   },
   roundStatus: {
-    demand: ['roomStatus', 'getRoomInfoOld'],
-    get: ({ getRoomInfoOld, roomStatus }) => roomStatus && getRoomInfoOld.data.roundStatus
+    demand: ['roomStatus', 'liveRoom'],
+    get: ({ liveRoom, roomStatus }) => roomStatus && liveRoom.roundStatus
   },
   liveStatus: {
-    demand: ['roomStatus', 'getRoomInfoOld'],
-    get: ({ getRoomInfoOld, roomStatus }) => roomStatus && getRoomInfoOld.data.liveStatus
+    demand: ['roomStatus', 'liveRoom'],
+    get: ({ liveRoom, roomStatus }) => roomStatus && liveRoom.liveStatus
   },
   title: {
-    demand: ['getRoomInfoOld'],
-    get: ({ getRoomInfoOld }) => getRoomInfoOld.data.title
+    demand: ['liveRoom'],
+    get: ({ liveRoom }) => liveRoom.title
   },
   online: {
-    demand: ['liveStatus', 'getRoomInfoOld'],
-    get: ({ liveStatus, getRoomInfoOld }) => {
+    demand: ['liveStatus', 'liveRoom'],
+    get: ({ liveStatus, liveRoom }) => {
       if (!liveStatus) {
         return 0
       } else {
-        return getRoomInfoOld.data.online
+        return liveRoom.online
       }
     }
   },

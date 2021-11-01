@@ -30,7 +30,7 @@ module.exports = {
   // TODO: p: {},
   // TODO: page: {},
   roomid: {
-    demand: ['getRoomInfoOld'],
-    get: ({ getRoomInfoOld }) => getRoomInfoOld.data.roomid
+    demand: ['liveRoom'],
+    get: ({ liveRoom }) => liveRoom.roomid
   }
 }

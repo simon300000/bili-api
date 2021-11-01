@@ -1,9 +1,4 @@
 module.exports = {
-  getRoomInfoOld: {
-    demand: ['mid'],
-    type: 'json',
-    get: ({ mid }) => `https://api.live.bilibili.com/room/v1/Room/getRoomInfoOld?mid=${mid}`
-  },
   topList: {
     demand: ['roomid', 'mid'],
     type: 'json',

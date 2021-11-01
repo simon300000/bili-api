@@ -102,19 +102,19 @@ describe('Bilibili biliAPI', function() {
     context('Exceptions', function() {
       context('No live room', function() {
         it('mid -> roomStatus -> 0', async function() {
-          let { roomStatus } = await biliAPI({ mid: 233 }, ['roomStatus'])
+          let { roomStatus } = await biliAPI({ mid: 2333 }, ['roomStatus'])
           assert.strictEqual(roomStatus, 0)
         })
         it('mid -> roundStatus -> 0', async function() {
-          let { roundStatus } = await biliAPI({ mid: 233 }, ['roundStatus'])
+          let { roundStatus } = await biliAPI({ mid: 2333 }, ['roundStatus'])
           assert.strictEqual(roundStatus, 0)
         })
         it('mid -> liveStatus -> 0', async function() {
-          let { liveStatus } = await biliAPI({ mid: 233 }, ['liveStatus'])
+          let { liveStatus } = await biliAPI({ mid: 2333 }, ['liveStatus'])
           assert.strictEqual(liveStatus, 0)
         })
         it('mid -> online -> 0', async function() {
-          let { online } = await biliAPI({ mid: 233 }, ['online'])
+          let { online } = await biliAPI({ mid: 2333 }, ['online'])
           assert.strictEqual(online, 0)
         })
       })
@@ -166,7 +166,7 @@ describe('Bilibili biliAPI', function() {
       assert.strictEqual(areaRank, 1000)
     })
     it('mid -> allVideos', async function() {
-      let { allVideos } = await biliAPI({ mid: 349991143 }, ['allVideos'])
+      const { allVideos } = await biliAPI({ mid: 3499295 }, ['allVideos'])
       assert.isArray(allVideos)
     })
     it('aid -> cids', async function() {

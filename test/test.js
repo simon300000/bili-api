@@ -140,16 +140,6 @@ describe('Bilibili biliAPI', function() {
       let { notice } = await biliAPI({ mid: 349991143 }, ['notice'])
       assert.isString(notice)
     })
-    it('mid -> archiveView', async function() {
-      let { archiveView } = await biliAPI({ mid: 349991143 }, ['archiveView'])
-      assert.isNumber(archiveView)
-      assert.isNotNaN(archiveView)
-    })
-    it('mid -> articleView', async function() {
-      let { articleView } = await biliAPI({ mid: 349991143 }, ['articleView'])
-      assert.isNumber(articleView)
-      assert.isNotNaN(articleView)
-    })
     it('mid -> face', async function() {
       let { face } = await biliAPI({ mid: 349991143 }, ['face'])
       assert.isString(face)

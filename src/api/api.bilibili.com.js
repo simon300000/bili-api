@@ -33,12 +33,12 @@ module.exports = {
     demand: ['mid'],
     type: 'json',
     optional: ['page'],
-    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=100&pn=${page}`
+    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=50&pn=${page}`
   },
   getAllSubmitVideos: {
     demand: ['getSubmitVideosPage', 'mid'],
     type: 'jsonArray',
-    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((_, i) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=100&tid=0&pn=${i + 1}`)
+    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((_, i) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=50&tid=0&pn=${i + 1}`)
   },
   getFollowers: {
     demand: ['mid'],

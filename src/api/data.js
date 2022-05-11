@@ -60,7 +60,7 @@ module.exports = {
   },
   liveRoom: {
     demand: ['info'],
-    get: ({ info }) => info.data.live_room
+    get: ({ info }) => info.data.live_room || {}
   },
   roomStatus: {
     demand: ['liveRoom'],

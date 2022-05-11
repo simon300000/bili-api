@@ -31,6 +31,6 @@ module.exports = {
   // TODO: page: {},
   roomid: {
     demand: ['liveRoom'],
-    get: ({ liveRoom }) => liveRoom.roomid
+    get: ({ liveRoom }) => liveRoom.roomid || 0
   }
 }

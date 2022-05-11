@@ -103,38 +103,21 @@ describe('Bilibili biliAPI', function() {
       context('No live room', function() {
         it('mid -> roomStatus -> 0', async function() {
           let { roomStatus } = await biliAPI({ mid: 2333 }, ['roomStatus'])
-          assert.strictEqual(roomStatus, 0)
+          assert.strictEqual(roomStatus, undefined)
         })
         it('mid -> roundStatus -> 0', async function() {
           let { roundStatus } = await biliAPI({ mid: 2333 }, ['roundStatus'])
-          assert.strictEqual(roundStatus, 0)
+          assert.strictEqual(roundStatus, undefined)
         })
         it('mid -> liveStatus -> 0', async function() {
           let { liveStatus } = await biliAPI({ mid: 2333 }, ['liveStatus'])
-          assert.strictEqual(liveStatus, 0)
-        })
-        it('mid -> online -> 0', async function() {
-          let { online } = await biliAPI({ mid: 2333 }, ['online'])
-          assert.strictEqual(online, 0)
+          assert.strictEqual(liveStatus, undefined)
         })
       })
     })
     it('roomid -> title', async function() {
       let { title } = await biliAPI({ roomid: 12235923 }, ['title'])
       assert.isString(title)
-    })
-    it('roomid -> online', async function() {
-      let { online } = await biliAPI({ roomid: 12235923 }, ['online'])
-      assert.isNumber(online)
-      assert.isNotNaN(online)
-    })
-    it('roomid -> online > 0', async function() {
-      this.timeout(100000)
-      const roomid = JSON.parse((await got('https://api.live.bilibili.com/room/v1/Area/getListByAreaID?areaId=0&sort=online&pageSize=10')).body).data[2].roomid
-      const { online } = await biliAPI({ roomid }, ['online'])
-      assert.isNumber(online)
-      assert.isNotNaN(online)
-      assert.isAbove(online, 0)
     })
     it('mid -> notice', async function() {
       let { notice } = await biliAPI({ mid: 349991143 }, ['notice'])

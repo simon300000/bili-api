@@ -78,16 +78,6 @@ module.exports = {
     demand: ['liveRoom'],
     get: ({ liveRoom }) => liveRoom.title
   },
-  online: {
-    demand: ['liveStatus', 'liveRoom'],
-    get: ({ liveStatus, liveRoom }) => {
-      if (!liveStatus) {
-        return 0
-      } else {
-        return liveRoom.online
-      }
-    }
-  },
   notice: {
     demand: ['_notice'],
     get: ({ _notice }) => _notice.data

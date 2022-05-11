@@ -2,8 +2,8 @@
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
-object.uname // → "神楽Mea_Official"
-object.guardNum // → 183
+object.uname // → "神楽Mea_NHOTBOT"
+object.guardNum // → 142
 ```
 
 # 目录
@@ -27,7 +27,6 @@ object.guardNum // → 183
     + [roundStatus](#roundstatus)
     + [liveStatus](#livestatus)
     + [title](#title)
-    + [online](#online)
     + [notice](#notice)
     + [archiveView](#archiveview)
     + [articleView](#articleview)
@@ -66,7 +65,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 853437
+  up.follower // → 869332
 })()
 ```
 
@@ -82,7 +81,7 @@ const biliAPI = require('bili-api');
   guardLevel // → [
   //  0,
   //  0,
-  //  3
+  //  1
   //]
 })()
 ```
@@ -94,7 +93,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '帕里_Paryi' }, ['guardNum'])
-  guardNum // → 17
+  guardNum // → 11
 })()
 ```
 
@@ -146,27 +145,27 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 380829248 }, ['allVideos'])
-  allVideos.length  // → 561
+  allVideos.length  // → 679
   allVideos[0]  // → {
-  //  "comment": 101,
-  //  "typeid": 17,
-  //  "play": 12611,
-  //  "pic": "http://i0.hdslb.com/bfs/archive/315edc54b83375ac836ad28601944e215488a19d.jpg",
+  //  "comment": 103,
+  //  "typeid": 27,
+  //  "play": 24249,
+  //  "pic": "http://i0.hdslb.com/bfs/archive/4831cd2877641c42b03811b50f185119d1a5c366.jpg",
   //  "subtitle": "",
-  //  "description": "【猫之夜曲】PC下载链接：https://akiyamamio.xyz/neko3\n──────────────────────────────────────────\n2021年10月04日B站直播节选\n──────────────────────────────────────────\n剪辑：真名看破\n翻译：咸鱼\n时轴：咸鱼\n校对：咸鱼\n美工：术士\n──────────────────────────────────────────\n推特：https://twitter.com/hanazono_se",
+  //  "description": "「NHOT BOT首次六人联动～吸血鬼生存者游戏 30分钟大挑战！」录播熟肉?来咯！\n先发成员+新成员 一共分为三组\n资深前辈以及超级新人的她们，在激烈的生存游戏中产生了什么样的化学反应？又发生了什么令人捧腹大笑的趣事呢？\n到底成员会怎样分组？吊车尾的队伍会接受什麽样的惩罚任务？！又是哪组获胜呢？！快来?吧！\n \n?新成员帐号关注了吗？就差你一个咯！\n☔@雨音月奈_NHOTBOT   ?@UzuMe舞紫梦_NHOTBOT    ?@星罗薄荷_NHOTBOT   ?\n\n\n++++++++++++++++++",
   //  "copyright": "1",
-  //  "title": "【十分钟看猫猫】开局金色传说，下一刻却迎来破产危机？！【猫之夜曲序章下】",
+  //  "title": "【NHOT BOT专属团综#19】「吸血鬼生存者游戏」30分钟大挑战！",
   //  "review": 0,
-  //  "author": "花园Serena",
-  //  "mid": 380829248,
-  //  "created": 1635591606,
-  //  "length": "10:01",
-  //  "video_review": 18,
-  //  "aid": 208857024,
-  //  "bvid": "BV1Eh41187aB",
+  //  "author": "NHOT_BOT_Official",
+  //  "mid": 1400431115,
+  //  "created": 1652248800,
+  //  "length": "95:04",
+  //  "video_review": 63,
+  //  "aid": 383884239,
+  //  "bvid": "BV1dZ4y1h7Mb",
   //  "hide_click": false,
   //  "is_pay": 0,
-  //  "is_union_video": 0,
+  //  "is_union_video": 1,
   //  "is_steins_gate": 0,
   //  "is_live_playback": 0
   //}
@@ -476,13 +475,6 @@ const biliAPI = require('bili-api');
   直播间标题
   
   *前置:* <[liveRoom](#api_liveRoom)>
-
-* ### <a name="api_online"></a>online
-
-  直播间当前人气值
-  非直播状态为0
-  
-  *前置:* <[liveStatus](#api_liveStatus)>, <[liveRoom](#api_liveRoom)>
 
 * ### <a name="api_notice"></a>notice
 

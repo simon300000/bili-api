@@ -102,6 +102,10 @@ module.exports = {
     demand: ['getInfoByRoom'],
     get: ({ getInfoByRoom }) => getInfoByRoom.data.anchor_info.live_info.score
   },
+  fansclub: {
+    demand: ['getInfoByRoom'],
+    get: ({ getInfoByRoom }) => getInfoByRoom.data.anchor_info.medal_info.fansclub
+  },
   areaRank: {
     demand: ['rankdb'],
     get: ({ rankdb }) => Number(rankdb.data.areaRank.rank.replace('>', ''))

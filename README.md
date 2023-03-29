@@ -3,7 +3,7 @@
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
 object.uname // → "神楽Mea_NHOTBOT"
-object.guardNum // → 142
+object.guardNum // → 106
 ```
 
 # 目录
@@ -65,7 +65,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 869332
+  up.follower // → 867069
 })()
 ```
 
@@ -81,7 +81,7 @@ const biliAPI = require('bili-api');
   guardLevel // → [
   //  0,
   //  0,
-  //  1
+  //  0
   //]
 })()
 ```
@@ -93,7 +93,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '帕里_Paryi' }, ['guardNum'])
-  guardNum // → 11
+  guardNum // → 7
 })()
 ```
 
@@ -105,7 +105,7 @@ const biliAPI = require('bili-api');
 (async () => {
   // 迷 迭 迷 迭 帕 里 桑
   let { uname } = await biliAPI({ aid: 54299141 }, ['uname'])
-  uname // → "德國马牌酸菜客服汉斯"
+  uname // → "马牌酸菜罐头"
 })()
 ```
 
@@ -145,29 +145,32 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 380829248 }, ['allVideos'])
-  allVideos.length  // → 679
+  allVideos.length  // → 784
   allVideos[0]  // → {
-  //  "comment": 103,
+  //  "comment": 43,
   //  "typeid": 27,
-  //  "play": 24249,
-  //  "pic": "http://i0.hdslb.com/bfs/archive/4831cd2877641c42b03811b50f185119d1a5c366.jpg",
+  //  "play": 9418,
+  //  "pic": "http://i0.hdslb.com/bfs/archive/171d5d1960c2234bdb85d997e6ef2bd816c83fb3.jpg",
   //  "subtitle": "",
-  //  "description": "「NHOT BOT首次六人联动～吸血鬼生存者游戏 30分钟大挑战！」录播熟肉?来咯！\n先发成员+新成员 一共分为三组\n资深前辈以及超级新人的她们，在激烈的生存游戏中产生了什么样的化学反应？又发生了什么令人捧腹大笑的趣事呢？\n到底成员会怎样分组？吊车尾的队伍会接受什麽样的惩罚任务？！又是哪组获胜呢？！快来?吧！\n \n?新成员帐号关注了吗？就差你一个咯！\n☔@雨音月奈_NHOTBOT   ?@UzuMe舞紫梦_NHOTBOT    ?@星罗薄荷_NHOTBOT   ?\n\n\n++++++++++++++++++",
+  //  "description": "b站直播节选片段\n\n—————————————————————\n\n剪辑：我喜欢蓝色\n\n翻译：意呆\n\n时轴：白狐\n\n校对：美海\n\n封面：black\n\n\n—————————————————————\n\n推特：https://twitter.com/hanazono_serena\n\n油管：https://www.youtube.com/channel/UCRXBTd80F5IIWWY4HatJ5Ug\n\ntwitcasting：http://www.twitcasting.tv/hanazono_serena/sh",
   //  "copyright": "1",
-  //  "title": "【NHOT BOT专属团综#19】「吸血鬼生存者游戏」30分钟大挑战！",
+  //  "title": "【三分钟看猫豆人】你养的猫猫正在给你挖坑",
   //  "review": 0,
-  //  "author": "NHOT_BOT_Official",
-  //  "mid": 1400431115,
-  //  "created": 1652248800,
-  //  "length": "95:04",
-  //  "video_review": 63,
-  //  "aid": 383884239,
-  //  "bvid": "BV1dZ4y1h7Mb",
+  //  "author": "花园Serena",
+  //  "mid": 380829248,
+  //  "created": 1679740200,
+  //  "length": "02:54",
+  //  "video_review": 11,
+  //  "aid": 824073454,
+  //  "bvid": "BV1fg4y1W7LX",
   //  "hide_click": false,
   //  "is_pay": 0,
-  //  "is_union_video": 1,
+  //  "is_union_video": 0,
   //  "is_steins_gate": 0,
-  //  "is_live_playback": 0
+  //  "is_live_playback": 0,
+  //  "meta": null,
+  //  "is_avoided": 0,
+  //  "attribute": 0
   //}
 })()
 ```
@@ -180,8 +183,8 @@ const biliAPI = require('bili-api');
 (async () => {
   let { cids } = await biliAPI({ aid: 27702699 }, ['cids'])
   cids // → [
-  //  154130876,
   //  153368014,
+  //  154130876,
   //  153022084,
   //  152986511,
   //  152985543,
@@ -367,7 +370,7 @@ const biliAPI = require('bili-api');
   //  103130328,
   //  103130885,
   //  103130897,
-  //  103131464,
+  //  758399977,
   //  103132696,
   //  103132455,
   //  103132879,

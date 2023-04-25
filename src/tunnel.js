@@ -5,7 +5,7 @@ module.exports = async tunnelOne => {
   let agent = tunnel.httpsOverHttp({
     proxy: tunnelOne
   })
-  let request = got('https://api.bilibili.com/x/space/acc/info?mid=349991143', { json: true, agent })
+  let request = got('https://api.bilibili.com/x/space/wbi/acc/info?mid=349991143', { json: true, agent })
   setTimeout(() => {
     request.cancel()
   }, 1000)

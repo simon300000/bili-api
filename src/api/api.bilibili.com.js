@@ -17,7 +17,7 @@ module.exports = {
   info: {
     demand: ['mid'],
     type: 'json',
-    get: ({ mid }) => `https://api.bilibili.com/x/space/acc/info?mid=${mid}`
+    get: ({ mid }) => `https://api.bilibili.com/x/space/wbi/acc/info?mid=${mid}`
   },
   view: {
     demand: ['bvid'],
@@ -61,7 +61,7 @@ module.exports = {
   search: {
     demand: ['uname'],
     type: 'json',
-    get: ({ uname }) => `https://api.bilibili.com/x/web-interface/search/type?jsonp=jsonp&search_type=bili_user&keyword=${uname}`
+    get: ({ uname }) => `https://api.bilibili.com/x/web-interface/wbi/search/type?search_type=bili_user&keyword=${uname}`
   },
   _notice: {
     demand: ['mid'],

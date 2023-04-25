@@ -22,7 +22,7 @@ module.exports = {
   view: {
     demand: ['bvid'],
     type: 'json',
-    get: ({ bvid }) => `https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`
+    get: ({ bvid }) => `https://api.bilibili.com/x/web-interface/wbi/view?bvid=${bvid}`
   },
   list: {
     demand: ['cid'],
@@ -33,12 +33,12 @@ module.exports = {
     demand: ['mid'],
     type: 'json',
     optional: ['page'],
-    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=50&pn=${page}`
+    get: ({ mid, page = 1 }) => `https://api.bilibili.com/x/space/wbi/arc/search?mid=${mid}&ps=50&pn=${page}`
   },
   getAllSubmitVideos: {
     demand: ['getSubmitVideosPage', 'mid'],
     type: 'jsonArray',
-    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((_, i) => `https://api.bilibili.com/x/space/arc/search?mid=${mid}&ps=50&tid=0&pn=${i + 1}`)
+    get: ({ mid, getSubmitVideosPage }) => Array(getSubmitVideosPage).fill().map((_, i) => `https://api.bilibili.com/x/space/wbi/arc/search?mid=${mid}&ps=50&tid=0&pn=${i + 1}`)
   },
   getFollowers: {
     demand: ['mid'],

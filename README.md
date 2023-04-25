@@ -2,8 +2,8 @@
 
 ```javascript
 let object = await biliAPI({ mid: 349991143 }, ['uname', 'guardNum'])
-object.uname // → "神楽Mea_NHOTBOT"
-object.guardNum // → 106
+object.uname // → "神楽Mea_Official"
+object.guardNum // → 90
 ```
 
 # 目录
@@ -65,7 +65,7 @@ const biliAPI = require('bili-api')
 ;
 (async () => {
   let up = await biliAPI({ mid: 349991143 }, ['follower'])
-  up.follower // → 867069
+  up.follower // → 865364
 })()
 ```
 
@@ -93,7 +93,7 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { guardNum } = await biliAPI({ uname: '帕里_Paryi' }, ['guardNum'])
-  guardNum // → 7
+  guardNum // → 4
 })()
 ```
 
@@ -145,30 +145,55 @@ const biliAPI = require('bili-api');
 
 (async () => {
   let { allVideos } = await biliAPI({ mid: 380829248 }, ['allVideos'])
-  allVideos.length  // → 784
+  allVideos.length  // → 803
   allVideos[0]  // → {
-  //  "comment": 43,
+  //  "comment": 151,
   //  "typeid": 27,
-  //  "play": 9418,
-  //  "pic": "http://i0.hdslb.com/bfs/archive/171d5d1960c2234bdb85d997e6ef2bd816c83fb3.jpg",
+  //  "play": 35467,
+  //  "pic": "http://i1.hdslb.com/bfs/archive/7ebdf463d240d634c48ffd1fa07aa5b4300626a1.jpg",
   //  "subtitle": "",
-  //  "description": "b站直播节选片段\n\n—————————————————————\n\n剪辑：我喜欢蓝色\n\n翻译：意呆\n\n时轴：白狐\n\n校对：美海\n\n封面：black\n\n\n—————————————————————\n\n推特：https://twitter.com/hanazono_serena\n\n油管：https://www.youtube.com/channel/UCRXBTd80F5IIWWY4HatJ5Ug\n\ntwitcasting：http://www.twitcasting.tv/hanazono_serena/sh",
+  //  "description": "看一眼，这是什么，是花园橘猫，橘猫飞扑！再多看一眼，这是什么，是花园橘猫，橘猫飞扑！\n\n推特：https://twitter.com/hanazono_serena\n\n油管：https://www.youtube.com/channel/UCRXBTd80F5IIWWY4HatJ5Ug\n\ntwitcasting：http://www.twitcasting.tv/hanazono_serena/show",
   //  "copyright": "1",
-  //  "title": "【三分钟看猫豆人】你养的猫猫正在给你挖坑",
+  //  "title": "再多看一眼，是肥猫飞扑！！(ง˙o˙)ว",
   //  "review": 0,
   //  "author": "花园Serena",
   //  "mid": 380829248,
-  //  "created": 1679740200,
-  //  "length": "02:54",
-  //  "video_review": 11,
-  //  "aid": 824073454,
-  //  "bvid": "BV1fg4y1W7LX",
+  //  "created": 1682341800,
+  //  "length": "00:17",
+  //  "video_review": 17,
+  //  "aid": 697813388,
+  //  "bvid": "BV1Dm4y127Rk",
   //  "hide_click": false,
   //  "is_pay": 0,
   //  "is_union_video": 0,
   //  "is_steins_gate": 0,
   //  "is_live_playback": 0,
-  //  "meta": null,
+  //  "meta": {
+  //    "id": 1273994,
+  //    "title": "猫猫小场景",
+  //    "cover": "https://archive.biliimg.com/bfs/archive/d924dca6f0fe32acd664187541ad181a5f95402c.jpg",
+  //    "mid": 380829248,
+  //    "intro": "短视频合集",
+  //    "sign_state": 0,
+  //    "attribute": 140,
+  //    "stat": {
+  //      "season_id": 1273994,
+  //      "view": 679218,
+  //      "danmaku": 394,
+  //      "reply": 2164,
+  //      "favorite": 27482,
+  //      "coin": 9946,
+  //      "share": 3687,
+  //      "like": 135269,
+  //      "mtime": 1682420254,
+  //      "vt": 1236324,
+  //      "vv": 0
+  //    },
+  //    "ep_count": 15,
+  //    "first_aid": 354674889,
+  //    "ptime": 1682341800,
+  //    "ep_num": 0
+  //  },
   //  "is_avoided": 0,
   //  "attribute": 0
   //}
@@ -370,7 +395,7 @@ const biliAPI = require('bili-api');
   //  103130328,
   //  103130885,
   //  103130897,
-  //  758399977,
+  //  1085091986,
   //  103132696,
   //  103132455,
   //  103132879,

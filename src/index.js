@@ -11,13 +11,30 @@ const apis = { ...api, ...data, ...input, ...live, ...api_vc }
 const defaultParser = require('./parser')
 // const checkTunnel = require('./tunnel')
 
-const defaultGot = async ({ url, cookie = { buvid3: 233 } }) => got(new URL(url), {
-  headers: {
-    Origin: 'https://www.bilibili.com',
-    Cookie: Object.entries({ _uuid: '', rpdid: '', ...cookie }).map(([k, v]) => `${k}=${v}`).join(';'),
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15'
+const parseBSON = data => {
+  const chunks = data.split('}{"code":')
+  if (chunks.length === 1) {
+    return data
   }
-}).json()
+  return chunks.map((chunk, index) => {
+    if (index === 0) {
+      return chunk + '}'
+    }
+    return '{"code":' + chunk
+  })[1]
+}
+
+const defaultGot = async ({ url, cookie = { buvid3: 233 } }) => {
+  const raw = await got(new URL(url), {
+    headers: {
+      Origin: 'https://www.bilibili.com',
+      Cookie: Object.entries({ _uuid: '', rpdid: '', ...cookie }).map(([k, v]) => `${k}=${v}`).join(';'),
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15'
+    }
+  }).text()
+
+  return JSON.parse(parseBSON(raw))
+}
 
 /**
  * 程序主入口

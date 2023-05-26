@@ -1,4 +1,8 @@
 module.exports = {
+  nav: {
+    type: 'json',
+    get: () => 'https://api.bilibili.com/x/web-interface/nav'
+  },
   stat: {
     demand: ['mid'],
     type: 'json',

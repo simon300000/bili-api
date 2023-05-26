@@ -47,13 +47,25 @@ const defaultGot = async ({ url, cookie = { buvid3: 233 } }) => {
 
 let defaultWait = 0
 
-module.exports = async ({ ...object }, [...targets], { // 这里以下属于Options
+const w = async ({ ...object }, [...targets], { // 这里以下属于Options
   parsers = {},
   log = () => { },
   wait = defaultWait,
   tunnels = [],
-  got = defaultGot
-} = {}) => (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).relation(object, targets, { wait, tunnels, got, log })
+  got = defaultGot,
+  noSalt = false,
+  salt = undefined
+} = {}) => {
+  let bilibiliSalt
+  if (!noSalt) {
+    const { salt: saltResult } = await w({ ...object, salt }, ['salt'], { noSalt: true })
+    log('using salt', salt)
+    bilibiliSalt = saltResult
+  }
+  return (new RelationX({ nodes: apis, parsers: { ...defaultParser, ...parsers } })).relation(object, targets, { wait, tunnels, got, log, salt: bilibiliSalt })
+}
+
+module.exports = w
 
 module.exports.apis = { ...apis }
 

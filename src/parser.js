@@ -30,8 +30,6 @@ const json = async (urlInfo, { wait, got, log, salt }) => {
     urlInfo.url = url.href
   }
 
-  console.log(urlInfo)
-
   log('json', urlInfo.url)
 
   return got(urlInfo)
